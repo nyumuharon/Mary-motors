@@ -30,9 +30,9 @@ function renderVehicles(filter = 'all') {
         <p class="car-make">${v.make}</p>
         <h3 class="car-name">${v.name}</h3>
         <div class="car-specs">
-          <span class="car-spec">⛽ ${v.fuel}</span>
-          <span class="car-spec">🛣️ ${v.mileage}</span>
-          <span class="car-spec">👤 ${v.seats} seats</span>
+          <span class="car-spec"> ${v.fuel}</span>
+          <span class="car-spec"> ${v.mileage}</span>
+          <span class="car-spec"> ${v.seats} seats</span>
         </div>
         <div class="car-footer">
           <div class="car-price">${v.price}<span> / unit</span></div>

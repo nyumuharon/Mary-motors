@@ -50,7 +50,7 @@ pages.forEach(page => {
     finalHtml = finalHtml.replace(/href="\.\/"/g, 'href="./index.html"');
 
     // Write to file
-    fs.writeFileSync(path.join(outDir, `${page.name}.html`), finalHtml);
+    fs.writeFileSync(path.join(outDir, `${page.name}.html`), finalHtml, "utf-8");
 });
 
 // Copy assets from public
