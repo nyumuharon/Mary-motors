@@ -13,7 +13,6 @@ const vehicles = [
   { id: 9, make: 'Subaru', name: 'Outback XT', type: 'used', badge: 'Used', price: '$16,200', mileage: '58,000 km', fuel: 'Petrol', seats: '5', img: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80' },
 ];
 
-let cart = [];
 
 /* ── RENDER VEHICLE CARDS ───────────────────────────────── */
 function renderVehicles(filter = 'all') {
@@ -35,20 +34,11 @@ function renderVehicles(filter = 'all') {
           <span class="car-spec"> ${v.seats} seats</span>
         </div>
         <div class="car-footer">
-          <div class="car-price">${v.price}<span> / unit</span></div>
-          <button class="add-cart-btn" data-id="${v.id}">+ Add to Cart</button>
         </div>
       </div>
     </div>
   `).join('');
 
-  /* Attach add-to-cart listeners */
-  grid.querySelectorAll('.add-cart-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = parseInt(btn.dataset.id);
-      addToCart(id);
-    });
-  });
 }
 
 /* ── FILTER TABS ────────────────────────────────────────── */
@@ -60,68 +50,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* ── CART LOGIC ─────────────────────────────────────────── */
-function addToCart(id) {
-  const vehicle = vehicles.find(v => v.id === id);
-  if (!vehicle) return;
-  const existing = cart.find(c => c.id === id);
-  if (!existing) {
-    cart.push({ ...vehicle });
-    updateCartUI();
-    openCart();
-    showToast(`${vehicle.name} added to cart!`);
-  } else {
-    showToast(`${vehicle.name} is already in your cart.`);
-  }
-}
 
-function removeFromCart(id) {
-  cart = cart.filter(c => c.id !== id);
-  updateCartUI();
-}
-
-function updateCartUI() {
-  const count = cart.length;
-  document.getElementById('cart-count').textContent = count;
-  const itemsDiv = document.getElementById('cart-items');
-  const emptyDiv = document.getElementById('cart-empty');
-
-  if (count === 0) {
-    emptyDiv.style.display = 'block';
-    itemsDiv.innerHTML = '';
-  } else {
-    emptyDiv.style.display = 'none';
-    itemsDiv.innerHTML = cart.map(c => `
-      <div class="cart-item">
-        <img src="${c.img}" alt="${c.name}"/>
-        <div class="cart-item-info">
-          <h4>${c.make} ${c.name}</h4>
-          <span>${c.price}</span>
-        </div>
-        <button class="remove-cart" data-id="${c.id}" title="Remove">✕</button>
-      </div>
-    `).join('');
-    itemsDiv.querySelectorAll('.remove-cart').forEach(btn => {
-      btn.addEventListener('click', () => removeFromCart(parseInt(btn.dataset.id)));
-    });
-  }
-}
-
-function openCart() {
-  document.getElementById('cart-drawer').classList.add('open');
-  document.getElementById('cart-overlay').classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeCart() {
-  document.getElementById('cart-drawer').classList.remove('open');
-  document.getElementById('cart-overlay').classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('cart-btn').addEventListener('click', openCart);
-document.getElementById('close-cart').addEventListener('click', closeCart);
-document.getElementById('cart-overlay').addEventListener('click', closeCart);
 
 /* ── TOAST NOTIFICATION ─────────────────────────────────── */
 function showToast(msg) {
@@ -259,4 +188,3 @@ document.querySelectorAll('.feature-card, .car-card, .testi-card, .blog-card, .g
 
 /* ── INIT ───────────────────────────────────────────────── */
 renderVehicles('all');
-updateCartUI();
