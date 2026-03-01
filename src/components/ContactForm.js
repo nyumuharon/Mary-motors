@@ -43,7 +43,7 @@ export default function ContactForm() {
         <form className="contact-form" id="contact-form" onSubmit={handleSubmit} style={{ boxShadow: 'none', padding: 0 }}>
             <h3 style={{ fontSize: '1.8rem', marginBottom: '20px' }}>Send Us a Message</h3>
             <p style={{ color: '#666', marginBottom: '30px' }}>
-                Fill out the form to chat with one of our experts directly on WhatsApp!
+                Fill out the form below and one of our experts will get back to you within 24 hours.
             </p>
 
             <div className="form-row">
@@ -93,9 +93,9 @@ export default function ContactForm() {
                 type="submit"
                 className="btn-primary"
                 disabled={status === 'loading'}
-                style={{ width: '100%', marginTop: '20px', fontSize: '1.1rem', padding: '15px', background: '#25D366', borderColor: '#25D366' }}
+                style={{ width: '100%', marginTop: '20px', fontSize: '1.1rem', padding: '15px' }}
             >
-                {status === 'loading' ? 'Opening WhatsApp…' : <>Chat on WhatsApp <span style={{ marginLeft: '8px' }}>💬</span></>}
+                {status === 'loading' ? 'Sending…' : <>Send Message <span>→</span></>}
             </button>
 
             {status === 'success' && (
