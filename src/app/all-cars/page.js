@@ -95,11 +95,10 @@ function AllCarsContent() {
             </div>
 
             <section className="vehicles-page" style={{ padding: '80px 0', background: '#f9f9f9' }}>
-                <div className="container" style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
+                <div className="container all-cars-layout">
 
                     {/* Sidebar Filters */}
-                    <aside className="sidebar"
-                        style={{ width: '25%', background: 'white', padding: '25px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', position: 'sticky', top: '100px' }}>
+                    <aside className="sidebar filter-sidebar">
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', borderBottom: '2px solid #f0f0f0', paddingBottom: '10px' }}>Filter By</h3>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
@@ -135,8 +134,8 @@ function AllCarsContent() {
                     </aside>
 
                     {/* Main Grid */}
-                    <div className="main-content" style={{ width: '75%' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
+                    <div className="main-content cars-main-content">
+                        <div className="cars-toolbar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
                             <p style={{ color: '#666' }}>Showing {filteredVehicles.length} vehicles</p>
                             <select value={sort} onChange={(e) => setSort(e.target.value)} style={{ padding: '8px 15px', border: '1px solid #ddd', borderRadius: '5px' }}>
                                 <option>Sort By: Default</option>

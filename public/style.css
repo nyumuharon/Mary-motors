@@ -1287,6 +1287,27 @@ a {
   color: var(--red);
 }
 
+/* ===== ALL CARS LAYOUT ===== */
+.all-cars-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.filter-sidebar {
+  width: 25%;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 100px;
+}
+
+.cars-main-content {
+  width: 75%;
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
   from {
@@ -1409,6 +1430,30 @@ a {
 
   .search-bar {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .search-bar select,
+  .search-go {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .all-cars-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter-sidebar,
+  .cars-main-content {
+    width: 100%;
+    position: static;
+  }
+
+  .cars-toolbar {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 15px;
   }
 
   .form-row {
@@ -1427,13 +1472,17 @@ a {
   }
 
   .slide-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .slide-sub {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
   }
 
   .slide-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.4rem;
+    display: none;
   }
 
   .gallery-grid {
