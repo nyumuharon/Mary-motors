@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <meta name="description" content="Mary Motors – Your trusted partner for new, pre-order, and used vehicles." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="10" width="36" height="6" rx="3" fill="#c0392b" />
+                    <circle cx="10" cy="16" r="4" fill="#222" />
+                    <circle cx="10" cy="16" r="2" fill="#888" />
+                    <circle cx="30" cy="16" r="4" fill="#222" />
+                    <circle cx="30" cy="16" r="2" fill="#888" />
+                    <path d="M4 10 L10 3 L30 3 L36 10" stroke="#c0392b" stroke-width="2" fill="none"
+                        stroke-linejoin="round" />
+                </svg>
+                <span class="logo-text">MARY <span class="logo-accent">MOTORS</span></span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="/" class="nav-link {{#if activeHome}}active{{/if}}">Home</a>
+                <a href="/about" class="nav-link {{#if activeAbout}}active{{/if}}">About Us</a>
+                <a href="/all-cars" class="nav-link {{#if activeVehicles}}active{{/if}}">Vehicles</a>
+                <a href="/gallery" class="nav-link {{#if activeGallery}}active{{/if}}">Gallery</a>
+                <a href="/blogs" class="nav-link {{#if activeBlogs}}active{{/if}}">Blogs</a>
+                <a href="/contact-us" class="nav-link {{#if activeContact}}active{{/if}}">Contact</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Shop <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="/all-cars">New Cars</a>
+                        <a href="/all-cars">Used Cars</a>
+                        <a href="/all-cars">Pre-Orders</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="nav-right">
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main style="min-height: 80vh;">
+        {{{body}}}
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 20" fill="none">
+                        <rect x="2" y="10" width="36" height="6" rx="3" fill="#c0392b" />
+                        <circle cx="10" cy="16" r="4" fill="#555" />
+                        <circle cx="30" cy="16" r="4" fill="#555" />
+                        <path d="M4 10 L10 3 L30 3 L36 10" stroke="#c0392b" stroke-width="2" fill="none"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="logo-text" style="color:#fff">MARY <span class="logo-accent">MOTORS</span></span>
+                </a>
+                <p>Your trusted partner for premium new, pre-order, and certified used vehicles. Drive your dream with
+                    Mary Motors.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                    <a href="#" aria-label="Twitter">tw</a>
+                    <a href="#" aria-label="YouTube">yt</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a><a href="/about">About Us</a>
+                <a href="/all-cars">Vehicles</a><a href="/gallery">Gallery</a>
+                <a href="/blogs">Blog</a><a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Inventory</h4>
+                <a href="/all-cars">New Cars</a><a href="/all-cars">Used Cars</a>
+                <a href="/all-cars">Pre-Orders</a><a href="/all-cars">SUVs</a>
+                <a href="/all-cars">Sedans</a><a href="/all-cars">Trucks</a>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="font-size:0.85rem;color:#aaa;margin-bottom:12px">Get the latest deals and arrivals right in
+                    your inbox.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email" id="nl-email" />
+                    <button class="btn-primary" id="nl-btn">→</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Mary Motors. All rights reserved. | Designed with ♥</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
