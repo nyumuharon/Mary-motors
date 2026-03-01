@@ -1,15 +1,36 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
 import { vehicles } from '@/lib/vehicles';
+import { useSearchParams } from 'next/navigation';
 
-export default function AllCarsPage() {
+function AllCarsContent() {
+    const searchParams = useSearchParams();
+    const filterParam = searchParams.get('filter');
+
     // Filter States
-    const [condition, setCondition] = useState({ all: true, new: false, used: false, preorder: false });
+    const [condition, setCondition] = useState({
+        all: !filterParam || filterParam === 'all',
+        new: filterParam === 'new',
+        used: filterParam === 'used',
+        preorder: filterParam === 'preorder'
+    });
     const [make, setMake] = useState('All Makes');
     const [priceRange, setPriceRange] = useState(3000000); // Default to max
     const [sort, setSort] = useState('Default');
+
+    // Sync state if URL changes
+    useEffect(() => {
+        if (filterParam) {
+            setCondition({
+                all: filterParam === 'all',
+                new: filterParam === 'new',
+                used: filterParam === 'used',
+                preorder: filterParam === 'preorder'
+            });
+        }
+    }, [filterParam]);
 
     // Handle Checkboxes
     const handleConditionChange = (type) => {
@@ -138,5 +159,13 @@ export default function AllCarsPage() {
                 </div>
             </section>
         </>
+    );
+}
+
+export default function AllCarsPage() {
+    return (
+        <Suspense fallback={<div style={{ padding: '100px', textAlign: 'center' }}>Loading vehicles...</div>}>
+            <AllCarsContent />
+        </Suspense>
     );
 }

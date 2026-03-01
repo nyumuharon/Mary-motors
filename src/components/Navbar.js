@@ -30,9 +30,9 @@ export default function Navbar() {
                     <div className="dropdown">
                         <a href="#" className="nav-link dropdown-toggle">Shop <span className="arrow">▾</span></a>
                         <div className="dropdown-menu">
-                            <Link href="/all-cars">New Cars</Link>
-                            <Link href="/all-cars">Used Cars</Link>
-                            <Link href="/all-cars">Pre-Orders</Link>
+                            <Link href="/all-cars?filter=new">New Cars</Link>
+                            <Link href="/all-cars?filter=used">Used Cars</Link>
+                            <Link href="/all-cars?filter=preorder">Pre-Orders</Link>
                         </div>
                     </div>
                 </nav>
