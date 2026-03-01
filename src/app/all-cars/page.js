@@ -1,9 +1,65 @@
+'use client';
+import { useState, useMemo } from 'react';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
-
-export const metadata = { title: 'All Cars – Mary Motors' };
+import { vehicles } from '@/lib/vehicles';
 
 export default function AllCarsPage() {
+    // Filter States
+    const [condition, setCondition] = useState({ all: true, new: false, used: false, preorder: false });
+    const [make, setMake] = useState('All Makes');
+    const [priceRange, setPriceRange] = useState(3000000); // Default to max
+    const [sort, setSort] = useState('Default');
+
+    // Handle Checkboxes
+    const handleConditionChange = (type) => {
+        if (type === 'all') {
+            setCondition({ all: true, new: false, used: false, preorder: false });
+        } else {
+            setCondition(prev => {
+                const updated = { ...prev, [type]: !prev[type], all: false };
+                if (!updated.new && !updated.used && !updated.preorder) updated.all = true;
+                return updated;
+            });
+        }
+    };
+
+    // Derived Data
+    const filteredVehicles = useMemo(() => {
+        let result = vehicles;
+
+        // Condition Filter
+        if (!condition.all) {
+            result = result.filter(v => condition[v.type]);
+        }
+
+        // Make Filter
+        if (make !== 'All Makes') {
+            result = result.filter(v => v.make === make);
+        }
+
+        // Price Filter (Extract number from "$85,000")
+        result = result.filter(v => {
+            const numPrice = parseInt(v.price.replace(/[^0-9]/g, ''), 10);
+            return numPrice <= priceRange;
+        });
+
+        // Sorting
+        if (sort === 'Price: Low to High') {
+            result = [...result].sort((a, b) => parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, '')));
+        } else if (sort === 'Price: High to Low') {
+            result = [...result].sort((a, b) => parseInt(b.price.replace(/[^0-9]/g, '')) - parseInt(a.price.replace(/[^0-9]/g, '')));
+        } else if (sort === 'Newest First') {
+            // Simulated by reversing ID for newest
+            result = [...result].sort((a, b) => b.id - a.id);
+        }
+
+        return result;
+    }, [condition, make, priceRange, sort]);
+
+    // Derived unique makes for dropdown
+    const allMakes = ['All Makes', ...new Set(vehicles.map(v => v.make))];
+
     return (
         <>
             <div className="page-header"
@@ -27,37 +83,41 @@ export default function AllCarsPage() {
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
                             <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Condition</h4>
-                            <label style={{ display: 'block', marginBottom: '8px' }}><input type="checkbox" defaultChecked /> All Vehicles</label>
-                            <label style={{ display: 'block', marginBottom: '8px' }}><input type="checkbox" /> New Cars</label>
-                            <label style={{ display: 'block', marginBottom: '8px' }}><input type="checkbox" /> Used Cars</label>
-                            <label style={{ display: 'block', marginBottom: '8px' }}><input type="checkbox" /> Pre-Order</label>
+                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
+                                <input type="checkbox" checked={condition.all} onChange={() => handleConditionChange('all')} style={{ marginRight: '8px' }} /> All Vehicles
+                            </label>
+                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
+                                <input type="checkbox" checked={condition.new} onChange={() => handleConditionChange('new')} style={{ marginRight: '8px' }} /> New Cars
+                            </label>
+                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
+                                <input type="checkbox" checked={condition.used} onChange={() => handleConditionChange('used')} style={{ marginRight: '8px' }} /> Used Cars
+                            </label>
+                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
+                                <input type="checkbox" checked={condition.preorder} onChange={() => handleConditionChange('preorder')} style={{ marginRight: '8px' }} /> Pre-Order
+                            </label>
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
                             <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Make</h4>
-                            <select style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
-                                <option>All Makes</option>
-                                <option>Toyota</option><option>BMW</option><option>Mercedes-Benz</option>
-                                <option>Audi</option><option>Ford</option>
+                            <select value={make} onChange={(e) => setMake(e.target.value)} style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+                                {allMakes.map(m => <option key={m} value={m}>{m}</option>)}
                             </select>
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Price Range</h4>
-                            <input type="range" min="10000" max="3000000" style={{ width: '100%', marginBottom: '10px' }} />
+                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Price Range (Max: ${priceRange.toLocaleString()})</h4>
+                            <input type="range" min="1000" max="3000000" step="5000" value={priceRange} onChange={(e) => setPriceRange(Number(e.target.value))} style={{ width: '100%', marginBottom: '10px' }} />
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#777' }}>
-                                <span>$1,300</span><span>$3,000,000+</span>
+                                <span>$1,000</span><span>$3,000,000+</span>
                             </div>
                         </div>
-
-                        <button className="btn-primary" style={{ width: '100%', textAlign: 'center', padding: '12px' }}>Apply Filters</button>
                     </aside>
 
                     {/* Main Grid */}
                     <div className="main-content" style={{ width: '75%' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-                            <p style={{ color: '#666' }}>Showing all vehicles</p>
-                            <select style={{ padding: '8px 15px', border: '1px solid #ddd', borderRadius: '5px' }}>
+                            <p style={{ color: '#666' }}>Showing {filteredVehicles.length} vehicles</p>
+                            <select value={sort} onChange={(e) => setSort(e.target.value)} style={{ padding: '8px 15px', border: '1px solid #ddd', borderRadius: '5px' }}>
                                 <option>Sort By: Default</option>
                                 <option>Price: Low to High</option>
                                 <option>Price: High to Low</option>
@@ -65,15 +125,15 @@ export default function AllCarsPage() {
                             </select>
                         </div>
 
-                        <VehicleGrid showFilterTabs={false} />
-
-                        <div className="pagination" style={{ display: 'flex', justifyContent: 'center', marginTop: '50px', gap: '10px' }}>
-                            <button style={{ width: '40px', height: '40px', border: '1px solid #ddd', background: 'white', borderRadius: '5px', cursor: 'pointer' }}>&laquo;</button>
-                            <button style={{ width: '40px', height: '40px', border: 'none', background: '#c0392b', color: 'white', borderRadius: '5px', cursor: 'pointer' }}>1</button>
-                            <button style={{ width: '40px', height: '40px', border: '1px solid #ddd', background: 'white', borderRadius: '5px', cursor: 'pointer' }}>2</button>
-                            <button style={{ width: '40px', height: '40px', border: '1px solid #ddd', background: 'white', borderRadius: '5px', cursor: 'pointer' }}>3</button>
-                            <button style={{ width: '40px', height: '40px', border: '1px solid #ddd', background: 'white', borderRadius: '5px', cursor: 'pointer' }}>&raquo;</button>
-                        </div>
+                        {filteredVehicles.length > 0 ? (
+                            <VehicleGrid showFilterTabs={false} customVehicles={filteredVehicles} />
+                        ) : (
+                            <div style={{ padding: '60px', textAlign: 'center', background: 'white', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
+                                <h3 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '10px' }}>No vehicles found</h3>
+                                <p style={{ color: '#666' }}>Try adjusting your filters to see more results.</p>
+                                <button onClick={() => { setCondition({ all: true, new: false, used: false, preorder: false }); setMake('All Makes'); setPriceRange(3000000); }} className="btn-primary" style={{ marginTop: '20px' }}>Reset Filters</button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

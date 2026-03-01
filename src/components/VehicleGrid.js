@@ -10,12 +10,15 @@ const FILTERS = [
     { label: 'Pre-Order', value: 'preorder' },
 ];
 
-export default function VehicleGrid({ showFilterTabs = true, limit = null }) {
+export default function VehicleGrid({ showFilterTabs = true, limit = null, customVehicles = null }) {
     const [activeFilter, setActiveFilter] = useState('all');
 
+    // Use custom dataset if provided, else use all vehicles
+    const sourceVehicles = customVehicles || vehicles;
+
     const filtered = activeFilter === 'all'
-        ? vehicles
-        : vehicles.filter(v => v.type === activeFilter);
+        ? sourceVehicles
+        : sourceVehicles.filter(v => v.type === activeFilter);
 
     const displayed = limit ? filtered.slice(0, limit) : filtered;
 
