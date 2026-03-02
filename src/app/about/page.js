@@ -49,38 +49,14 @@ export default function AboutPage() {
                     </div>
                     <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
                         {[
-                            { icon: '🛡️', title: 'Quality Assurance', desc: 'Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.' },
-                            { icon: '💰', title: 'Transparent Pricing', desc: 'No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.' },
-                            { icon: '🤝', title: 'Customer First', desc: 'Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.' },
+                            { icon: '', title: 'Quality Assurance', desc: 'Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.' },
+                            { icon: '', title: 'Transparent Pricing', desc: 'No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.' },
+                            { icon: '', title: 'Customer First', desc: 'Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.' },
                         ].map((v, i) => (
                             <div key={i} className="feature-card" style={{ background: 'white' }}>
                                 <div className="feature-icon">{v.icon}</div>
                                 <h3>{v.title}</h3>
                                 <p>{v.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Team */}
-            <section style={{ padding: '100px 0' }}>
-                <div className="container">
-                    <div className="section-header">
-                        <p className="section-tag">OUR EXPERTS</p>
-                        <h2 className="section-title">Meet Our Team</h2>
-                    </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '30px' }}>
-                        {[
-                            { name: 'Brooklyn Simmons', role: 'Sales Director', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-                            { name: 'Darlene Robertson', role: 'Finance Manager', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-                            { name: 'Guy Hawkins', role: 'Lead Mechanic', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
-                            { name: 'Jenny Wilson', role: 'Customer Success', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
-                        ].map((member, i) => (
-                            <div key={i} style={{ textAlign: 'center' }}>
-                                <img src={member.img} alt={member.name} style={{ borderRadius: '10px', marginBottom: '20px', aspectRatio: '3/4', objectFit: 'cover', width: '100%' }} />
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>{member.name}</h3>
-                                <p style={{ color: '#c0392b', fontWeight: 600, fontSize: '0.9rem' }}>{member.role}</p>
                             </div>
                         ))}
                     </div>
