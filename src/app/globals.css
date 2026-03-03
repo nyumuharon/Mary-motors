@@ -1018,7 +1018,10 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #111;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url('/footer-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #aaa;
   padding: 70px 0 0;
 }
@@ -1382,6 +1385,7 @@ a {
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .faq-grid {
     grid-template-columns: 1fr;
   }
@@ -1391,6 +1395,7 @@ a {
   .why-grid {
     grid-template-columns: 1fr;
   }
+
   .faq-questions {
     grid-template-columns: 1fr;
   }
