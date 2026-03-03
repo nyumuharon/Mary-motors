@@ -36,18 +36,21 @@ a {
 
 /* ===== VARIABLES ===== */
 :root {
-  --red: #c0392b;
-  --red-dark: #a93226;
-  --red-light: #f8ecec;
-  --dark: #111111;
-  --gray: #f5f5f5;
-  --text: #555;
-  --border: #e8e8e8;
+  --red: #ff3333;
+  /* More vibrant red */
+  --red-dark: #cc0000;
+  --red-light: #fff5f5;
+  --dark: #0a0a0a;
+  /* Darker darks for contrast */
+  --gray: #f8f9fa;
+  --text: #333333;
+  /* Darker text for readability */
+  --border: #eeeeee;
   --white: #ffffff;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.14);
-  --radius: 10px;
-  --transition: 0.3s ease;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --radius: 12px;
+  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* ===== UTILITY ===== */
@@ -99,13 +102,20 @@ a {
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: all var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
 }
 
 .btn-primary:hover {
   background: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
+  box-shadow: 0 8px 25px rgba(255, 51, 51, 0.4);
 }
 
 .btn-primary span {
@@ -620,6 +630,21 @@ a {
   padding: 20px;
 }
 
+.car-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 51, 51, 0.1);
+}
+
 .car-make {
   font-size: 0.75rem;
   font-weight: 700;
@@ -1018,11 +1043,12 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/footer-bg.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('/footer-bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #aaa;
+  color: #eee;
+  /* Brighter text for footer */
   padding: 70px 0 0;
 }
 
