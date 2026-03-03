@@ -1,6 +1,8 @@
 import HeroSlider from '@/components/HeroSlider';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import FAQ from '@/components/FAQ';
 
 export const metadata = {
   title: 'Mary Motors – Drive Your Dream',
@@ -99,6 +101,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <WhyChooseUs />
 
       {/* ===== VEHICLES SECTION ===== */}
       <section className="vehicles" id="vehicles">
@@ -115,7 +118,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== SEARCH BANNER ===== */}
       <section className="search-banner">
         <div className="container search-inner">
           <h2>Find Your Perfect Vehicle</h2>
@@ -194,6 +196,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <FAQ />
 
       {/* ===== BLOG PREVIEW ===== */}
       <section className="blogs" id="blogs">
