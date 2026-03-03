@@ -73,10 +73,11 @@ export default function HeroSlider() {
                     <div
                         key={i}
                         className={`slide ${i === current ? 'active' : ''}`}
-                        style={{
-                            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.1) 100%), url('${slide.bg}')`,
-                        }}
                     >
+                        <div
+                            className="slide-bg"
+                            style={{ backgroundImage: `url('${slide.bg}')` }}
+                        />
                         <div className="container slide-content">
                             <p className="slide-tag">{slide.tag}</p>
                             <h1
@@ -90,6 +91,13 @@ export default function HeroSlider() {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="hero-progress">
+                <div
+                    className="progress-bar"
+                    key={current} /* Restart animation on slide change */
+                />
             </div>
 
             <button className="slide-arrow prev" onClick={() => goTo(current - 1)} aria-label="Previous">&#8249;</button>

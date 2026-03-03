@@ -286,64 +286,149 @@ a {
   min-height: 600px;
   overflow: hidden;
   margin-top: 72px;
+  background: #000;
 }
 
 .slides-wrapper {
-  display: flex;
+  position: relative;
   height: 100%;
-  transition: none;
 }
 
 .slide {
-  min-width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  transition: opacity 0.7s ease;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
+  z-index: 1;
 }
 
 .slide.active {
   opacity: 1;
-  pointer-events: all;
+  visibility: visible;
+  z-index: 2;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  transition: transform 10s linear;
+}
+
+.slide-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(75deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.slide.active .slide-bg {
+  transform: scale(1);
+  /* Ken Burns Zoom Out */
+}
+
+/* Staggered Content Animations */
+.slide-content>* {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide.active .slide-content>* {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide.active .slide-tag {
+  transition-delay: 0.3s;
+}
+
+.slide.active .slide-title {
+  transition-delay: 0.5s;
+}
+
+.slide.active .slide-sub {
+  transition-delay: 0.7s;
+}
+
+.slide.active .btn-primary {
+  transition-delay: 0.9s;
 }
 
 .slide-content {
+  position: relative;
+  z-index: 10;
   padding: 40px 0;
 }
 
 .slide-tag {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: var(--red);
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .slide-title {
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 900;
   color: #fff;
   line-height: 1.1;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 24px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.02em;
 }
 
 .slide-sub {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 480px;
-  margin-bottom: 36px;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Progress Indicator */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 20;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+  width: 0;
+  animation: progressRun 10s linear forwards;
+}
+
+@keyframes progressRun {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 /* Slider Controls */
