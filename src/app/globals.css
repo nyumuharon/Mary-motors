@@ -1418,6 +1418,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .footer {
+    background-attachment: scroll !important;
+  }
+
   .why-grid {
     grid-template-columns: 1fr;
   }
