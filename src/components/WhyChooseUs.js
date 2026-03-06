@@ -1,109 +1,115 @@
 'use client';
-import { useRef } from 'react';
+
+import { motion } from 'framer-motion';
+import {
+    CarFront,
+    ShieldCheck,
+    Banknote,
+    ClipboardCheck,
+    Layers,
+    HeadphonesIcon
+} from 'lucide-react';
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1]
+        }
+    }
+};
 
 const WhyChooseUs = () => {
     const features = [
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18M9 21V9" />
-                </svg>
-            ),
+            icon: CarFront,
             title: 'Quality Vehicles',
             desc: 'Low-mileage imports from Japan/UK. Discover premium vehicles rigorously inspected for peak performance.',
-            size: 'span-2'
+            isWide: true
         },
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-            ),
+            icon: ShieldCheck,
             title: 'Trusted Dealers',
             desc: 'Verified sellers and perfectly transparent transactions.',
-            size: 'span-1'
+            isWide: false
         },
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-            ),
+            icon: Banknote,
             title: 'Competitive Prices',
             desc: 'Get affordable deals and highly flexible financing.',
-            size: 'span-1'
+            isWide: false
         },
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-            ),
+            icon: ClipboardCheck,
             title: 'Certified Inspections',
             desc: 'Our vehicles undergo professional inspections to ensure absolute reliability on the road.',
-            size: 'span-2'
+            isWide: true
         },
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2z" />
-                    <circle cx="8" cy="16" r="2" />
-                    <circle cx="16" cy="16" r="2" />
-                </svg>
-            ),
+            icon: Layers,
             title: 'Wide Selection',
             desc: 'Choose from sedans, SUVs, hatchbacks, and trucks from leading global brands.',
-            size: 'span-2'
+            isWide: true
         },
         {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-            ),
+            icon: HeadphonesIcon,
             title: 'Customer Support',
             desc: 'Available 24/7 to completely guide you through the buying process.',
-            size: 'span-1'
+            isWide: false
         }
     ];
 
-    const handleMouseMove = (e, index) => {
-        const card = document.getElementById(`bento-card-${index}`);
-        if (!card) return;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--x', `${x}px`);
-        card.style.setProperty('--y', `${y}px`);
-    };
-
     return (
-        <section className="bento-section">
+        <section className="edge-section">
             <div className="container" style={{ maxWidth: '1100px' }}>
-                <h2 className="bento-title">The Mary Motors Edge</h2>
-                <div className="bento-grid">
-                    {features.map((f, i) => (
-                        <div
-                            key={i}
-                            id={`bento-card-${i}`}
-                            className={`bento-card ${f.size}`}
-                            onMouseMove={(e) => handleMouseMove(e, i)}
-                        >
-                            <div className="bento-glow" />
-                            <div className="bento-content">
-                                <div className="bento-icon-wrap">
-                                    {f.icon}
+                <h2 className="edge-title">The Mary Motors Edge</h2>
+
+                <motion.div
+                    className="edge-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                >
+                    {features.map((feature, i) => {
+                        const Icon = feature.icon;
+                        return (
+                            <motion.div
+                                key={i}
+                                variants={cardVariants}
+                                className={`edge-card ${feature.isWide ? 'wide' : ''}`}
+                            >
+                                {/* Icon Treatment */}
+                                <div className="edge-icon-box">
+                                    <Icon size={28} strokeWidth={1.5} />
                                 </div>
-                                <h3 className="bento-heading">{f.title}</h3>
-                                <p className="bento-desc">{f.desc}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+
+                                {/* Text Hierarchy */}
+                                <h3 className="edge-heading">{feature.title}</h3>
+                                <p className="edge-desc">{feature.desc}</p>
+
+                                {/* Subtle Decorative Detail */}
+                                <div className="edge-number">
+                                    0{i + 1}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
+                </motion.div>
             </div>
         </section>
     );
