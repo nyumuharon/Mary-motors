@@ -6,12 +6,39 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import FAQ from '@/components/FAQ';
 
 export const metadata = {
-  title: 'Mary Motors – Drive Your Dream',
+  title: 'Buy Cars in Kenya | New & Used Cars for Sale – Mary Motors',
+  description: 'Browse new cars, used cars, SUVs, and imported vehicles from Japan and the UK at Mary Motors Kenya. Competitive prices, certified inspections, and car financing available in Nairobi.',
+  keywords: 'cars for sale Kenya, buy car Nairobi, used cars Kenya, Toyota Kenya, car dealership Nairobi',
+  alternates: { canonical: 'https://mary-motors.vercel.app' },
+  openGraph: {
+    title: 'Buy Cars in Kenya | New & Used Cars for Sale – Mary Motors',
+    description: 'New cars, used cars, and Japanese imports at Mary Motors. Trusted dealership in Kenya.',
+    url: 'https://mary-motors.vercel.app',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What are the best cars to buy in Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'Popular choices include Toyota, Mazda, Nissan, and Subaru because they are reliable, fuel-efficient, and have affordable spare parts.' } },
+    { '@type': 'Question', name: 'How much does it cost to buy a car in Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'Used cars can start from around KES 500,000, while newer imported vehicles can range from KES 1 million to over KES 5 million.' } },
+    { '@type': 'Question', name: 'Can I import a car from Japan to Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The process involves purchasing the vehicle, shipping it to Kenya, paying import duty, and registering it locally.' } },
+    { '@type': 'Question', name: 'Do you offer car financing in Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We work with banks and lenders to provide car financing options so customers can pay in monthly installments.' } },
+    { '@type': 'Question', name: 'What documents are required to buy a car in Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'You need a National ID or passport, KRA PIN, proof of payment, and insurance documents.' } },
+    { '@type': 'Question', name: 'What are the most fuel-efficient cars in Kenya?', acceptedAnswer: { '@type': 'Answer', text: 'Fuel-efficient options include the Toyota Vitz, Honda Fit, Mazda Demio, and Suzuki Alto.' } },
+    { '@type': 'Question', name: 'Can I trade in my old car for a new one?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The value of your current vehicle is deducted from the price of the new one.' } },
+    { '@type': 'Question', name: 'How do I know if a used car is in good condition?', acceptedAnswer: { '@type': 'Answer', text: 'Check the vehicle history, mileage, inspection reports, and service records. A professional inspection can also confirm the car condition.' } },
+  ],
 };
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* ===== HERO SLIDER ===== */}
       <HeroSlider />
 

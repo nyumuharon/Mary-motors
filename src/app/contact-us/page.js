@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 
-export const metadata = { title: 'Contact Us – Mary Motors' };
+export const metadata = {
+    title: 'Contact Us | Mary Motors – Car Dealership in Nairobi, Kenya',
+    description: 'Contact Mary Motors for inquiries about cars for sale in Kenya, test drives, financing, or trade-ins. Visit our Nairobi showroom or reach out online.',
+    alternates: { canonical: 'https://mary-motors.vercel.app/contact-us' },
+    openGraph: {
+        title: 'Contact Mary Motors – Car Dealership in Nairobi',
+        description: 'Get in touch with Mary Motors for test drives, car inquiries, and financing. We are here to help you find the right car in Kenya.',
+        url: 'https://mary-motors.vercel.app/contact-us',
+    },
+};
 
 export default function ContactPage() {
     return (

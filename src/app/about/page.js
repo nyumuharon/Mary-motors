@@ -1,6 +1,15 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'About Us – Mary Motors' };
+export const metadata = {
+    title: 'About Us | Mary Motors – Trusted Car Dealership in Kenya',
+    description: 'Learn about Mary Motors, a trusted car dealership in Kenya with 15+ years of experience selling new, used, and imported vehicles. Serving Nairobi and beyond.',
+    alternates: { canonical: 'https://mary-motors.vercel.app/about' },
+    openGraph: {
+        title: 'About Mary Motors – Trusted Car Dealership in Kenya',
+        description: '15+ years connecting Kenyan drivers with quality new and used vehicles. Transparent pricing, certified inspections, and excellent customer support.',
+        url: 'https://mary-motors.vercel.app/about',
+    },
+};
 
 export default function AboutPage() {
     return (
