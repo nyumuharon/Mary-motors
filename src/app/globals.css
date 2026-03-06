@@ -1561,8 +1561,11 @@ a {
 
 .why-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(231, 76, 60, 0.12);
-  border-color: rgba(231, 76, 60, 0.1);
+  box-shadow:
+    0 10px 25px rgba(231, 76, 60, 0.2),
+    0 20px 48px rgba(231, 76, 60, 0.25),
+    0 1px 4px rgba(231, 76, 60, 0.6);
+  border-color: rgba(231, 76, 60, 0.4);
 }
 
 .why-card:hover::before {
@@ -1586,7 +1589,9 @@ a {
 
 .why-card:hover .why-icon-wrap {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(231, 76, 60, 0.15);
+  box-shadow:
+    0 8px 20px rgba(231, 76, 60, 0.25),
+    0 15px 35px rgba(231, 76, 60, 0.15);
 }
 
 .why-text {
