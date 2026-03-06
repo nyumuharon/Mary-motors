@@ -43,19 +43,10 @@ export default function Footer() {
                     <Link href="/all-cars">Trucks</Link>
                 </div>
 
-                <div className="footer-col">
-                    <h4>Newsletter</h4>
-                    <p style={{ fontSize: '0.85rem', color: '#aaa', marginBottom: '12px' }}>
-                        Get the latest deals and arrivals right in your inbox.
-                    </p>
-                    <div className="newsletter-form">
-                        <input type="email" placeholder="Your email" id="nl-email" />
-                        <button className="btn-primary" id="nl-btn">→</button>
-                    </div>
-                </div>
+
             </div>
             <div className="footer-bottom">
-                <p>© 2025 Mary Motors. All rights reserved. | Designed with ♥</p>
+                <p>© 2026 Mary Motors. All rights reserved. | Designed with ♥</p>
             </div>
         </footer>
     );

@@ -27,18 +27,6 @@ export default function ClientScripts() {
             });
         });
 
-        // ── NEWSLETTER ───────────────────────────────────────
-        const nlBtn = document.getElementById('nl-btn');
-        const nlEmail = document.getElementById('nl-email');
-        const handleNewsletter = () => {
-            if (nlEmail?.value && nlEmail.value.includes('@')) {
-                showToast('✓ Subscribed! Thanks for joining us.');
-                nlEmail.value = '';
-            } else {
-                showToast('Please enter a valid email address.');
-            }
-        };
-        nlBtn?.addEventListener('click', handleNewsletter);
 
         // ── INTERSECTION OBSERVER (fade-in) ──────────────────
         const observer = new IntersectionObserver(entries => {
@@ -61,7 +49,6 @@ export default function ClientScripts() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
             hamburger?.removeEventListener('click', handleHamburger);
-            nlBtn?.removeEventListener('click', handleNewsletter);
             observer.disconnect();
         };
     }, []);
