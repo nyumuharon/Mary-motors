@@ -539,18 +539,19 @@ a {
 }
 
 .feature-card {
-  background: #fff;
+  background: #09090b;
   border-radius: var(--radius);
   padding: 36px 24px;
   text-align: center;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform var(--transition), box-shadow var(--transition);
   border-bottom: 3px solid transparent;
 }
 
 .feature-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 30px rgba(231, 76, 60, 0.2);
   border-bottom-color: var(--red);
 }
 
@@ -561,15 +562,16 @@ a {
 }
 
 .feature-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .feature-card p {
   font-size: 0.875rem;
-  color: var(--text);
+  color: #a1a1aa;
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -637,7 +639,7 @@ a {
 }
 
 .about-desc {
-  color: var(--text);
+  color: #a1a1aa;
   line-height: 1.8;
   margin-bottom: 36px;
 }
@@ -1228,16 +1230,18 @@ a {
 }
 
 .socials a {
-  width: 36px;
+  width: auto;
+  padding: 0 12px;
   height: 36px;
   border-radius: 8px;
-  border: 1px solid #333;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
   font-weight: 700;
-  color: #aaa;
+  color: #a1a1aa;
   text-transform: uppercase;
   transition: all var(--transition);
 }
@@ -1549,14 +1553,14 @@ a {
 
 .faq-item h3 {
   font-size: 1rem;
-  font-weight: 800;
-  color: var(--dark);
+  font-weight: 600;
+  color: #fff;
   margin-bottom: 12px;
 }
 
 .faq-item p {
   font-size: 0.875rem;
-  color: #666;
+  color: #a1a1aa;
   line-height: 1.6;
 }
 
@@ -1587,7 +1591,7 @@ a {
 /* ===== WHY CHOOSE US ===== */
 .why-choose-us {
   padding: 100px 0;
-  background: #f8f9fa;
+  background: #0a0a0a;
 }
 
 .why-grid {
@@ -1597,11 +1601,11 @@ a {
 }
 
 .why-card {
-  background: #fff;
+  background: #09090b;
   border-radius: 16px;
   padding: 40px 32px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1645,13 +1649,13 @@ a {
   flex-shrink: 0;
   width: 76px;
   height: 76px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -1667,16 +1671,17 @@ a {
 }
 
 .why-title {
+  font-family: 'Playfair Display', serif;
   font-size: 1.25rem;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-weight: 500;
+  color: #fff;
   margin-bottom: 12px;
   letter-spacing: -0.01em;
 }
 
 .why-desc {
   font-size: 0.95rem;
-  color: #4a4a4a;
+  color: #a1a1aa;
   line-height: 1.7;
   font-weight: 500;
 }
