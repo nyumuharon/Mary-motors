@@ -46,7 +46,7 @@ export default function Footer() {
 
             </div>
             <div className="footer-bottom">
-                <p>© 2026 Mary Motors. All rights reserved. | Designed by haron</p>
+                <p>© 2026 Mary Motors. All rights reserved. | Designed by haron +254702864025</p>
             </div>
         </footer>
     );
