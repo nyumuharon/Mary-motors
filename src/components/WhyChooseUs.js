@@ -74,11 +74,13 @@ const WhyChooseUs = () => {
                 <div className="why-grid">
                     {features.map((f, i) => (
                         <div key={i} className="why-card">
-                            <div className="why-icon">
+                            <div className="why-icon-wrap">
                                 {f.icon}
                             </div>
-                            <h3>{f.title}</h3>
-                            <p>{f.desc}</p>
+                            <div className="why-text">
+                                <h3 className="why-title">{f.title}</h3>
+                                <p className="why-desc">{f.desc}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
