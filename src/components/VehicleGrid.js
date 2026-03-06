@@ -55,12 +55,22 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                             <p className="car-make">{v.make}</p>
                             <h3 className="car-name">{v.name}</h3>
                             <div className="car-specs">
-                                <span className="car-spec">{v.fuel}</span>
-                                <span className="car-spec">{v.mileage}</span>
-                                <span className="car-spec">{v.seats} seats</span>
+                                <span className="car-spec">
+                                    <svg viewBox="0 0 24 24"><path d="M3 10h12M3 14h12M19 10v4M15 10l4 4M15 14l4-4" /></svg>
+                                    {v.fuel}
+                                </span>
+                                <span className="car-spec">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                                    {v.mileage}
+                                </span>
+                                <span className="car-spec">
+                                    <svg viewBox="0 0 24 24"><path d="M4 14h16v4H4zM8 10h8v4H8z" /></svg>
+                                    {v.seats} seats
+                                </span>
                             </div>
                             <div className="car-footer">
-                                <div className="car-price">{v.price}<span> / unit</span></div>
+                                <div className="car-price"><span>$ </span>{v.price.replace('KES ', '')}</div>
+                                <button className="btn-primary" style={{ padding: '8px 16px', fontSize: '12px' }}>VIEW DETAILS</button>
                             </div>
                         </div>
                     </div>
