@@ -172,31 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="section-header">
-            <p className="section-tag">TESTIMONIALS</p>
-            <h2 className="section-title">What Our Clients Say</h2>
-          </div>
-          <div className="testi-grid">
-            {[
-              { quote: 'Mary Motors made buying my first car an absolute joy. The staff is knowledgeable and never pushy. I drove away with my dream SUV at a great price!', name: 'James K.', role: 'Toyota Land Cruiser Owner', img: 'https://i.pravatar.cc/50?img=32' },
-              { quote: 'The pre-order experience was seamless. I reserved my car 3 months before launch and got it exactly on time. Exceptional service from start to finish.', name: 'Sarah M.', role: 'BMW 5 Series Owner', img: 'https://i.pravatar.cc/50?img=47' },
-              { quote: "I was skeptical about buying a used car, but Mary Motors' certified vehicles are flawless. Two years later and my car still runs like it's brand new!", name: 'David O.', role: 'Mercedes C-Class Owner', img: 'https://i.pravatar.cc/50?img=15' },
-            ].map((t, i) => (
-              <div key={i} className="testi-card">
-                <div className="stars">★★★★★</div>
-                <p>&ldquo;{t.quote}&rdquo;</p>
-                <div className="testi-author">
-                  <Image src={t.img} alt={t.name} width={50} height={50} />
-                  <div><strong>{t.name}</strong><span>{t.role}</span></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
       <FAQ />
 
 
