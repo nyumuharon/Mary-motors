@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const FAQ = () => {
     const faqs = [
         {
@@ -47,7 +49,7 @@ const FAQ = () => {
                 <div className="container">
                     <div className="faq-grid">
                         <div className="faq-img-wrap">
-                            <img src="/faq-image.png" alt="FAQ support" className="faq-img" />
+                            <Image src="/faq-image.png" alt="FAQ support" className="faq-img" width={500} height={400} />
                         </div>
                         <div className="faq-questions">
                             {faqs.map((faq, i) => (

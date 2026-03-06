@@ -1,6 +1,7 @@
 import HeroSlider from '@/components/HeroSlider';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
+import Image from 'next/image';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FAQ from '@/components/FAQ';
 
@@ -57,7 +58,7 @@ export default function HomePage() {
               </svg>
             </div>
             <h3>Latest Car</h3>
-            <p>Stay updated on the automotive world's newest sensations. Be the first to drive tomorrow's technology.</p>
+            <p>Stay updated on the automotive world&apos;s newest sensations. Be the first to drive tomorrow&apos;s technology.</p>
             <Link href="/all-cars" className="feature-link">View Latest →</Link>
           </div>
           <div className="feature-card">
@@ -82,7 +83,7 @@ export default function HomePage() {
       <section className="about" id="about">
         <div className="container about-grid">
           <div className="about-img-wrap">
-            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" alt="Mary Motors Showroom" className="about-img" />
+            <Image src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" alt="Mary Motors Showroom" className="about-img" width={800} height={500} />
             <div className="about-badge">
               <span className="badge-number">15+</span>
               <span className="badge-text">Years of Excellence</span>
@@ -160,7 +161,7 @@ export default function HomePage() {
               { src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80' },
             ].map((img, i) => (
               <div key={i} className={`gallery-item ${img.cls || ''}`}>
-                <img src={img.src} alt={`Showroom car ${i + 1}`} loading="lazy" />
+                <Image src={img.src} alt={`Showroom car ${i + 1}`} loading="lazy" width={600} height={400} />
                 <div className="gallery-overlay"><span>View</span></div>
               </div>
             ))}
@@ -188,7 +189,7 @@ export default function HomePage() {
                 <div className="stars">★★★★★</div>
                 <p>&ldquo;{t.quote}&rdquo;</p>
                 <div className="testi-author">
-                  <img src={t.img} alt={t.name} />
+                  <Image src={t.img} alt={t.name} width={50} height={50} />
                   <div><strong>{t.name}</strong><span>{t.role}</span></div>
                 </div>
               </div>
@@ -212,7 +213,7 @@ export default function HomePage() {
               { img: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80', tag: 'Maintenance', title: 'How to Extend Your Car\'s Lifespan by 50,000 Miles', desc: 'Simple maintenance habits that the pros use to keep their vehicles running at peak performance for years longer.' },
             ].map((post, i) => (
               <article key={i} className="blog-card">
-                <div className="blog-img"><img src={post.img} alt={post.title} loading="lazy" /></div>
+                <div className="blog-img"><Image src={post.img} alt={post.title} loading="lazy" width={600} height={400} /></div>
                 <div className="blog-body">
                   <span className="blog-tag">{post.tag}</span>
                   <h3>{post.title}</h3>

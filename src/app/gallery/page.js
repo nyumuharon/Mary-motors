@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const galleryImages = [
     'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
@@ -51,7 +52,7 @@ export default function GalleryPage() {
                     <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
                         {galleryImages.map((src, i) => (
                             <div key={i} className="gallery-item" style={{ aspectRatio: '1' }}>
-                                <img src={src} alt={`Gallery image ${i + 1}`} loading="lazy" />
+                                <Image src={src} alt={`Gallery image ${i + 1}`} loading="lazy" width={600} height={400} />
                                 <div className="gallery-overlay"><span>View High Res</span></div>
                             </div>
                         ))}

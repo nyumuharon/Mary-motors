@@ -42,10 +42,12 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                 {displayed.map(v => (
                     <div key={v.id} className="car-card" data-type={v.type}>
                         <div className="car-img-wrap">
-                            <img
+                            <Image
                                 src={v.img}
                                 alt={`${v.make} ${v.name}`}
                                 loading="lazy"
+                                width={600}
+                                height={400}
                             />
                             <span className="car-badge">{v.badge}</span>
                         </div>
