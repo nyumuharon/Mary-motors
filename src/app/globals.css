@@ -1590,103 +1590,129 @@ a {
   }
 }
 
-/* ===== WHY CHOOSE US ===== */
-.why-choose-us {
+/* ===== BENTO GRID (WHY CHOOSE US) ===== */
+.bento-section {
   padding: 100px 0;
-  background: #111116;
+  background: #000;
+  color: #fff;
 }
 
-.why-grid {
+.bento-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  text-align: center;
+  margin-bottom: 72px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: #fff;
+}
+
+.bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 16px;
 }
 
-.why-card {
-  background: #18181b;
-  /* zinc-900 */
-  border-radius: 16px;
-  padding: 40px 32px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+.bento-card {
   position: relative;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.bento-card.span-2 {
+  grid-column: span 2;
+}
+
+.bento-card.span-1 {
+  grid-column: span 1;
+}
+
+.bento-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(231, 76, 60, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
   z-index: 1;
 }
 
-.why-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--red) 0%, #ff6b6b 100%);
-  opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+.bento-card:hover .bento-glow {
+  opacity: 1;
+}
+
+.bento-content {
+  position: relative;
   z-index: 2;
 }
 
-.why-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 10px 25px rgba(231, 76, 60, 0.4),
-    0 20px 40px rgba(231, 76, 60, 0.35),
-    0 2px 8px rgba(231, 76, 60, 0.8);
-  border-color: rgba(231, 76, 60, 0.7);
+.bento-icon-wrap {
+  margin-bottom: 24px;
+  color: var(--red);
+  transition: transform 0.4s ease;
 }
 
-.why-card:hover::before {
-  opacity: 1;
-  transform: scaleX(1);
+.bento-card:hover .bento-icon-wrap {
+  transform: translateY(-6px);
 }
 
-.why-icon-wrap {
-  flex-shrink: 0;
-  width: 76px;
-  height: 76px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.bento-icon {
+  width: 32px;
+  height: 32px;
 }
 
-.why-card:hover .why-icon-wrap {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow:
-    0 10px 25px rgba(231, 76, 60, 0.5),
-    0 15px 35px rgba(231, 76, 60, 0.4);
-}
-
-.why-text {
-  width: 100%;
-}
-
-.why-title {
-  font-family: 'Playfair Display', serif;
+.bento-heading {
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 700;
+  margin-bottom: 8px;
   color: #fff;
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
 }
 
-.why-desc {
-  font-size: 0.95rem;
+.bento-desc {
+  font-size: 0.875rem;
   color: #a1a1aa;
-  line-height: 1.7;
-  font-weight: 500;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card.span-2 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card.span-2,
+  .bento-card.span-1 {
+    grid-column: span 1;
+  }
+
+  .bento-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .bento-card {
+    padding: 24px;
+  }
 }
 
 /* FAQ list style */
@@ -1697,43 +1723,4 @@ a {
   color: #555;
   font-size: 0.9rem;
   line-height: 1.8;
-}
-
-@media (max-width: 1024px) {
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .why-card {
-    padding: 30px 24px;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-card {
-    padding: 24px 20px;
-    gap: 16px;
-    border-radius: 12px;
-  }
-
-  .why-icon-wrap {
-    width: 64px;
-    height: 64px;
-  }
-
-  .why-icon-wrap svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .why-title {
-    font-size: 1.15rem;
-  }
 }

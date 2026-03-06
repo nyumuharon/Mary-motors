@@ -1,85 +1,105 @@
-import Image from 'next/image';
+'use client';
+import { useRef } from 'react';
 
 const WhyChooseUs = () => {
     const features = [
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <rect x="10" y="10" width="28" height="28" rx="4" stroke="#e74c3c" strokeWidth="3" />
-                    <path d="M18 20h12M18 28h12M24 16v16" stroke="#e74c3c" strokeWidth="3" strokeLinecap="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
                 </svg>
             ),
             title: 'Quality Vehicles',
-            desc: 'Browse a wide selection of new and used cars in Kenya, including low-mileage imports from Japan and the UK.'
+            desc: 'Low-mileage imports from Japan/UK. Discover premium vehicles rigorously inspected for peak performance.',
+            size: 'span-2'
         },
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <circle cx="24" cy="18" r="8" stroke="#3498db" strokeWidth="3" />
-                    <path d="M10 40c0-8 6-12 14-12s14 4 14 12" stroke="#3498db" strokeWidth="3" strokeLinecap="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
             ),
             title: 'Trusted Dealers',
-            desc: 'We work with verified sellers and trusted partners to ensure safe and transparent car transactions.'
+            desc: 'Verified sellers and perfectly transparent transactions.',
+            size: 'span-1'
         },
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <path d="M24 8l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" fill="#f1c40f" stroke="#f1c40f" strokeWidth="2" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
             ),
             title: 'Competitive Prices',
-            desc: 'Get affordable deals on cars for sale in Kenya with fair pricing and flexible financing options.'
+            desc: 'Get affordable deals and highly flexible financing.',
+            size: 'span-1'
         },
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <rect x="6" y="14" width="36" height="20" rx="4" stroke="#e67e22" strokeWidth="3" />
-                    <circle cx="14" cy="34" r="4" stroke="#e67e22" strokeWidth="3" />
-                    <circle cx="34" cy="34" r="4" stroke="#e67e22" strokeWidth="3" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
             ),
             title: 'Certified Inspections',
-            desc: 'Our vehicles undergo professional inspections to ensure quality, reliability, and peace of mind.'
+            desc: 'Our vehicles undergo professional inspections to ensure absolute reliability on the road.',
+            size: 'span-2'
         },
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <path d="M24 4L6 12v12c0 10 18 18 18 18s18-8 18-18V12L24 4z" stroke="#3498db" strokeWidth="3" fill="#3498db" fillOpacity="0.2" />
-                    <path d="M18 24l4 4 8-8" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2z" />
+                    <circle cx="8" cy="16" r="2" />
+                    <circle cx="16" cy="16" r="2" />
                 </svg>
             ),
             title: 'Wide Selection',
-            desc: 'Choose from sedans, SUVs, hatchbacks, and trucks from brands like Toyota, Nissan, Mazda, BMW, and more.'
+            desc: 'Choose from sedans, SUVs, hatchbacks, and trucks from leading global brands.',
+            size: 'span-2'
         },
         {
             icon: (
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                    <rect x="8" y="8" width="32" height="32" rx="4" stroke="#a1a1aa" strokeWidth="3" fill="#a1a1aa" fillOpacity="0.15" />
-                    <path d="M16 20l4 4 12-12" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="bento-icon">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
             ),
             title: 'Customer Support',
-            desc: 'Our team is available to help you choose the right car and guide you through the buying process.'
+            desc: 'Available 24/7 to completely guide you through the buying process.',
+            size: 'span-1'
         }
     ];
 
+    const handleMouseMove = (e, index) => {
+        const card = document.getElementById(`bento-card-${index}`);
+        if (!card) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+    };
+
     return (
-        <section className="why-choose-us">
-            <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Why Choose Us</h2>
-                    <p className="section-sub">Choose Mary Motors for your automotive needs and discover the difference. Our commitment to delivering exceptional service and expertise is at the heart of everything we do.</p>
-                </div>
-                <div className="why-grid">
+        <section className="bento-section">
+            <div className="container" style={{ maxWidth: '1100px' }}>
+                <h2 className="bento-title">The Mary Motors Edge</h2>
+                <div className="bento-grid">
                     {features.map((f, i) => (
-                        <div key={i} className="why-card">
-                            <div className="why-icon-wrap">
-                                {f.icon}
-                            </div>
-                            <div className="why-text">
-                                <h3 className="why-title">{f.title}</h3>
-                                <p className="why-desc">{f.desc}</p>
+                        <div
+                            key={i}
+                            id={`bento-card-${i}`}
+                            className={`bento-card ${f.size}`}
+                            onMouseMove={(e) => handleMouseMove(e, i)}
+                        >
+                            <div className="bento-glow" />
+                            <div className="bento-content">
+                                <div className="bento-icon-wrap">
+                                    {f.icon}
+                                </div>
+                                <h3 className="bento-heading">{f.title}</h3>
+                                <p className="bento-desc">{f.desc}</p>
                             </div>
                         </div>
                     ))}
