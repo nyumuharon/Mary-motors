@@ -136,8 +136,8 @@ export default function HomePage() {
             </select>
             <select id="search-price">
               <option value="">Price Range</option>
-              <option>Under $20,000</option><option>$20,000–$40,000</option>
-              <option>$40,000–$70,000</option><option>Above $70,000</option>
+              <option>Under KES 2,000,000</option><option>KES 2,000,000–KES 5,000,000</option>
+              <option>KES 5,000,000–KES 10,000,000</option><option>Above KES 10,000,000</option>
             </select>
             <Link href="/all-cars" className="btn-primary search-go">Search →</Link>
           </div>

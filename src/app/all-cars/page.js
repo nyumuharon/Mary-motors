@@ -17,7 +17,7 @@ function AllCarsContent() {
         preorder: filterParam === 'preorder'
     });
     const [make, setMake] = useState('All Makes');
-    const [priceRange, setPriceRange] = useState(3000000); // Default to max
+    const [priceRange, setPriceRange] = useState(390000000); // Default to max (KES)
     const [sort, setSort] = useState('Default');
 
     // Sync state if URL changes
@@ -59,7 +59,7 @@ function AllCarsContent() {
             result = result.filter(v => v.make === make);
         }
 
-        // Price Filter (Extract number from "$85,000")
+        // Price Filter (Extract number from "KES 11,050,000")
         result = result.filter(v => {
             const numPrice = parseInt(v.price.replace(/[^0-9]/g, ''), 10);
             return numPrice <= priceRange;
@@ -125,10 +125,10 @@ function AllCarsContent() {
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Price Range (Max: ${priceRange.toLocaleString()})</h4>
-                            <input type="range" min="1000" max="3000000" step="5000" value={priceRange} onChange={(e) => setPriceRange(Number(e.target.value))} style={{ width: '100%', marginBottom: '10px' }} />
+                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Price Range (Max: KES {priceRange.toLocaleString()})</h4>
+                            <input type="range" min="100000" max="390000000" step="500000" value={priceRange} onChange={(e) => setPriceRange(Number(e.target.value))} style={{ width: '100%', marginBottom: '10px' }} />
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#777' }}>
-                                <span>$1,000</span><span>$3,000,000+</span>
+                                <span>KES 100,000</span><span>KES 390,000,000+</span>
                             </div>
                         </div>
                     </aside>
@@ -151,7 +151,7 @@ function AllCarsContent() {
                             <div style={{ padding: '60px', textAlign: 'center', background: 'white', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
                                 <h3 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '10px' }}>No vehicles found</h3>
                                 <p style={{ color: '#666' }}>Try adjusting your filters to see more results.</p>
-                                <button onClick={() => { setCondition({ all: true, new: false, used: false, preorder: false }); setMake('All Makes'); setPriceRange(3000000); }} className="btn-primary" style={{ marginTop: '20px' }}>Reset Filters</button>
+                                <button onClick={() => { setCondition({ all: true, new: false, used: false, preorder: false }); setMake('All Makes'); setPriceRange(390000000); }} className="btn-primary" style={{ marginTop: '20px' }}>Reset Filters</button>
                             </div>
                         )}
                     </div>
