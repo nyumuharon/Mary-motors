@@ -16,10 +16,10 @@ export default function Footer() {
                     </Link>
                     <p>Your trusted partner for premium new, pre-order, and certified used vehicles. Drive your dream with Mary Motors.</p>
                     <div className="socials">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Instagram">ig</a>
-                        <a href="#" aria-label="Twitter">tw</a>
-                        <a href="#" aria-label="YouTube">yt</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Twitter">X</a>
+                        <a href="#" aria-label="YouTube">YouTube</a>
                     </div>
                 </div>
 
@@ -35,9 +35,9 @@ export default function Footer() {
 
                 <div className="footer-col">
                     <h4>Inventory</h4>
-                    <Link href="/all-cars">New Cars</Link>
-                    <Link href="/all-cars">Used Cars</Link>
-                    <Link href="/all-cars">Pre-Orders</Link>
+                    <Link href="/all-cars?filter=new">New Cars</Link>
+                    <Link href="/all-cars?filter=used">Used Cars</Link>
+                    <Link href="/all-cars?filter=preorder">Pre-Orders</Link>
                     <Link href="/all-cars">SUVs</Link>
                     <Link href="/all-cars">Sedans</Link>
                     <Link href="/all-cars">Trucks</Link>
@@ -46,7 +46,7 @@ export default function Footer() {
 
             </div>
             <div className="footer-bottom">
-                <p>© 2026 Mary Motors. All rights reserved. | Designed by haron +254702864025</p>
+                <p>© 2026 Mary Motors. All rights reserved. | Designed by haron +254702864025 </p>
             </div>
         </footer>
     );
