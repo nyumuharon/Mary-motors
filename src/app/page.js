@@ -121,29 +121,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
-      <section className="about" id="about">
-        <div className="container about-grid">
-          <div className="about-img-wrap">
-            <Image src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" alt="Mary Motors Showroom" className="about-img" width={800} height={500} />
-            <div className="about-badge">
-              <span className="badge-number">15+</span>
-              <span className="badge-text">Years of Excellence</span>
-            </div>
-          </div>
-          <div className="about-text">
-            <p className="section-tag">WHO WE ARE</p>
-            <h2 className="section-title">Your Trusted Partner in Premium Automotive</h2>
-            <p className="about-desc">At Mary Motors, we believe that finding the right car should be an exciting, seamless experience. For over 15 years, we&apos;ve been connecting drivers with vehicles that match their lifestyle, budget, and aspirations.</p>
-            <div className="about-stats">
-              <div className="stat"><span className="stat-num">2,500+</span><span className="stat-label">Cars Sold</span></div>
-              <div className="stat"><span className="stat-num">98%</span><span className="stat-label">Happy Clients</span></div>
-              <div className="stat"><span className="stat-num">50+</span><span className="stat-label">Car Brands</span></div>
-            </div>
-            <Link href="/about" className="btn-primary">Learn More <span>→</span></Link>
-          </div>
-        </div>
-      </section>
+
       <WhyChooseUs />
 
       <section className="search-banner">
