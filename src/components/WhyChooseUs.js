@@ -9,8 +9,8 @@ const WhyChooseUs = () => {
                     <path d="M18 20h12M18 28h12M24 16v16" stroke="#c0392b" strokeWidth="3" strokeLinecap="round" />
                 </svg>
             ),
-            title: 'Quality Inventory',
-            desc: 'Highlight the quality and variety of vehicles you offer, including both new and used cars. Mention exclusive models or brands you may carry.'
+            title: 'Quality Vehicles',
+            desc: 'Browse a wide selection of new and used cars in Kenya, including low-mileage imports from Japan and the UK.'
         },
         {
             icon: (
@@ -19,8 +19,8 @@ const WhyChooseUs = () => {
                     <path d="M10 40c0-8 6-12 14-12s14 4 14 12" stroke="#3498db" strokeWidth="3" strokeLinecap="round" />
                 </svg>
             ),
-            title: 'Exceptional Customer Service',
-            desc: 'Emphasize your commitment to providing exceptional customer service. Mention personalized assistance, and responsive customer support.'
+            title: 'Trusted Dealers',
+            desc: 'We work with verified sellers and trusted partners to ensure safe and transparent car transactions.'
         },
         {
             icon: (
@@ -28,8 +28,8 @@ const WhyChooseUs = () => {
                     <path d="M24 8l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" fill="#f1c40f" stroke="#f1c40f" strokeWidth="2" />
                 </svg>
             ),
-            title: 'Competitive Pricing',
-            desc: 'If your dealership offers competitive pricing or special discounts, make sure to mention it. Consider showcasing specific pricing advantages deals.'
+            title: 'Competitive Prices',
+            desc: 'Get affordable deals on cars for sale in Kenya with fair pricing and flexible financing options.'
         },
         {
             icon: (
@@ -39,8 +39,8 @@ const WhyChooseUs = () => {
                     <circle cx="34" cy="34" r="4" stroke="#e67e22" strokeWidth="3" />
                 </svg>
             ),
-            title: 'Certified Pre-Owned Vehicles',
-            desc: 'If you offer certified pre-owned cars, stress the benefits of these vehicles, such as thorough inspections, warranties, and peace of mind.'
+            title: 'Certified Inspections',
+            desc: 'Our vehicles undergo professional inspections to ensure quality, reliability, and peace of mind.'
         },
         {
             icon: (
@@ -49,8 +49,8 @@ const WhyChooseUs = () => {
                     <path d="M18 24l4 4 8-8" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             ),
-            title: 'Reputation and Trust',
-            desc: 'Mention any awards, industry recognition, or years of experience that have helped build trust with your customers.'
+            title: 'Wide Selection',
+            desc: 'Choose from sedans, SUVs, hatchbacks, and trucks from brands like Toyota, Nissan, Mazda, BMW, and more.'
         },
         {
             icon: (
@@ -59,8 +59,8 @@ const WhyChooseUs = () => {
                     <path d="M16 20l4 4 12-12" stroke="#2c3e50" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             ),
-            title: 'Satisfaction Guarantee',
-            desc: 'If applicable, consider offering a satisfaction guarantee to instill confidence in potential our customers.'
+            title: 'Customer Support',
+            desc: 'Our team is available to help you choose the right car and guide you through the buying process.'
         }
     ];
 
@@ -68,8 +68,8 @@ const WhyChooseUs = () => {
         <section className="why-choose-us">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title">Why choose us</h2>
-                    <p className="section-sub">Choose CarHub for your automotive needs and discover the difference. Our commitment to delivering exceptional service and expertise is at the heart of everything we do.</p>
+                    <h2 className="section-title">Why Choose Us</h2>
+                    <p className="section-sub">Choose Mary Motors for your automotive needs and discover the difference. Our commitment to delivering exceptional service and expertise is at the heart of everything we do.</p>
                 </div>
                 <div className="why-grid">
                     {features.map((f, i) => (
