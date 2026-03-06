@@ -1515,3 +1515,90 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== WHY CHOOSE US ===== */
+.why-choose-us {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-bottom: 3px solid transparent;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  border-bottom-color: var(--red);
+}
+
+.why-icon-wrap {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: #fff5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(192, 57, 43, 0.12);
+  transition: background 0.3s ease;
+}
+
+.why-card:hover .why-icon-wrap {
+  background: #fee;
+}
+
+.why-text {
+  flex: 1;
+}
+
+.why-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.why-desc {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* FAQ list style */
+.faq-list {
+  margin-top: 8px;
+  padding-left: 20px;
+  list-style: disc;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
