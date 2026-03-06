@@ -25,7 +25,6 @@ export default function Navbar() {
                     <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>About Us</Link>
                     <Link href="/all-cars" className={`nav-link ${pathname === '/all-cars' ? 'active' : ''}`}>Vehicles</Link>
                     <Link href="/gallery" className={`nav-link ${pathname === '/gallery' ? 'active' : ''}`}>Gallery</Link>
-                    <Link href="/blogs" className={`nav-link ${pathname === '/blogs' ? 'active' : ''}`}>Blogs</Link>
                     <Link href="/contact-us" className={`nav-link ${pathname === '/contact-us' ? 'active' : ''}`}>Contact</Link>
                     <div className="dropdown">
                         <a href="#" className="nav-link dropdown-toggle">Shop <span className="arrow">▾</span></a>

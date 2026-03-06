@@ -199,35 +199,7 @@ export default function HomePage() {
       </section>
       <FAQ />
 
-      {/* ===== BLOG PREVIEW ===== */}
-      <section className="blogs" id="blogs">
-        <div className="container">
-          <div className="section-header">
-            <p className="section-tag">LATEST NEWS</p>
-            <h2 className="section-title">From Our Blog</h2>
-          </div>
-          <div className="blogs-grid">
-            {[
-              { img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80', tag: 'Buying Tips', title: 'Top 5 Things to Check Before Buying a Used Car', desc: 'Learn what experts look for when inspecting a pre-owned vehicle to ensure you get the best value for your money.' },
-              { img: 'https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=600&q=80', tag: 'Industry News', title: '2025 Automotive Trends: What\'s Shaping the Future', desc: 'From electric vehicles to AI-powered safety features, discover what innovations are transforming the automotive world.' },
-              { img: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80', tag: 'Maintenance', title: 'How to Extend Your Car\'s Lifespan by 50,000 Miles', desc: 'Simple maintenance habits that the pros use to keep their vehicles running at peak performance for years longer.' },
-            ].map((post, i) => (
-              <article key={i} className="blog-card">
-                <div className="blog-img"><Image src={post.img} alt={post.title} loading="lazy" width={600} height={400} /></div>
-                <div className="blog-body">
-                  <span className="blog-tag">{post.tag}</span>
-                  <h3>{post.title}</h3>
-                  <p>{post.desc}</p>
-                  <Link href="/blogs" className="blog-link">Read More →</Link>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/blogs" className="btn-outline">Read All Articles</Link>
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }

@@ -29,7 +29,6 @@ export default function Footer() {
                     <Link href="/about">About Us</Link>
                     <Link href="/all-cars">Vehicles</Link>
                     <Link href="/gallery">Gallery</Link>
-                    <Link href="/blogs">Blog</Link>
                     <Link href="/contact-us">Contact</Link>
                 </div>
 
