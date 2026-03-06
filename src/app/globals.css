@@ -14,7 +14,8 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   color: #eeeeee;
-  background: #0a0a0a;
+  background: #111116;
+  /* Lighter dark mode background */
   overflow-x: hidden;
   line-height: 1.618;
 }
@@ -51,7 +52,7 @@ a {
   --red-dark: #c0392b;
   --red-light: rgba(231, 76, 60, 0.1);
   --dark: #000000;
-  --gray: #1a1a1a;
+  --gray: #111116;
   --text: #a1a1aa;
   /* zinc-400 */
   --border: rgba(255, 255, 255, 0.1);
@@ -539,7 +540,8 @@ a {
 }
 
 .feature-card {
-  background: #09090b;
+  background: #18181b;
+  /* zinc-900 */
   border-radius: var(--radius);
   padding: 36px 24px;
   text-align: center;
@@ -1591,7 +1593,7 @@ a {
 /* ===== WHY CHOOSE US ===== */
 .why-choose-us {
   padding: 100px 0;
-  background: #0a0a0a;
+  background: #111116;
 }
 
 .why-grid {
@@ -1601,7 +1603,8 @@ a {
 }
 
 .why-card {
-  background: #09090b;
+  background: #18181b;
+  /* zinc-900 */
   border-radius: 16px;
   padding: 40px 32px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);

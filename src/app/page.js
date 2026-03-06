@@ -42,6 +42,21 @@ export default function HomePage() {
       {/* ===== HERO SLIDER ===== */}
       <HeroSlider />
 
+      {/* ===== VEHICLES SECTION ===== */}
+      <section className="vehicles" id="vehicles">
+        <div className="container">
+          <div className="section-header">
+            <p className="section-tag">OUR INVENTORY</p>
+            <h2 className="section-title">Featured Vehicles</h2>
+            <p className="section-sub">Hand-picked premium vehicles ready for you to drive off the lot today.</p>
+          </div>
+          <VehicleGrid showFilterTabs={true} limit={9} />
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link href="/all-cars" className="btn-outline">View All Vehicles</Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== FEATURE CARDS ===== */}
       <section className="features" id="features">
         <div className="container features-grid">
@@ -130,21 +145,6 @@ export default function HomePage() {
         </div>
       </section>
       <WhyChooseUs />
-
-      {/* ===== VEHICLES SECTION ===== */}
-      <section className="vehicles" id="vehicles">
-        <div className="container">
-          <div className="section-header">
-            <p className="section-tag">OUR INVENTORY</p>
-            <h2 className="section-title">Featured Vehicles</h2>
-            <p className="section-sub">Hand-picked premium vehicles ready for you to drive off the lot today.</p>
-          </div>
-          <VehicleGrid showFilterTabs={true} limit={9} />
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/all-cars" className="btn-outline">View All Vehicles</Link>
-          </div>
-        </div>
-      </section>
 
       <section className="search-banner">
         <div className="container search-inner">
