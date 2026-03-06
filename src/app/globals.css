@@ -1514,7 +1514,8 @@ a {
 /* ===== BENTO GRID (WHY CHOOSE US) ===== */
 .bento-section {
   padding: 100px 0;
-  background: #000;
+  background: #111116;
+  /* zinc-900 tint instead of pure #000 */
   color: #fff;
 }
 
@@ -1561,7 +1562,7 @@ a {
 .bento-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(231, 76, 60, 0.25), transparent 70%);
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(231, 76, 60, 0.45), transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
