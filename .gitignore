@@ -1,4 +1,4 @@
-# dependencies
+﻿# dependencies
 node_modules/
 
 # Next.js build output
@@ -24,3 +24,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+.next/
+out/
+node_modules/
+
