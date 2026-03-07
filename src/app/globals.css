@@ -204,7 +204,8 @@ a {
   max-width: 250px;
   flex-shrink: 0;
   object-fit: contain;
-  filter: brightness(1.15) contrast(1.2);
+  filter: brightness(1.1) contrast(1.2);
+  mix-blend-mode: multiply;
 }
 
 .logo-text {
