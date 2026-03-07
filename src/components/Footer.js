@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
     return (
@@ -6,12 +7,14 @@ export default function Footer() {
             <div className="container footer-grid">
                 <div className="footer-brand">
                     <Link href="/" className="logo">
-                        <svg className="logo-icon" viewBox="0 0 40 20" fill="none">
-                            <rect x="2" y="10" width="36" height="6" rx="3" fill="#c0392b" />
-                            <circle cx="10" cy="16" r="4" fill="#555" />
-                            <circle cx="30" cy="16" r="4" fill="#555" />
-                            <path d="M4 10 L10 3 L30 3 L36 10" stroke="#c0392b" strokeWidth="2" fill="none" strokeLinejoin="round" />
-                        </svg>
+                        <Image
+                            src="/logo.png"
+                            alt="Mary Motors Logo"
+                            className="logo-icon"
+                            width={80}
+                            height={40}
+                            style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
+                        />
                         <span className="logo-text" style={{ color: '#fff' }}>MARY <span className="logo-accent">MOTORS</span></span>
                     </Link>
                     <p>Your trusted partner for premium new, pre-order, and certified used vehicles. Drive your dream with Mary Motors.</p>

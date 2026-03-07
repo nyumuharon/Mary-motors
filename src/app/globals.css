@@ -199,9 +199,10 @@ a {
 }
 
 .logo-icon {
-  width: 42px;
-  height: 22px;
+  width: 80px;
+  height: 40px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .logo-text {
