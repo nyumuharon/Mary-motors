@@ -27,7 +27,12 @@ export default function Navbar() {
                     <Link href="/gallery" className={`nav-link ${pathname === '/gallery' ? 'active' : ''}`}>Gallery</Link>
                     <Link href="/contact-us" className={`nav-link ${pathname === '/contact-us' ? 'active' : ''}`}>Contact</Link>
                     <div className="dropdown">
-                        <a href="#" className="nav-link dropdown-toggle">Shop <span className="arrow">▾</span></a>
+                        <Link href="/all-cars" className="nav-link dropdown-toggle" onClick={(e) => {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault();
+                                e.currentTarget.parentElement.classList.toggle('active');
+                            }
+                        }}>Shop <span className="arrow">▾</span></Link>
                         <div className="dropdown-menu">
                             <Link href="/all-cars?filter=new">New Cars</Link>
                             <Link href="/all-cars?filter=used">Used Cars</Link>

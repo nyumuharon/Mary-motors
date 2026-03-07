@@ -1,8 +1,14 @@
 'use client';
 import { useState } from 'react';
 
-export default function ContactForm() {
+export default function ContactForm({ defaultSubject = "General Inquiry" }) {
     const [status, setStatus] = useState('idle'); // idle | loading | success
+    const [selectedSubject, setSelectedSubject] = useState(defaultSubject);
+
+    // Update selected subject if prop changes
+    useState(() => {
+        setSelectedSubject(defaultSubject);
+    }, [defaultSubject]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -74,12 +80,21 @@ export default function ContactForm() {
 
             <div style={{ marginTop: '20px' }}>
                 <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>Subject</label>
-                <select name="subject" style={{ width: '100%', padding: '15px', border: '1px solid #ddd', borderRadius: '5px', background: '#f9f9f9', fontFamily: 'inherit' }}>
+                <select 
+                    name="subject" 
+                    value={selectedSubject}
+                    onChange={(e) => setSelectedSubject(e.target.value)}
+                    style={{ width: '100%', padding: '15px', border: '1px solid #ddd', borderRadius: '5px', background: '#f9f9f9', fontFamily: 'inherit' }}
+                >
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Looking to Buy">Looking to Buy</option>
                     <option value="Looking to Sell">Looking to Sell</option>
                     <option value="Financing Questions">Financing Questions</option>
                     <option value="Service & Maintenance">Service &amp; Maintenance</option>
+                    {/* Allow for custom dynamic subjects */}
+                    {!["General Inquiry", "Looking to Buy", "Looking to Sell", "Financing Questions", "Service & Maintenance"].includes(selectedSubject) && (
+                        <option value={selectedSubject}>{selectedSubject}</option>
+                    )}
                 </select>
             </div>
 

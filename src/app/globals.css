@@ -53,8 +53,8 @@ a {
   --red: #e74c3c;
   --red-dark: #c0392b;
   --red-light: rgba(231, 76, 60, 0.1);
-  --accent: #f97316;
-  /* Brand orange */
+  --accent: #e74c3c;
+  /* Brand red */
   --canvas: #fbfbfb;
   /* Studio light background */
   --surface: #ffffff;
@@ -996,7 +996,7 @@ a {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: rgba(249, 115, 22, 0.1);
+  background: rgba(231, 76, 60, 0.1);
   padding: 3px 10px;
   border-radius: 4px;
 }
@@ -1566,7 +1566,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: rgba(249, 115, 22, 0.1);
+  background: rgba(231, 76, 60, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;

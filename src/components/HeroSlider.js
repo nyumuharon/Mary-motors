@@ -9,6 +9,7 @@ const slides = [
         title: 'Meet the New Stars<br />of Our Showroom',
         sub: 'Your ultimate destination for premium vehicles. We bring you the finest selection crafted for driving excellence.',
         cta: 'Buy This Car',
+        link: '/all-cars?filter=new',
     },
     {
         bg: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1600&q=80',
@@ -16,6 +17,7 @@ const slides = [
         title: 'Experience Luxury<br />Like Never Before',
         sub: 'Reserve your dream car before it hits the showroom. Exclusive pre-order deals with special pricing.',
         cta: 'Pre-Order Now',
+        link: '/all-cars?filter=preorder',
     },
     {
         bg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=80',
@@ -23,6 +25,7 @@ const slides = [
         title: 'Quality Used Cars<br />You Can Trust',
         sub: 'Certified pre-owned vehicles thoroughly inspected and ready to hit the road. Great value, unbeatable quality.',
         cta: 'Browse Inventory',
+        link: '/all-cars?filter=used',
     },
     {
         bg: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80',
@@ -30,6 +33,7 @@ const slides = [
         title: 'Unleash Your<br />Inner Driver',
         sub: 'From sleek sports cars to rugged SUVs, we have the perfect ride for every personality and lifestyle.',
         cta: 'Explore Models',
+        link: '/all-cars',
     },
 ];
 
@@ -85,7 +89,7 @@ export default function HeroSlider() {
                                 dangerouslySetInnerHTML={{ __html: slide.title }}
                             />
                             <p className="slide-sub">{slide.sub}</p>
-                            <Link href="/all-cars" className="btn-primary">
+                            <Link href={slide.link} className="btn-primary">
                                 {slide.cta} <span>→</span>
                             </Link>
                         </div>

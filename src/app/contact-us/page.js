@@ -1,18 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export const metadata = {
-    title: 'Contact Us | Mary Motors – Car Dealership in Nairobi, Kenya',
-    description: 'Contact Mary Motors for inquiries about cars for sale in Kenya, test drives, financing, or trade-ins. Visit our Nairobi showroom or reach out online.',
-    alternates: { canonical: 'https://mary-motors.vercel.app/contact-us' },
-    openGraph: {
-        title: 'Contact Mary Motors – Car Dealership in Nairobi',
-        description: 'Get in touch with Mary Motors for test drives, car inquiries, and financing. We are here to help you find the right car in Kenya.',
-        url: 'https://mary-motors.vercel.app/contact-us',
-    },
-};
+function ContactContent() {
+    const searchParams = useSearchParams();
+    const subject = searchParams.get('subject') || 'General Inquiry';
 
-export default function ContactPage() {
     return (
         <>
             <div className="page-header"
@@ -55,7 +51,7 @@ export default function ContactPage() {
 
                     {/* Form Column */}
                     <div style={{ background: 'white', padding: '40px', borderRadius: '15px', boxShadow: '0 5px 30px rgba(0,0,0,0.05)' }}>
-                        <ContactForm />
+                        <ContactForm defaultSubject={subject} />
                     </div>
 
                 </div>
@@ -75,5 +71,13 @@ export default function ContactPage() {
                 />
             </section>
         </>
+    );
+}
+
+export default function ContactPage() {
+    return (
+        <Suspense fallback={<div style={{ padding: '100px', textAlign: 'center' }}>Loading contact form...</div>}>
+            <ContactContent />
+        </Suspense>
     );
 }

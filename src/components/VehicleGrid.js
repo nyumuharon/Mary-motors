@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { vehicles } from '@/lib/vehicles';
 
 const FILTERS = [
@@ -69,8 +70,8 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                                 </span>
                             </div>
                             <div className="car-footer">
-                                <div className="car-price"><span>$ </span>{v.price.replace('KES ', '')}</div>
-                                <button className="btn-primary" style={{ padding: '8px 16px', fontSize: '12px' }}>VIEW DETAILS</button>
+                                <div className="car-price"><span>KES </span>{v.price.replace('KES ', '')}</div>
+                                <Link href={`/contact-us?subject=Inquiry: ${v.make} ${v.name}`} className="btn-primary" style={{ padding: '8px 16px', fontSize: '12px' }}>VIEW DETAILS</Link>
                             </div>
                         </div>
                     </div>
