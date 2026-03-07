@@ -568,9 +568,12 @@ a {
 }
 
 .feature-icon {
-  width: 64px;
-  height: 64px;
+  width: auto;
+  max-width: 140px;
+  height: 60px;
   margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .feature-card h3 {
