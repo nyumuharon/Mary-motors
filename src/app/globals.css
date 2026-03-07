@@ -204,6 +204,7 @@ a {
   max-width: 250px;
   flex-shrink: 0;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .logo-text {
