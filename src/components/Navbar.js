@@ -11,11 +11,11 @@ export default function Navbar() {
             <div className="container nav-inner">
                 <Link href="/" className="logo">
                     <Image
-                        src="/logo.svg"
+                        src="/logo.png"
                         alt="Mary Motors Logo"
                         className="logo-icon"
-                        width={100}
-                        height={50}
+                        width={80}
+                        height={40}
                         priority
                         style={{ objectFit: 'contain' }}
                     />
