@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="footer-brand">
                     <Link href="/" className="logo">
                         <Image
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="Mary Motors Logo"
                             className="logo-icon"
                             width={80}

@@ -11,7 +11,7 @@ export default function Navbar() {
             <div className="container nav-inner">
                 <Link href="/" className="logo">
                     <Image
-                        src="/logo.png"
+                        src="/logo.svg"
                         alt="Mary Motors Logo"
                         className="logo-icon"
                         width={80}
