@@ -50,10 +50,10 @@ a {
 
 /* ===== VARIABLES ===== */
 :root {
-  --red: #e74c3c;
-  --red-dark: #c0392b;
-  --red-light: rgba(231, 76, 60, 0.1);
-  --accent: #e74c3c;
+  --red: #c0392b;
+  --red-dark: #a93226;
+  --red-light: rgba(192, 57, 43, 0.1);
+  --accent: #c0392b;
   /* Brand red */
   --canvas: #fbfbfb;
   /* Studio light background */
@@ -124,7 +124,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all var(--transition);
-  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -147,7 +147,7 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+  box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -996,7 +996,7 @@ a {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: rgba(231, 76, 60, 0.1);
+  background: rgba(192, 57, 43, 0.1);
   padding: 3px 10px;
   border-radius: 4px;
 }
@@ -1566,7 +1566,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: rgba(231, 76, 60, 0.1);
+  background: rgba(192, 57, 43, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
