@@ -11,11 +11,10 @@ export default function Footer() {
                             src="/logo.svg"
                             alt="Mary Motors Logo"
                             className="logo-icon"
-                            width={80}
-                            height={40}
+                            width={240}
+                            height={60}
                             style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                         />
-                        <span className="logo-text" style={{ color: '#fff' }}>MARY <span className="logo-accent">MOTORS</span></span>
                     </Link>
                     <p>Your trusted partner for premium new, pre-order, and certified used vehicles. Drive your dream with Mary Motors.</p>
                     <div className="socials">

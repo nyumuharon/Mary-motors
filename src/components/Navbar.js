@@ -14,12 +14,11 @@ export default function Navbar() {
                         src="/logo.svg"
                         alt="Mary Motors Logo"
                         className="logo-icon"
-                        width={80}
-                        height={40}
+                        width={240}
+                        height={50}
                         priority
                         style={{ objectFit: 'contain' }}
                     />
-                    <span className="logo-text">MARY <span className="logo-accent">MOTORS</span></span>
                 </Link>
 
                 <nav className="nav-links" id="nav-links">
