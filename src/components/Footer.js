@@ -8,11 +8,11 @@ export default function Footer() {
                 <div className="footer-brand">
                     <Link href="/" className="logo">
                         <Image
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="Mary Motors Logo"
                             className="logo-icon"
-                            width={80}
-                            height={40}
+                            width={100}
+                            height={50}
                             style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                         />
                         <span className="logo-text" style={{ color: '#fff' }}>MARY <span className="logo-accent">MOTORS</span></span>
