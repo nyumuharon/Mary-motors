@@ -63,19 +63,27 @@ a {
   --red-light: rgba(192, 57, 43, 0.1);
   --accent: #c0392b;
   /* Brand red */
-  --canvas: #fbfbfb;
-  /* Studio light background */
-  --surface: #ffffff;
-  /* Elevated card background */
-  --stroke: #e5e7eb;
-  /* Clean hairline borders */
-  --primary-text: #111827;
-  /* Deep charcoal for hierarchy */
-  --secondary-text: #4b5563;
-  /* Neutral gray for body */
 
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
+  --gold: #E8A838;
+  /* Amber gold accent */
+  --gold-dark: #C98A1A;
+  --gold-light: rgba(232, 168, 56, 0.12);
+
+  --canvas: #FFF8F0;
+  /* Warm cream background */
+  --canvas-alt: #FDF3E7;
+  /* Slightly deeper cream for alternate sections */
+  --surface: #FFFFFF;
+  /* Card / elevated surface */
+  --stroke: #F0E4D4;
+  /* Warm hairline borders */
+  --primary-text: #1C1008;
+  /* Deep warm charcoal */
+  --secondary-text: #6B5744;
+  /* Warm brown-grey for body text */
+
+  --shadow: 0 10px 40px -10px rgba(180, 100, 40, 0.08);
+  --shadow-lg: 0 30px 60px -15px rgba(180, 100, 40, 0.14);
   --radius: 12px;
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -155,7 +163,8 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
+  box-shadow: 0 8px 25px rgba(232, 168, 56, 0.5);
+  background: var(--gold);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -179,7 +188,7 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 248, 240, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--stroke);
@@ -187,8 +196,8 @@ a {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 248, 240, 0.97);
+  box-shadow: 0 4px 30px rgba(180, 100, 40, 0.06);
   border-bottom: 1px solid var(--stroke);
 }
 
@@ -572,7 +581,7 @@ a {
 .feature-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--gold);
 }
 
 .feature-icon {
@@ -1189,8 +1198,8 @@ a {
 }
 
 .socials a:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--gold);
+  border-color: var(--gold);
   color: #fff;
 }
 
@@ -1210,7 +1219,7 @@ a {
 }
 
 .footer-col a:hover {
-  color: var(--accent);
+  color: var(--gold);
 }
 
 .newsletter-form {
