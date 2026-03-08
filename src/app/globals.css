@@ -57,84 +57,11 @@ a {
   color: inherit;
 }
 
-/* ===== GLOBAL VARIABLES — DEEP OCEAN (OPTION B) ===== */
+/* ===== GLOBAL VARIABLES — MIDNIGHT CRIMSON (OPTION A) ===== */
 :root {
   --red: #E8192C;
-  --accent: #00B4D8;
-  --accent-hover: #0096B4;
-  --accent-glow: rgba(0, 180, 216, 0.6);
-  --gold: #00B4D8;
-
-  --canvas: #0D1B2A;
-  --canvas-alt: #1B263B;
-  --surface: #102135;
-  --stroke: rgba(0, 180, 216, 0.2);
-  --primary-text: #E0E1DD;
-  --secondary-text: #778DA9;
-
-  --nav-bg: rgba(13, 27, 42, 0.85);
-  --nav-scrolled: rgba(10, 20, 32, 0.97);
-  --nav-border: rgba(0, 180, 216, 0.1);
-  --footer-bg: linear-gradient(rgba(13, 27, 42, 0.85), rgba(10, 20, 32, 0.98)), url('/footer-bg.jpeg');
-
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-  --radius: 12px;
-  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* ===== HERO & SEARCH — CARBON & CHROME (OPTION C) ===== */
-.hero,
-.hero-slider,
-.search-banner,
-.page-header {
-  --accent: #FF6B35;
-  --accent-hover: #E85B2A;
-  --accent-glow: rgba(255, 107, 53, 0.6);
-  --gold: #FF6B35;
-
-  --canvas: #1C1E21;
-  --canvas-alt: #232629;
-  --surface: #2D3136;
-  --stroke: rgba(255, 255, 255, 0.1);
-  --primary-text: #F8F9FA;
-  --secondary-text: #ADB5BD;
-
-  background-color: var(--canvas) !important;
-  color: var(--primary-text);
-}
-
-.search-banner {
-  background-color: var(--canvas-alt) !important;
-}
-
-/* ===== FEATURES — ROSE GOLD LUXE (OPTION D) ===== */
-.features,
-.edge-section,
-.about-section {
-  --accent: #D4396B;
-  --accent-hover: #C22F5F;
-  --accent-glow: rgba(212, 57, 107, 0.6);
-  --gold: #D4AF37;
-
-  --canvas: #FFF5F7;
-  --canvas-alt: #FFEBF0;
-  --surface: #FFFFFF;
-  --stroke: rgba(212, 57, 107, 0.15);
-  --primary-text: #2D1E24;
-  --secondary-text: #8A6B76;
-
-  background-color: var(--canvas-alt) !important;
-  color: var(--primary-text);
-}
-
-.why-choose-us {
-  background-color: var(--canvas) !important;
-}
-
-/* ===== INVENTORY — MIDNIGHT CRIMSON (OPTION A) ===== */
-.vehicles,
-.vehicles-page {
   --accent: #E8192C;
+  /* Ferrari Crimson */
   --accent-hover: #C01020;
   --accent-glow: rgba(232, 25, 44, 0.6);
   --gold: #D4AF37;
@@ -146,8 +73,14 @@ a {
   --primary-text: #F5F5F5;
   --secondary-text: #A0A0A0;
 
-  background-color: var(--canvas-alt) !important;
-  color: var(--primary-text);
+  --nav-bg: rgba(10, 10, 10, 0.85);
+  --nav-scrolled: rgba(8, 8, 8, 0.97);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --footer-bg: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
+
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --radius: 12px;
+  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* ===== UTILITY ===== */
