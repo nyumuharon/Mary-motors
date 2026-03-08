@@ -9,7 +9,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '8',
-        img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80'
+        engine: '3.5L V6 Twin-Turbo',
+        transmission: '10-Speed Automatic',
+        color: 'Oxford White',
+        weight: '2,500 kg',
+        img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 2,
@@ -21,7 +31,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80'
+        engine: '4.4L V8 Twin-Turbo',
+        transmission: '8-Speed M Steptronic',
+        color: 'Marina Bay Blue',
+        weight: '1,930 kg',
+        img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+            'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 3,
@@ -33,7 +53,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '4',
-        img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80'
+        engine: '6.2L V8',
+        transmission: '10-Speed Automatic',
+        color: 'Red Hot',
+        weight: '1,680 kg',
+        img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+            'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 4,
@@ -45,7 +75,17 @@ export const vehicles = [
         mileage: '12,000 km',
         fuel: 'Petrol',
         seats: '4',
-        img: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80'
+        engine: '3.0L Straight-6 Twin-Turbo',
+        transmission: '7-Speed DCT',
+        color: 'Austin Yellow Metallic',
+        weight: '1,572 kg',
+        img: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80',
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
 
     {
@@ -58,7 +98,17 @@ export const vehicles = [
         mileage: '42,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80'
+        engine: '3.8L V6 Twin-Turbo',
+        transmission: '6-Speed Dual-Clutch',
+        color: 'Ultimate Silver',
+        weight: '1,740 kg',
+        img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80',
+            'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 7,
@@ -70,7 +120,17 @@ export const vehicles = [
         mileage: '12,000 km',
         fuel: 'Petrol',
         seats: '2',
-        img: 'https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=600&q=80'
+        engine: '5.2L V10',
+        transmission: '7-Speed Dual-Clutch',
+        color: 'Giallo Midas',
+        weight: '1,422 kg',
+        img: 'https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=800&q=80',
+            'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 8,
@@ -82,7 +142,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '4',
-        img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80'
+        engine: '6.2L Supercharged V8',
+        transmission: '10-Speed Automatic',
+        color: 'Summit White',
+        weight: '1,760 kg',
+        img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
+            'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 9,
@@ -94,7 +164,17 @@ export const vehicles = [
         mileage: '58,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80'
+        engine: '3.0L Turbo Inline-6',
+        transmission: '9-Speed Automatic',
+        color: 'Obsidian Black',
+        weight: '2,250 kg',
+        img: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&q=80',
+            'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 10,
@@ -106,7 +186,17 @@ export const vehicles = [
         mileage: '65,000 km',
         fuel: 'Diesel',
         seats: '7',
-        img: 'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=500&q=60'
+        engine: '2.8L Turbo Diesel',
+        transmission: '6-Speed Automatic',
+        color: 'Super White',
+        weight: '2,300 kg',
+        img: 'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=500&q=60',
+        gallery: [
+            'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=800&q=80',
+            'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 11,
@@ -118,7 +208,17 @@ export const vehicles = [
         mileage: '70,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1687048988997-ec57f83ea3bd?w=500&q=60'
+        engine: '2.5L 4-Cylinder',
+        transmission: 'Lineartronic CVT',
+        color: 'Magnetite Gray Metallic',
+        weight: '1,560 kg',
+        img: 'https://images.unsplash.com/photo-1687048988997-ec57f83ea3bd?w=500&q=60',
+        gallery: [
+            'https://images.unsplash.com/photo-1687048988997-ec57f83ea3bd?w=800&q=80',
+            'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 12,
@@ -130,7 +230,17 @@ export const vehicles = [
         mileage: '85,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1596728439366-ce2d14cb35be?w=600&q=80'
+        engine: '1.3L 4-Cylinder',
+        transmission: 'CVT',
+        color: 'Silver Metallic',
+        weight: '1,010 kg',
+        img: 'https://images.unsplash.com/photo-1596728439366-ce2d14cb35be?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1596728439366-ce2d14cb35be?w=800&q=80',
+            'https://images.unsplash.com/photo-1606132777170-ea8710aa3949?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 13,
@@ -142,7 +252,17 @@ export const vehicles = [
         mileage: '78,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80'
+        engine: '1.5L 4-Cylinder',
+        transmission: '6-Speed Automatic',
+        color: 'Soul Red Crystal',
+        weight: '1,050 kg',
+        img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+            'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 14,
@@ -154,7 +274,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '2',
-        img: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80'
+        engine: '160cc Single Cylinder',
+        transmission: '5-Speed Manual',
+        color: 'Racing Red',
+        weight: '145 kg',
+        img: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80',
+            'https://images.unsplash.com/photo-144410919233f-781f027f8dca?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 15,
@@ -166,7 +296,17 @@ export const vehicles = [
         mileage: '0 km',
         fuel: 'Petrol',
         seats: '2',
-        img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bajaj_Boxer_150.jpg'
+        engine: '150cc Single Cylinder',
+        transmission: '4-Speed Manual',
+        color: 'Jet Black',
+        weight: '123 kg',
+        img: 'https://images.unsplash.com/photo-144410919233f-781f027f8dca?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-144410919233f-781f027f8dca?w=800&q=80',
+            'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     },
     {
         id: 16,
@@ -178,6 +318,16 @@ export const vehicles = [
         mileage: '90,000 km',
         fuel: 'Petrol',
         seats: '5',
-        img: 'https://images.unsplash.com/photo-1606132777170-ea8710aa3949?w=600&q=80'
+        engine: '1.2L 3-Cylinder',
+        transmission: 'Xtronic CVT',
+        color: 'Pearl White',
+        weight: '1,030 kg',
+        img: 'https://images.unsplash.com/photo-1606132777170-ea8710aa3949?w=600&q=80',
+        gallery: [
+            'https://images.unsplash.com/photo-1606132777170-ea8710aa3949?w=800&q=80',
+            'https://images.unsplash.com/photo-1596728439366-ce2d14cb35be?w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+            'https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80'
+        ]
     }
 ];

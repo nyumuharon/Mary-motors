@@ -1,4 +1,4 @@
-'use client';
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,13 +12,17 @@ import {
     ShieldCheck,
     Zap,
     MapPin,
-    ArrowRight
+    ArrowRight,
+    Settings,
+    Weight,
+    Palette
 } from 'lucide-react';
 
 export default function VehicleDetailsPage() {
     const params = useParams();
     const id = parseInt(params.id);
     const vehicle = vehicles.find(v => v.id === id);
+    const [mainImage, setMainImage] = useState(vehicle?.img);
 
     if (!vehicle) {
         return (
@@ -43,24 +47,33 @@ export default function VehicleDetailsPage() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '60px' }} className="mobile-stack">
                     {/* Left: Images Showcase */}
                     <div className="vehicle-gallery">
-                        <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', background: '#fff' }}>
+                        <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', background: '#fff', position: 'relative', aspectRatio: '4/3' }}>
                             <Image
-                                src={vehicle.img}
+                                src={mainImage || vehicle.img}
                                 alt={vehicle.name}
-                                width={800}
-                                height={600}
-                                style={{ width: '100%', height: 'auto', display: 'block' }}
+                                fill
+                                priority
+                                style={{ objectFit: 'cover' }}
                             />
                         </div>
 
-                        {/* Thumbnails Placeholder */}
+                        {/* Interactive Thumbnails */}
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px', marginTop: '15px' }}>
-                            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '2px solid var(--accent)' }}>
-                                <Image src={vehicle.img} alt="Thumbnail 1" width={200} height={150} />
-                            </div>
-                            {[1, 2, 3].map(i => (
-                                <div key={i} style={{ borderRadius: '12px', overflow: 'hidden', opacity: 0.6 }}>
-                                    <Image src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80" alt={`Interior ${i}`} width={200} height={150} />
+                            {(vehicle.gallery || [vehicle.img]).map((img, i) => (
+                                <div
+                                    key={i}
+                                    onClick={() => setMainImage(img)}
+                                    style={{
+                                        borderRadius: '12px',
+                                        overflow: 'hidden',
+                                        cursor: 'pointer',
+                                        border: (mainImage || vehicle.img) === img ? '2px solid var(--accent)' : '2px solid transparent',
+                                        transition: 'all 0.3s ease',
+                                        aspectRatio: '1/1',
+                                        position: 'relative'
+                                    }}
+                                >
+                                    <Image src={img} alt={`Gallery ${i + 1}`} fill style={{ objectFit: 'cover' }} />
                                 </div>
                             ))}
                         </div>
@@ -85,7 +98,7 @@ export default function VehicleDetailsPage() {
                             </div>
                         </div>
 
-                        {/* Quick Specs Grid */}
+                        {/* Enhanced Specs Grid */}
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
                             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
                                 <div style={{ color: 'var(--accent)' }}><Gauge size={24} /></div>
@@ -102,17 +115,31 @@ export default function VehicleDetailsPage() {
                                 </div>
                             </div>
                             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Users size={24} /></div>
+                                <div style={{ color: 'var(--accent)' }}><Settings size={24} /></div>
                                 <div>
-                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Seating</span>
-                                    <strong style={{ fontSize: '1rem' }}>{vehicle.seats} Seats</strong>
+                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Engine</span>
+                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.engine || 'N/A'}</strong>
                                 </div>
                             </div>
                             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
                                 <div style={{ color: 'var(--accent)' }}><Zap size={24} /></div>
                                 <div>
-                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Condition</span>
-                                    <strong style={{ fontSize: '1rem' }}>Certified</strong>
+                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Transmission</span>
+                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.transmission || 'Automatic'}</strong>
+                                </div>
+                            </div>
+                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
+                                <div style={{ color: 'var(--accent)' }}><Palette size={24} /></div>
+                                <div>
+                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Color</span>
+                                    <strong style={{ fontSize: '1rem' }}>{vehicle.color || 'Dynamic'}</strong>
+                                </div>
+                            </div>
+                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
+                                <div style={{ color: 'var(--accent)' }}><Weight size={24} /></div>
+                                <div>
+                                    <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Weight</span>
+                                    <strong style={{ fontSize: '1rem' }}>{vehicle.weight || 'N/A'}</strong>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +163,7 @@ export default function VehicleDetailsPage() {
 
                         {/* Assurance */}
                         <div style={{ marginTop: '30px', display: 'flex', gap: '15px', padding: '20px', borderRadius: '16px', background: 'rgba(231, 76, 60, 0.05)', border: '1px dashed var(--accent)' }}>
-                            <ShieldCheck style={{ color: 'var(--accent)' }} />
+                            <ShieldCheck size={28} style={{ color: 'var(--accent)', flexShrink: 0 }} />
                             <p style={{ fontSize: '0.85rem', color: 'var(--secondary-text)' }}>
                                 <strong>Mary Motors Guarantee:</strong> This vehicle has undergone a rigorous 150-point inspection and comes with a 6-month limited warranty.
                             </p>
@@ -144,12 +171,12 @@ export default function VehicleDetailsPage() {
                     </div>
                 </div>
 
-                {/* Description & More Details */}
+                {/* Description & Technical Specifications */}
                 <div style={{ marginTop: '80px', paddingTop: '80px', borderTop: '1px solid var(--stroke)' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 300px', gap: '60px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: '60px' }} className="mobile-stack">
                         <div>
-                            <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '24px' }}>Vehicle Overview</h2>
-                            <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--secondary-text)' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '24px', fontFamily: 'Syne, sans-serif' }}>Vehicle Overview</h2>
+                            <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--secondary-text)', marginBottom: '60px' }}>
                                 <p>
                                     This stunning {vehicle.make} {vehicle.name} represents the pinnacle of automotive excellence.
                                     Meticulously maintained and finished in a breathtaking paint shade, this vehicle offers a
@@ -162,18 +189,105 @@ export default function VehicleDetailsPage() {
                                     and reliability at every turn.
                                 </p>
                             </div>
+
+                            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '24px', fontFamily: 'Syne, sans-serif' }}>Technical Specifications</h3>
+                            <div style={{ background: '#fff', borderRadius: '24px', border: '1px solid var(--stroke)', overflow: 'hidden' }}>
+                                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                                    <tbody>
+                                        {[
+                                            { label: 'Make', value: vehicle.make },
+                                            { label: 'Model', value: vehicle.name },
+                                            { label: 'Body Type', value: vehicle.id > 13 ? 'Motorcycle' : 'Sedan/SUV' },
+                                            { label: 'Engine Capacity', value: vehicle.engine || 'N/A' },
+                                            { label: 'Transmission', value: vehicle.transmission || 'Automatic' },
+                                            { label: 'Fuel Type', value: vehicle.fuel },
+                                            { label: 'Mileage', value: vehicle.mileage },
+                                            { label: 'Color', value: vehicle.color || 'N/A' },
+                                            { label: 'Seating Capacity', value: `${vehicle.seats} Seats` },
+                                            { label: 'Weight', value: vehicle.weight || 'N/A' }
+                                        ].map((spec, i) => (
+                                            <tr key={i} style={{ borderBottom: i === 9 ? 'none' : '1px solid var(--stroke)' }}>
+                                                <td style={{ padding: '20px 30px', fontWeight: 600, color: 'var(--secondary-text)', width: '40%', background: 'rgba(0,0,0,0.02)' }}>{spec.label}</td>
+                                                <td style={{ padding: '20px 30px', fontWeight: 700, color: 'var(--primary-text)' }}>{spec.value}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
                         <aside>
-                            <div style={{ padding: '30px', background: 'var(--dark)', color: '#fff', borderRadius: '24px' }}>
-                                <h3 style={{ marginBottom: '20px' }}>Visit Showroom</h3>
-                                <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-                                    <MapPin size={20} style={{ color: 'var(--accent)', flexShrink: 0 }} />
-                                    <span style={{ fontSize: '0.9rem', opacity: 0.8 }}>Showroom 4, Nairobi Automotive Plaza, Mombasa Road</span>
+                            <div style={{
+                                padding: '40px',
+                                background: '#111',
+                                color: '#fff',
+                                borderRadius: '32px',
+                                position: 'sticky',
+                                top: '100px',
+                                boxShadow: '0 30px 60px rgba(0,0,0,0.2)'
+                            }}>
+                                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '24px', fontFamily: 'Syne, sans-serif' }}>Visit Showroom</h3>
+                                <div style={{ display: 'flex', gap: '15px', marginBottom: '30px' }}>
+                                    <div style={{
+                                        width: '44px',
+                                        height: '44px',
+                                        background: 'rgba(255,255,255,0.1)',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        <MapPin size={22} style={{ color: 'var(--accent)' }} />
+                                    </div>
+                                    <div>
+                                        <p style={{ fontWeight: 700, marginBottom: '4px', fontSize: '1rem' }}>Main Showroom</p>
+                                        <p style={{ fontSize: '0.9rem', opacity: 0.7, lineHeight: '1.5' }}>
+                                            Showroom 4, Nairobi Automotive Plaza,<br />
+                                            Mombasa Road, Nairobi
+                                        </p>
+                                    </div>
                                 </div>
-                                <Link href="/contact-us" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fff', textDecoration: 'none', fontWeight: 700 }}>
+                                <div style={{ display: 'flex', gap: '15px', marginBottom: '40px' }}>
+                                    <div style={{
+                                        width: '44px',
+                                        height: '44px',
+                                        background: 'rgba(255,255,255,0.1)',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        <Calendar size={22} style={{ color: 'var(--accent)' }} />
+                                    </div>
+                                    <div>
+                                        <p style={{ fontWeight: 700, marginBottom: '4px', fontSize: '1rem' }}>Opening Hours</p>
+                                        <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>Mon - Sat: 8 AM - 6 PM</p>
+                                    </div>
+                                </div>
+                                <a
+                                    href="https://goo.gl/maps/example"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '10px',
+                                        background: 'var(--accent)',
+                                        color: '#fff',
+                                        textDecoration: 'none',
+                                        fontWeight: 700,
+                                        padding: '16px',
+                                        borderRadius: '16px',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    className="hover-lift"
+                                >
                                     <span>Get Directions</span>
-                                    <ArrowRight size={16} />
-                                </Link>
+                                    <ArrowRight size={18} />
+                                </a>
                             </div>
                         </aside>
                     </div>
