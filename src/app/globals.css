@@ -57,11 +57,36 @@ a {
   color: inherit;
 }
 
-/* ===== GLOBAL VARIABLES — MIDNIGHT CRIMSON (OPTION A) ===== */
+/* ===== GLOBAL VARIABLES — STUDIO WHITE (ORIGINAL) ===== */
 :root {
   --red: #E8192C;
   --accent: #E8192C;
-  /* Ferrari Crimson */
+  /* Ferrari red across the site */
+  --accent-hover: #C01020;
+  --accent-glow: rgba(232, 25, 44, 0.6);
+  --gold: #D4AF37;
+
+  --canvas: #F8F9FA;
+  --canvas-alt: #FFFFFF;
+  --surface: #FFFFFF;
+  --stroke: #E9ECEF;
+  --primary-text: #212529;
+  --secondary-text: #495057;
+
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-scrolled: rgba(255, 255, 255, 0.98);
+  --nav-border: rgba(0, 0, 0, 0.05);
+  --footer-bg: linear-gradient(rgba(10, 10, 10, 0.9), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
+
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== INVENTORY — MIDNIGHT CRIMSON (OPTION A) ===== */
+.vehicles,
+.vehicles-page {
+  --accent: #E8192C;
   --accent-hover: #C01020;
   --accent-glow: rgba(232, 25, 44, 0.6);
   --gold: #D4AF37;
@@ -73,14 +98,8 @@ a {
   --primary-text: #F5F5F5;
   --secondary-text: #A0A0A0;
 
-  --nav-bg: rgba(10, 10, 10, 0.85);
-  --nav-scrolled: rgba(8, 8, 8, 0.97);
-  --nav-border: rgba(255, 255, 255, 0.06);
-  --footer-bg: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
-
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
-  --radius: 12px;
-  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: var(--canvas-alt) !important;
+  color: var(--primary-text);
 }
 
 /* ===== UTILITY ===== */
