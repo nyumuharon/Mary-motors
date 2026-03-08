@@ -59,7 +59,7 @@ export default function VehicleDetailsPage() {
                         </div>
 
                         {/* Interactive Thumbnails */}
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px', marginTop: '15px' }}>
+                        <div style={{ display: 'flex', gap: '15px', marginTop: '15px', overflowX: 'auto', paddingBottom: '10px' }}>
                             {(vehicle.gallery || [vehicle.img]).map((img, i) => (
                                 <div
                                     key={i}
@@ -71,7 +71,9 @@ export default function VehicleDetailsPage() {
                                         border: (mainImage || vehicle.img) === img ? '2px solid var(--accent)' : '2px solid transparent',
                                         transition: 'all 0.3s ease',
                                         aspectRatio: '1/1',
-                                        position: 'relative'
+                                        position: 'relative',
+                                        flexShrink: 0,
+                                        width: '80px'
                                     }}
                                 >
                                     <Image src={img} alt={`Gallery ${i + 1}`} fill style={{ objectFit: 'cover' }} />
@@ -100,7 +102,7 @@ export default function VehicleDetailsPage() {
                         </div>
 
                         {/* Enhanced Specs Grid */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
+                        <div className="specs-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
                             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '15px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
                                 <div style={{ color: 'var(--accent)' }}><Gauge size={24} /></div>
                                 <div>

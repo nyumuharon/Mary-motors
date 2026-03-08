@@ -706,17 +706,15 @@ a {
 /* ===== VEHICLES ===== */
 .vehicles {
   padding: 100px 0;
-  background-color: #16161A;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--canvas);
 }
 
 .vehicles .section-title {
-  color: #FFFFFF;
+  color: var(--primary-text);
 }
 
 .vehicles .section-sub {
-  color: #A0A0A0;
+  color: var(--secondary-text);
 }
 
 .filter-tabs {
@@ -847,13 +845,11 @@ a {
 
 .car-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding-top: 20px;
   border-top: 1px solid var(--stroke);
-  gap: 10px;
-  flex-wrap: nowrap;
-  /* FORCE ONE LINE */
+  gap: 16px;
 }
 
 .car-price {
@@ -867,14 +863,16 @@ a {
 .car-actions {
   display: flex;
   gap: 8px;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 .car-card .btn-primary,
 .car-card .btn-outline {
-  padding: 8px 12px;
+  flex: 1;
+  padding: 10px 12px;
   font-size: 0.75rem;
   white-space: nowrap;
+  text-align: center;
 }
 
 .contact-btn {
@@ -1474,6 +1472,14 @@ a {
   .features-grid,
   .values-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mobile-stack {
+    grid-template-columns: 1fr !important;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr !important;
   }
 
   .vehicles-grid {
@@ -2295,6 +2301,67 @@ a {
 
 .value-box:hover::before {
   transform: scaleX(1);
+}
+
+/* Glass Value Box variant for About Page */
+.glass-value-box {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 50px 40px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-value-box:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.glass-value-box:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.glass-value-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  transform-origin: left;
+}
+
+.glass-value-box:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-value-box:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .value-icon {

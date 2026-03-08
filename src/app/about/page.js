@@ -68,24 +68,32 @@ export default function AboutPage() {
             </section>
 
             {/* Core Values */}
-            <section style={{ backgroundColor: '#f5f5f5', padding: '100px 0' }}>
+            <section className="stunning-values" style={{ backgroundColor: '#f5f5f5', padding: '100px 0' }}>
                 <div className="container">
                     <div className="section-header">
-                        <p className="section-tag">WHY CHOOSE US</p>
+                        <p className="section-tag" style={{ color: 'var(--red)' }}>WHY CHOOSE US</p>
                         <h2 className="section-title">Our Core Values</h2>
                     </div>
-                    <div className="features-grid">
-                        {[
-                            { icon: '', title: 'Quality Assurance', desc: 'Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.' },
-                            { icon: '', title: 'Transparent Pricing', desc: 'No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.' },
-                            { icon: '', title: 'Customer First', desc: 'Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.' },
-                        ].map((v, i) => (
-                            <div key={i} className="feature-card" style={{ background: 'white' }}>
-                                <div className="feature-icon">{v.icon}</div>
-                                <h3>{v.title}</h3>
-                                <p>{v.desc}</p>
-                            </div>
-                        ))}
+
+                    <div className="values-grid">
+                        <div className="glass-value-box">
+                            <div className="value-icon">🛡️</div>
+                            <h3>Quality Assurance</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.</p>
+                        </div>
+                        <div className="glass-value-box">
+                            <div className="value-icon">💎</div>
+                            <h3>Transparent Pricing</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.</p>
+                        </div>
+                        <div className="glass-value-box">
+                            <div className="value-icon">🤝</div>
+                            <h3>Customer First</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.</p>
+                        </div>
                     </div>
                 </div>
             </section>

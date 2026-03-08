@@ -74,7 +74,7 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                                     <Link href={`/vehicle/${v.id}`} className="btn-primary">VIEW DETAILS</Link>
                                     <a
                                         href={`https://wa.me/254742764263?text=${encodeURIComponent(`Hi Mary Motors, I'm interested in the ${v.make} ${v.name} priced at ${v.price}.`)}`}
-                                        className="btn-outline contact-btn"
+                                        className="btn-primary"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
