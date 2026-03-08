@@ -84,8 +84,6 @@ a {
 }
 
 /* ===== INVENTORY CARDS — MIDNIGHT CRIMSON (OPTION A) ===== */
-.vehicles,
-.vehicles-page,
 .car-card {
   --red: #E8192C;
   --accent: #E8192C;
@@ -98,7 +96,7 @@ a {
   --primary-text: #F5F5F5;
   --secondary-text: #A0A0A0;
 
-  background-color: var(--canvas-alt) !important;
+  background-color: var(--surface) !important;
   color: var(--primary-text);
 }
 
@@ -641,10 +639,17 @@ a {
 /* ===== VEHICLES ===== */
 .vehicles {
   padding: 100px 0;
-  background-color: var(--canvas-alt) !important;
-  color: var(--primary-text);
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  background-color: #0c0c0c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vehicles .section-title {
+  color: #FFFFFF;
+}
+
+.vehicles .section-sub {
+  color: #A0A0A0;
 }
 
 .filter-tabs {
