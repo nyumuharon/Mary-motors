@@ -119,9 +119,15 @@ export default function VehicleDetailsPage() {
 
                         {/* Call to Actions */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                            <Link href={`/contact-us?subject=Inquiry: ${vehicle.make} ${vehicle.name}`} className="btn-primary" style={{ textAlign: 'center', padding: '18px', fontSize: '1.1rem' }}>
-                                Enquire Now
-                            </Link>
+                            <a
+                                href={`https://wa.me/254742764263?text=${encodeURIComponent(`Hi Mary Motors, I'm interested in the ${vehicle.make} ${vehicle.name} listing on your website.`)}`}
+                                className="btn-primary"
+                                style={{ textAlign: 'center', padding: '18px', fontSize: '1.1rem' }}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Enquire via WhatsApp
+                            </a>
                             <div style={{ display: 'flex', gap: '10px' }}>
                                 <button className="btn-outline" style={{ flex: 1, padding: '14px' }}>Book a Test Drive</button>
                                 <button className="btn-outline" style={{ flex: 1, padding: '14px' }}>Download Brochure</button>

@@ -99,53 +99,7 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="features" id="features">
-                <div className="container features-grid">
-                    <div className="feature-card">
-                        <div className="feature-icon">
-                            <Image
-                                src="/logo.svg"
-                                alt="Find a Car"
-                                width={120}
-                                height={60}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        </div>
-                        <h3>Find a Car</h3>
-                        <p>We provide a platform to help you find the perfect vehicle matching your preferences and budget.</p>
-                        <Link href="/all-cars" className="feature-link">Browse Cars →</Link>
-                    </div>
 
-                    <div className="feature-card">
-                        <div className="feature-icon">
-                            <Image
-                                src="/logo.svg"
-                                alt="Latest Car"
-                                width={120}
-                                height={60}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        </div>
-                        <h3>Latest Car</h3>
-                        <p>Stay updated on the automotive world&apos;s newest sensations. Be the first to drive tomorrow&apos;s technology.</p>
-                        <Link href="/all-cars" className="feature-link">View Latest →</Link>
-                    </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">
-                            <Image
-                                src="/logo.svg"
-                                alt="Used Car"
-                                width={120}
-                                height={60}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        </div>
-                        <h3>Used Car</h3>
-                        <p>Mary Motors is here to help you find a pre-loved gem that meets your requirements at the best value.</p>
-                        <Link href="/all-cars" className="feature-link">Browse Used →</Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyChooseUs />
 
