@@ -75,6 +75,7 @@ export default function HomePage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
             <HeroSlider />
+            <SearchBanner />
 
             <section className="vehicles" id="vehicles">
                 <div className="container">
@@ -153,7 +154,6 @@ export default function HomePage() {
 
             <WhyChooseUs />
 
-            <SearchBanner />
 
             <section className="gallery" id="gallery">
                 <div className="container">
