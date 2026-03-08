@@ -12,14 +12,6 @@ const slides = [
         link: '/all-cars?filter=new',
     },
     {
-        bg: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1600&q=80',
-        tag: 'PRE-ORDER NOW',
-        title: 'Experience Luxury<br />Like Never Before',
-        sub: 'Reserve your dream car before it hits the showroom. Exclusive pre-order deals with special pricing.',
-        cta: 'Pre-Order Now',
-        link: '/all-cars?filter=preorder',
-    },
-    {
         bg: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=80',
         tag: 'BEST VALUE',
         title: 'Quality Used Cars<br />You Can Trust',

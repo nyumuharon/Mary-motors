@@ -16,7 +16,7 @@ export default function Footer() {
                             style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                         />
                     </Link>
-                    <p>Your trusted partner for premium new, pre-order, and certified used vehicles. Drive your dream with Mary Motors.</p>
+                    <p>Your trusted partner for premium new and certified used vehicles. Drive your dream with Mary Motors.</p>
                     <div className="socials">
                         <a href="#" aria-label="Facebook">Facebook</a>
                         <a href="#" aria-label="Instagram">Instagram</a>
@@ -38,7 +38,6 @@ export default function Footer() {
                     <h4>Inventory</h4>
                     <Link href="/all-cars?filter=new">New Cars</Link>
                     <Link href="/all-cars?filter=used">Used Cars</Link>
-                    <Link href="/all-cars?filter=preorder">Pre-Orders</Link>
                     <Link href="/all-cars">SUVs</Link>
                     <Link href="/all-cars">Sedans</Link>
                     <Link href="/all-cars">Trucks</Link>

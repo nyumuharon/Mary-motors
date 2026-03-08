@@ -74,7 +74,7 @@ export default function AboutPage() {
                         <p className="section-tag">WHY CHOOSE US</p>
                         <h2 className="section-title">Our Core Values</h2>
                     </div>
-                    <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                    <div className="features-grid">
                         {[
                             { icon: '', title: 'Quality Assurance', desc: 'Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.' },
                             { icon: '', title: 'Transparent Pricing', desc: 'No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.' },

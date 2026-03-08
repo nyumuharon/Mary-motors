@@ -1461,7 +1461,8 @@ a {
     padding-left: 16px;
   }
 
-  .features-grid {
+  .features-grid,
+  .values-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1490,8 +1491,12 @@ a {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .search-bar {
