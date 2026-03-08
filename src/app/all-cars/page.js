@@ -94,12 +94,12 @@ function AllCarsContent() {
                 </div>
             </div>
 
-            <section className="vehicles-page" style={{ padding: '80px 0', background: '#f9f9f9' }}>
+            <section className="vehicles-page" style={{ padding: '80px 0', background: 'var(--canvas-alt)' }}>
                 <div className="container all-cars-layout">
 
                     {/* Sidebar Filters */}
-                    <aside className="sidebar filter-sidebar">
-                        <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', borderBottom: '2px solid #f0f0f0', paddingBottom: '10px' }}>Filter By</h3>
+                    <aside className="sidebar filter-sidebar" style={{ background: 'var(--surface)', color: 'var(--primary-text)' }}>
+                        <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', borderBottom: '2px solid var(--stroke)', paddingBottom: '10px' }}>Filter By</h3>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
                             <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Condition</h4>
@@ -118,16 +118,16 @@ function AllCarsContent() {
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Make</h4>
-                            <select value={make} onChange={(e) => setMake(e.target.value)} style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: 'var(--secondary-text)' }}>Make</h4>
+                            <select value={make} onChange={(e) => setMake(e.target.value)} style={{ width: '100%', padding: '10px', background: 'var(--surface)', color: 'var(--primary-text)', border: '1px solid var(--stroke)', borderRadius: '5px' }}>
                                 {allMakes.map(m => <option key={m} value={m}>{m}</option>)}
                             </select>
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Price Range (Max: KES {priceRange.toLocaleString()})</h4>
+                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: 'var(--secondary-text)' }}>Price Range (Max: KES {priceRange.toLocaleString()})</h4>
                             <input type="range" min="100000" max="390000000" step="500000" value={priceRange} onChange={(e) => setPriceRange(Number(e.target.value))} style={{ width: '100%', marginBottom: '10px' }} />
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#777' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: 'var(--secondary-text)' }}>
                                 <span>KES 100,000</span><span>KES 390,000,000+</span>
                             </div>
                         </div>
@@ -136,8 +136,8 @@ function AllCarsContent() {
                     {/* Main Grid */}
                     <div className="main-content cars-main-content">
                         <div className="cars-toolbar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-                            <p style={{ color: '#666' }}>Showing {filteredVehicles.length} vehicles</p>
-                            <select value={sort} onChange={(e) => setSort(e.target.value)} style={{ padding: '8px 15px', border: '1px solid #ddd', borderRadius: '5px' }}>
+                            <p style={{ color: 'var(--secondary-text)' }}>Showing {filteredVehicles.length} vehicles</p>
+                            <select value={sort} onChange={(e) => setSort(e.target.value)} style={{ padding: '8px 15px', background: 'var(--surface)', color: 'var(--primary-text)', border: '1px solid var(--stroke)', borderRadius: '5px' }}>
                                 <option>Sort By: Default</option>
                                 <option>Price: Low to High</option>
                                 <option>Price: High to Low</option>
@@ -148,9 +148,9 @@ function AllCarsContent() {
                         {filteredVehicles.length > 0 ? (
                             <VehicleGrid showFilterTabs={false} customVehicles={filteredVehicles} />
                         ) : (
-                            <div style={{ padding: '60px', textAlign: 'center', background: 'white', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
-                                <h3 style={{ fontSize: '1.5rem', color: '#333', marginBottom: '10px' }}>No vehicles found</h3>
-                                <p style={{ color: '#666' }}>Try adjusting your filters to see more results.</p>
+                            <div style={{ padding: '60px', textAlign: 'center', background: 'var(--surface)', borderRadius: '10px', boxShadow: 'var(--shadow)' }}>
+                                <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-text)', marginBottom: '10px' }}>No vehicles found</h3>
+                                <p style={{ color: 'var(--secondary-text)' }}>Try adjusting your filters to see more results.</p>
                                 <button onClick={() => { setCondition({ all: true, new: false, used: false, preorder: false }); setMake('All Makes'); setPriceRange(390000000); }} className="btn-primary" style={{ marginTop: '20px' }}>Reset Filters</button>
                             </div>
                         )}

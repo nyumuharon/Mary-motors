@@ -89,6 +89,36 @@ a {
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* ===== MIDNIGHT CRIMSON (CARDS & INVENTORY) ===== */
+.vehicles,
+.vehicles-page {
+  --accent: #E8192C;
+  /* Ferrari Crimson */
+  --gold: #D4AF37;
+  /* Showroom Gold */
+
+  --canvas: #0C0C0C;
+  --canvas-alt: #141414;
+  --surface: #1A1A1A;
+  --stroke: rgba(255, 255, 255, 0.08);
+
+  --primary-text: #F5F5F5;
+  --secondary-text: #A0A0A0;
+
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 60px -15px rgba(232, 25, 44, 0.2);
+
+  background-color: var(--canvas-alt) !important;
+  color: var(--primary-text);
+}
+
+.vehicles .btn-primary:hover,
+.vehicles-page .btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(232, 25, 44, 0.6) !important;
+  background: #C01020 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
 /* ===== UTILITY ===== */
 .container {
   max-width: 1200px;
