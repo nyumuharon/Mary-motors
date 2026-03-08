@@ -28,7 +28,7 @@ export default function AboutPage() {
             {/* Premium Story Section with Glassmorphism */}
             <section className="about-hero-bg">
                 <div className="container about-glass-content" style={{ color: '#FFFFFF' }}>
-                    <div className="about-grid" style={{ gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'center' }}>
+                    <div className="about-grid" style={{ alignItems: 'center' }}>
                         <div className="glass-card">
                             <p className="section-tag" style={{ color: 'var(--accent)' }}>OUR STORY</p>
                             <h2 className="section-title">Your Trusted Partner in Premium Automotive</h2>

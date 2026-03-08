@@ -1443,6 +1443,11 @@ a {
     overflow-y: auto;
   }
 
+  .logo-icon {
+    height: 40px;
+    max-width: 180px;
+  }
+
   .nav-links.open {
     transform: translateX(0);
   }
@@ -1459,6 +1464,11 @@ a {
     box-shadow: none;
     border: none;
     padding-left: 16px;
+  }
+
+  .about-stats-glass {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .features-grid,
