@@ -57,35 +57,97 @@ a {
   color: inherit;
 }
 
-/* ===== VARIABLES — MIDNIGHT CRIMSON ===== */
+/* ===== GLOBAL VARIABLES — DEEP OCEAN (OPTION B) ===== */
 :root {
   --red: #E8192C;
-  --red-dark: #C01020;
-  --red-light: rgba(232, 25, 44, 0.12);
-  --accent: #E8192C;
-  /* Ferrari Crimson */
+  --accent: #00B4D8;
+  --accent-hover: #0096B4;
+  --accent-glow: rgba(0, 180, 216, 0.6);
+  --gold: #00B4D8;
 
-  --gold: #D4AF37;
-  /* Classic Showroom Gold */
-  --gold-light: rgba(212, 175, 55, 0.15);
+  --canvas: #0D1B2A;
+  --canvas-alt: #1B263B;
+  --surface: #102135;
+  --stroke: rgba(0, 180, 216, 0.2);
+  --primary-text: #E0E1DD;
+  --secondary-text: #778DA9;
 
-  --canvas: #0C0C0C;
-  /* Deep black background */
-  --canvas-alt: #141414;
-  /* Slightly lighter dark for sections */
-  --surface: #1A1A1A;
-  /* Dark card surface */
-  --stroke: rgba(255, 255, 255, 0.08);
-  /* Subtle light border on dark */
-  --primary-text: #F5F5F5;
-  /* Near-white for readability */
-  --secondary-text: #A0A0A0;
-  /* Warm mid-grey for body */
+  --nav-bg: rgba(13, 27, 42, 0.85);
+  --nav-scrolled: rgba(10, 20, 32, 0.97);
+  --nav-border: rgba(0, 180, 216, 0.1);
+  --footer-bg: linear-gradient(rgba(13, 27, 42, 0.85), rgba(10, 20, 32, 0.98)), url('/footer-bg.jpeg');
 
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 30px 60px -15px rgba(232, 25, 44, 0.2);
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
   --radius: 12px;
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== HERO & SEARCH — CARBON & CHROME (OPTION C) ===== */
+.hero,
+.hero-slider,
+.search-banner,
+.page-header {
+  --accent: #FF6B35;
+  --accent-hover: #E85B2A;
+  --accent-glow: rgba(255, 107, 53, 0.6);
+  --gold: #FF6B35;
+
+  --canvas: #1C1E21;
+  --canvas-alt: #232629;
+  --surface: #2D3136;
+  --stroke: rgba(255, 255, 255, 0.1);
+  --primary-text: #F8F9FA;
+  --secondary-text: #ADB5BD;
+
+  background-color: var(--canvas) !important;
+  color: var(--primary-text);
+}
+
+.search-banner {
+  background-color: var(--canvas-alt) !important;
+}
+
+/* ===== FEATURES — ROSE GOLD LUXE (OPTION D) ===== */
+.features,
+.edge-section,
+.about-section {
+  --accent: #D4396B;
+  --accent-hover: #C22F5F;
+  --accent-glow: rgba(212, 57, 107, 0.6);
+  --gold: #D4AF37;
+
+  --canvas: #FFF5F7;
+  --canvas-alt: #FFEBF0;
+  --surface: #FFFFFF;
+  --stroke: rgba(212, 57, 107, 0.15);
+  --primary-text: #2D1E24;
+  --secondary-text: #8A6B76;
+
+  background-color: var(--canvas-alt) !important;
+  color: var(--primary-text);
+}
+
+.why-choose-us {
+  background-color: var(--canvas) !important;
+}
+
+/* ===== INVENTORY — MIDNIGHT CRIMSON (OPTION A) ===== */
+.vehicles,
+.vehicles-page {
+  --accent: #E8192C;
+  --accent-hover: #C01020;
+  --accent-glow: rgba(232, 25, 44, 0.6);
+  --gold: #D4AF37;
+
+  --canvas: #0C0C0C;
+  --canvas-alt: #141414;
+  --surface: #1A1A1A;
+  --stroke: rgba(255, 255, 255, 0.08);
+  --primary-text: #F5F5F5;
+  --secondary-text: #A0A0A0;
+
+  background-color: var(--canvas-alt) !important;
+  color: var(--primary-text);
 }
 
 /* ===== UTILITY ===== */
@@ -163,8 +225,8 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(232, 25, 44, 0.6);
-  background: #C01020;
+  box-shadow: 0 8px 30px var(--accent-glow);
+  background: var(--accent-hover);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -188,17 +250,17 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--nav-border);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(8, 8, 8, 0.97);
-  box-shadow: 0 4px 30px rgba(232, 25, 44, 0.12);
-  border-bottom: 1px solid rgba(232, 25, 44, 0.15);
+  background: var(--nav-scrolled);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--nav-border);
 }
 
 .nav-inner {
@@ -1148,7 +1210,7 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
+  background: var(--footer-bg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
