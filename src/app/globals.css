@@ -32,6 +32,14 @@ h6,
   color: var(--primary-text);
 }
 
+/* Page banner headers always show white text */
+.page-header h1,
+.page-header h2,
+.page-header p {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
 img {
   display: block;
   width: 100%;
