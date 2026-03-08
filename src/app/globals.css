@@ -76,7 +76,7 @@ a {
   --nav-bg: rgba(255, 255, 255, 0.9);
   --nav-scrolled: rgba(255, 255, 255, 0.98);
   --nav-border: rgba(0, 0, 0, 0.05);
-  --footer-bg: linear-gradient(rgba(10, 10, 10, 0.9), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
+  --footer-bg: linear-gradient(rgba(10, 10, 10, 0.4), rgba(5, 5, 5, 0.85)), url('/footer-bg.jpeg');
 
   --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
   --radius: 12px;
@@ -84,6 +84,8 @@ a {
 }
 
 /* ===== INVENTORY CARDS — MIDNIGHT CRIMSON (OPTION A) ===== */
+.vehicles,
+.vehicles-page,
 .car-card {
   --red: #E8192C;
   --accent: #E8192C;
@@ -96,7 +98,7 @@ a {
   --primary-text: #F5F5F5;
   --secondary-text: #A0A0A0;
 
-  background-color: var(--surface) !important;
+  background-color: var(--canvas-alt) !important;
   color: var(--primary-text);
 }
 
@@ -639,7 +641,8 @@ a {
 /* ===== VEHICLES ===== */
 .vehicles {
   padding: 100px 0;
-  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #eef0f3 100%);
+  background-color: var(--canvas-alt) !important;
+  color: var(--primary-text);
   border-top: 1px solid rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
@@ -1369,7 +1372,8 @@ a {
   }
 
   .vehicles-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .testi-grid,
@@ -1435,11 +1439,47 @@ a {
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .g-large {
-    grid-column: span 1;
+    grid-column: span 2;
+  }
+
+  /* Compact Card Adjustments for 2-column Mobile */
+  .car-info {
+    padding: 12px;
+  }
+
+  .car-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .car-specs {
+    font-size: 0.7rem;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .car-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .car-price {
+    font-size: 1.15rem;
+  }
+
+  .car-footer .btn {
+    width: 100%;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }
 
