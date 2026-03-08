@@ -57,66 +57,35 @@ a {
   color: inherit;
 }
 
-/* ===== VARIABLES — ROSE GOLD LUXE ===== */
+/* ===== VARIABLES — MIDNIGHT CRIMSON ===== */
 :root {
-  --red: #D4396B;
-  /* Deep Rose for logo/base */
-  --red-dark: #C22F5F;
-  --red-light: rgba(212, 57, 107, 0.12);
-  --accent: #D4396B;
-  /* Premium Deep Rose */
-
-  --gold: #D4AF37;
-  /* Classic Showroom Gold for highlights */
-  --gold-light: rgba(212, 175, 55, 0.15);
-
-  --canvas: #FFF5F7;
-  /* Warm Blush Pink background */
-  --canvas-alt: #FFEBF0;
-  /* Deeper blush for section boundaries */
-  --surface: #FFFFFF;
-  /* Pure white card surface */
-  --stroke: rgba(212, 57, 107, 0.15);
-  /* Subtle rose border */
-  --primary-text: #2D1E24;
-  /* Deep rose-charcoal for readability */
-  --secondary-text: #8A6B76;
-  /* Muted rose-grey for body */
-
-  --shadow: 0 10px 40px -10px rgba(212, 57, 107, 0.08);
-  --shadow-lg: 0 30px 60px -15px rgba(212, 57, 107, 0.15);
-  --radius: 12px;
-  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* ===== MIDNIGHT CRIMSON (CARDS & INVENTORY) ===== */
-.vehicles,
-.vehicles-page {
+  --red: #E8192C;
+  --red-dark: #C01020;
+  --red-light: rgba(232, 25, 44, 0.12);
   --accent: #E8192C;
   /* Ferrari Crimson */
+
   --gold: #D4AF37;
-  /* Showroom Gold */
+  /* Classic Showroom Gold */
+  --gold-light: rgba(212, 175, 55, 0.15);
 
   --canvas: #0C0C0C;
+  /* Deep black background */
   --canvas-alt: #141414;
+  /* Slightly lighter dark for sections */
   --surface: #1A1A1A;
+  /* Dark card surface */
   --stroke: rgba(255, 255, 255, 0.08);
-
+  /* Subtle light border on dark */
   --primary-text: #F5F5F5;
+  /* Near-white for readability */
   --secondary-text: #A0A0A0;
+  /* Warm mid-grey for body */
 
   --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 30px 60px -15px rgba(232, 25, 44, 0.2);
-
-  background-color: var(--canvas-alt) !important;
-  color: var(--primary-text);
-}
-
-.vehicles .btn-primary:hover,
-.vehicles-page .btn-primary:hover {
-  box-shadow: 0 8px 30px rgba(232, 25, 44, 0.6) !important;
-  background: #C01020 !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  --radius: 12px;
+  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* ===== UTILITY ===== */
@@ -194,9 +163,9 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(212, 57, 107, 0.4);
-  background: #C22F5F;
-  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(232, 25, 44, 0.6);
+  background: #C01020;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover::before {
@@ -219,17 +188,17 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 245, 247, 0.85);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 57, 107, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 30px rgba(212, 57, 107, 0.08);
-  border-bottom: 1px solid rgba(212, 57, 107, 0.15);
+  background: rgba(8, 8, 8, 0.97);
+  box-shadow: 0 4px 30px rgba(232, 25, 44, 0.12);
+  border-bottom: 1px solid rgba(232, 25, 44, 0.15);
 }
 
 .nav-inner {
@@ -1179,7 +1148,7 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(rgba(45, 30, 36, 0.95), rgba(28, 18, 22, 0.98)), url('/footer-bg.jpeg');
+  background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(5, 5, 5, 0.98)), url('/footer-bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
