@@ -7,7 +7,7 @@ export const vehicles = [
         badge: 'New',
         price: 'KES 11,050,000',
         mileage: '0 km',
-        fuel: 'Petrol (EcoBoost V6)',
+        fuel: 'Petrol',
         seats: '8',
         img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80'
     },
@@ -19,7 +19,7 @@ export const vehicles = [
         badge: 'Used',
         price: 'KES 12,545,000',
         mileage: '0 km',
-        fuel: 'Petrol (Twin-Turbo V8)',
+        fuel: 'Petrol',
         seats: '5',
         img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80'
     },
@@ -31,7 +31,7 @@ export const vehicles = [
         badge: 'New',
         price: 'KES 10,140,000',
         mileage: '0 km',
-        fuel: 'Petrol (6.2L V8)',
+        fuel: 'Petrol',
         seats: '4',
         img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80'
     },
@@ -55,7 +55,7 @@ export const vehicles = [
         badge: 'Pre-Order',
         price: 'KES 390,000,000',
         mileage: 'TBA',
-        fuel: 'Petrol (8.0L Quad-Turbo W16)',
+        fuel: 'Petrol',
         seats: '2',
         img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80'
     },
@@ -67,7 +67,7 @@ export const vehicles = [
         badge: 'Used',
         price: 'KES 7,800,000',
         mileage: '42,000 km',
-        fuel: 'Petrol (VR38DETT Twin-Turbo V6)',
+        fuel: 'Petrol',
         seats: '5',
         img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80'
     },
@@ -79,7 +79,7 @@ export const vehicles = [
         badge: 'Used',
         price: 'KES 23,400,000',
         mileage: '12,000 km',
-        fuel: 'Petrol (Naturally Aspirated 5.2L V10)',
+        fuel: 'Petrol',
         seats: '2',
         img: 'https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=600&q=80'
     },
@@ -91,7 +91,7 @@ export const vehicles = [
         badge: 'New',
         price: 'KES 9,620,000',
         mileage: '0 km',
-        fuel: 'Petrol (6.2L Supercharged V8)',
+        fuel: 'Petrol',
         seats: '4',
         img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80'
     },
@@ -115,7 +115,7 @@ export const vehicles = [
         badge: 'Used',
         price: 'KES 5,850,000',
         mileage: '65,000 km',
-        fuel: 'Diesel (D-4D)',
+        fuel: 'Diesel',
         seats: '7',
         img: 'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=500&q=60'
     },
@@ -187,7 +187,7 @@ export const vehicles = [
         badge: 'Used',
         price: 'KES 1,066,000',
         mileage: '90,000 km',
-        fuel: 'Petrol (e-Power)',
+        fuel: 'Petrol',
         seats: '5',
         img: 'https://images.unsplash.com/photo-1606132777170-ea8710aa3949?w=600&q=80'
     }
