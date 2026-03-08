@@ -85,8 +85,7 @@ a {
 
 /* ===== INVENTORY — MIDNIGHT CRIMSON (OPTION A) ===== */
 .vehicles,
-.vehicles-page,
-.features {
+.vehicles-page {
   --accent: #E8192C;
   --accent-hover: #C01020;
   --accent-glow: rgba(232, 25, 44, 0.6);
