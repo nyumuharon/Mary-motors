@@ -57,26 +57,33 @@ a {
   color: inherit;
 }
 
-/* ===== VARIABLES ===== */
+/* ===== VARIABLES — MIDNIGHT CRIMSON ===== */
 :root {
-  --red: #c0392b;
-  --red-dark: #a93226;
-  --red-light: rgba(192, 57, 43, 0.1);
-  --accent: #c0392b;
-  /* Brand red */
-  --canvas: #fbfbfb;
-  /* Studio light background */
-  --surface: #ffffff;
-  /* Elevated card background */
-  --stroke: #e5e7eb;
-  /* Clean hairline borders */
-  --primary-text: #111827;
-  /* Deep charcoal for hierarchy */
-  --secondary-text: #4b5563;
-  /* Neutral gray for body */
+  --red: #E8192C;
+  --red-dark: #C01020;
+  --red-light: rgba(232, 25, 44, 0.12);
+  --accent: #E8192C;
+  /* Ferrari Crimson */
 
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
+  --gold: #D4AF37;
+  /* Classic Showroom Gold */
+  --gold-light: rgba(212, 175, 55, 0.15);
+
+  --canvas: #0C0C0C;
+  /* Deep black background */
+  --canvas-alt: #141414;
+  /* Slightly lighter dark for sections */
+  --surface: #1A1A1A;
+  /* Dark card surface */
+  --stroke: rgba(255, 255, 255, 0.08);
+  /* Subtle light border on dark */
+  --primary-text: #F5F5F5;
+  /* Near-white for readability */
+  --secondary-text: #A0A0A0;
+  /* Warm mid-grey for body */
+
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 60px -15px rgba(232, 25, 44, 0.2);
   --radius: 12px;
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -156,8 +163,9 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
-  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(232, 25, 44, 0.6);
+  background: #C01020;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover::before {
@@ -180,17 +188,17 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--stroke);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-  border-bottom: 1px solid var(--stroke);
+  background: rgba(8, 8, 8, 0.97);
+  box-shadow: 0 4px 30px rgba(232, 25, 44, 0.12);
+  border-bottom: 1px solid rgba(232, 25, 44, 0.15);
 }
 
 .nav-inner {
@@ -755,7 +763,7 @@ a {
   font-family: 'Inter', monospace;
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary-text);
+  color: var(--gold);
 }
 
 .car-price span {
@@ -823,12 +831,12 @@ a {
 
 .search-bar select {
   border: none;
-  background: #f5f5f5;
+  background: var(--canvas-alt);
   border-radius: 6px;
   padding: 12px 16px;
   font-family: inherit;
   font-size: 0.875rem;
-  color: #333;
+  color: var(--primary-text);
   cursor: pointer;
   flex: 1 1 160px;
 }
