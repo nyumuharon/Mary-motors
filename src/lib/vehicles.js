@@ -47,18 +47,7 @@ export const vehicles = [
         seats: '4',
         img: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80'
     },
-    {
-        id: 5,
-        make: 'Bugatti',
-        name: 'Bugatti Chiron',
-        type: 'preorder',
-        badge: 'Pre-Order',
-        price: 'KES 390,000,000',
-        mileage: 'TBA',
-        fuel: 'Petrol',
-        seats: '2',
-        img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80'
-    },
+
     {
         id: 6,
         make: 'Nissan',

@@ -8,7 +8,6 @@ const FILTERS = [
     { label: 'All', value: 'all' },
     { label: 'New', value: 'new' },
     { label: 'Used', value: 'used' },
-    { label: 'Pre-Order', value: 'preorder' },
 ];
 
 export default function VehicleGrid({ showFilterTabs = true, limit = null, customVehicles = null }) {
@@ -71,7 +70,7 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                             </div>
                             <div className="car-footer">
                                 <div className="car-price"><span>KES </span>{v.price.replace('KES ', '')}</div>
-                                <Link href={`/contact-us?subject=Inquiry: ${v.make} ${v.name}`} className="btn-primary" style={{ padding: '8px 16px', fontSize: '12px' }}>VIEW DETAILS</Link>
+                                <Link href={`/vehicle/${v.id}`} className="btn-primary" style={{ padding: '8px 16px', fontSize: '12px' }}>VIEW DETAILS</Link>
                             </div>
                         </div>
                     </div>

@@ -8,16 +8,28 @@ import { useSearchParams } from 'next/navigation';
 function AllCarsContent() {
     const searchParams = useSearchParams();
     const filterParam = searchParams.get('filter');
+    const makeParam = searchParams.get('make');
+    const typeParam = searchParams.get('type');
+    const priceParam = searchParams.get('price');
 
     // Filter States
     const [condition, setCondition] = useState({
-        all: !filterParam || filterParam === 'all',
-        new: filterParam === 'new',
-        used: filterParam === 'used',
-        preorder: filterParam === 'preorder'
+        all: (!filterParam || filterParam === 'all') && !typeParam,
+        new: filterParam === 'new' || (typeParam && typeParam.toLowerCase() === 'new'),
+        used: filterParam === 'used' || (typeParam && typeParam.toLowerCase() === 'used')
     });
-    const [make, setMake] = useState('All Makes');
-    const [priceRange, setPriceRange] = useState(390000000); // Default to max (KES)
+    const [make, setMake] = useState(makeParam || 'All Makes');
+    const [priceRange, setPriceRange] = useState(() => {
+        if (priceParam) {
+            if (priceParam.includes('Above')) return 400000000;
+            const match = priceParam.match(/KES\s([\d,]+)/g);
+            if (match && match.length > 0) {
+                const high = parseInt(match[match.length - 1].replace(/[^0-9]/g, ''), 10);
+                return high || 390000000;
+            }
+        }
+        return 390000000;
+    });
     const [sort, setSort] = useState('Default');
 
     // Sync state if URL changes
@@ -26,8 +38,7 @@ function AllCarsContent() {
             setCondition({
                 all: filterParam === 'all',
                 new: filterParam === 'new',
-                used: filterParam === 'used',
-                preorder: filterParam === 'preorder'
+                used: filterParam === 'used'
             });
         }
     }, [filterParam]);
@@ -35,11 +46,11 @@ function AllCarsContent() {
     // Handle Checkboxes
     const handleConditionChange = (type) => {
         if (type === 'all') {
-            setCondition({ all: true, new: false, used: false, preorder: false });
+            setCondition({ all: true, new: false, used: false });
         } else {
             setCondition(prev => {
                 const updated = { ...prev, [type]: !prev[type], all: false };
-                if (!updated.new && !updated.used && !updated.preorder) updated.all = true;
+                if (!updated.new && !updated.used) updated.all = true;
                 return updated;
             });
         }

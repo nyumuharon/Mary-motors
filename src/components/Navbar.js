@@ -37,7 +37,7 @@ export default function Navbar() {
                         <div className="dropdown-menu">
                             <Link href="/all-cars?filter=new">New Cars</Link>
                             <Link href="/all-cars?filter=used">Used Cars</Link>
-                            <Link href="/all-cars?filter=preorder">Pre-Orders</Link>
+
                         </div>
                     </div>
                 </nav>

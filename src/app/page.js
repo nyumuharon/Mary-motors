@@ -33,8 +33,16 @@ function SearchBanner() {
 
     const handleSearch = () => {
         let url = '/all-cars?search=true';
-        if (make) url += `&make=${make}`;
-        if (type) url += `&type=${type}`;
+        if (make) url += `&make=${encodeURIComponent(make)}`;
+        if (type) url += `&type=${encodeURIComponent(type)}`;
+        if (price) url += `&price=${encodeURIComponent(price)}`;
+
+        // At least one filter check (optional, but requested "atleast one")
+        if (!make && !type && !price) {
+            alert('Please select at least one option to search');
+            return;
+        }
+
         router.push(url);
     };
 
@@ -107,20 +115,7 @@ export default function HomePage() {
                         <p>We provide a platform to help you find the perfect vehicle matching your preferences and budget.</p>
                         <Link href="/all-cars" className="feature-link">Browse Cars →</Link>
                     </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">
-                            <Image
-                                src="/logo.svg"
-                                alt="Pre Order"
-                                width={120}
-                                height={60}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        </div>
-                        <h3>Pre Order</h3>
-                        <p>Get ready to experience innovation, style, and performance like never before. Reserve your future ride today.</p>
-                        <Link href="/all-cars" className="feature-link">Pre-Order Now →</Link>
-                    </div>
+
                     <div className="feature-card">
                         <div className="feature-icon">
                             <Image

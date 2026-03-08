@@ -25,25 +25,43 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            {/* Story Section */}
-            <section className="about" style={{ padding: '100px 0' }}>
-                <div className="container about-grid">
-                    <div className="about-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80" alt="Mary Motors Showroom" className="about-img" />
-                        <div className="about-badge">
-                            <span className="badge-number">15+</span>
-                            <span className="badge-text">Years of Excellence</span>
+            {/* Premium Story Section with Glassmorphism */}
+            <section className="about-hero-bg">
+                <div className="container about-glass-content">
+                    <div className="about-grid" style={{ gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'center' }}>
+                        <div className="glass-card">
+                            <p className="section-tag" style={{ color: 'var(--accent)' }}>OUR STORY</p>
+                            <h2 className="section-title">Your Trusted Partner in Premium Automotive</h2>
+                            <p className="about-desc">
+                                At Mary Motors, we believe that finding the right car should be an exciting, seamless experience.
+                                For over 15 years, we&apos;ve been connecting drivers with vehicles that match their lifestyle, budget, and aspirations.
+                            </p>
+                            <p className="about-desc" style={{ marginTop: '20px' }}>
+                                We pride ourselves on an extensive inventory of new, used, and premium imports. Our expert team
+                                is committed to delivering unparalleled customer service, ensuring you drive away completely satisfied.
+                            </p>
+
+                            <div className="about-stats-glass">
+                                <div className="stat-glass">
+                                    <span className="stat-num">2,500+</span>
+                                    <span className="stat-label">Cars Sold</span>
+                                </div>
+                                <div className="stat-glass">
+                                    <span className="stat-num">98%</span>
+                                    <span className="stat-label">Happy Clients</span>
+                                </div>
+                                <div className="stat-glass">
+                                    <span className="stat-num">50+</span>
+                                    <span className="stat-label">Car Brands</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="about-text">
-                        <p className="section-tag">OUR STORY</p>
-                        <h2 className="section-title">Your Trusted Partner in Premium Automotive</h2>
-                        <p className="about-desc">At Mary Motors, we believe that finding the right car should be an exciting, seamless experience. For over 15 years, we&apos;ve been connecting drivers with vehicles that match their lifestyle, budget, and aspirations.</p>
-                        <p className="about-desc" style={{ marginTop: '20px' }}>We pride ourselves on an extensive inventory of new, used, and pre-order vehicles. Our expert team is committed to delivering unparalleled customer service, ensuring you drive away completely satisfied.</p>
-                        <div className="about-stats" style={{ marginTop: '40px' }}>
-                            <div className="stat"><span className="stat-num">2,500+</span><span className="stat-label">Cars Sold</span></div>
-                            <div className="stat"><span className="stat-num">98%</span><span className="stat-label">Happy Clients</span></div>
-                            <div className="stat"><span className="stat-num">50+</span><span className="stat-label">Car Brands</span></div>
+                        <div style={{ paddingLeft: '40px' }}>
+                            {/* Decorative Graphic or badge can go here */}
+                            <div className="about-badge" style={{ position: 'relative', right: 'auto', bottom: 'auto', transform: 'scale(1.2)', margin: '0 auto' }}>
+                                <span className="badge-number">15+</span>
+                                <span className="badge-text">Years of Excellence</span>
+                            </div>
                         </div>
                     </div>
                 </div>
