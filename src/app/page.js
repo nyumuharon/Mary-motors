@@ -99,36 +99,7 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="stunning-values">
-                <div className="container">
-                    <div className="section-header">
-                        <p className="section-tag" style={{ color: 'var(--red)' }}>WHY CHOOSE US</p>
-                        <h2 className="section-title">Our Core Values</h2>
-                        <p className="section-sub">We are committed to excellence, transparency, and providing the best automotive experience in Kenya.</p>
-                    </div>
 
-                    <div className="values-grid">
-                        <div className="value-box">
-                            <div className="value-icon">🛡️</div>
-                            <h3>Quality Assurance</h3>
-                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                            <p>Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.</p>
-                        </div>
-                        <div className="value-box">
-                            <div className="value-icon">💎</div>
-                            <h3>Transparent Pricing</h3>
-                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                            <p>No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.</p>
-                        </div>
-                        <div className="value-box">
-                            <div className="value-icon">🤝</div>
-                            <h3>Customer First</h3>
-                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                            <p>Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <WhyChooseUs />
 

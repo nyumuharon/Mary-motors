@@ -49,17 +49,35 @@ const FAQ = () => {
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
     return (
-        <section style={{ padding: '80px 0', background: 'var(--canvas-alt)' }}>
-            <div className="container">
+        <section style={{
+            padding: '100px 0',
+            background: `linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.88)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80') center/cover fixed`,
+            position: 'relative',
+            borderTop: '1px solid var(--stroke)'
+        }}>
+            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-                    <p className="section-tag">FAQ</p>
+                    <p className="section-tag" style={{ color: 'var(--accent)' }}>FAQ</p>
                     <h2 className="section-title">Frequently Asked Questions</h2>
                     <p style={{ color: 'var(--secondary-text)', maxWidth: '560px', margin: '12px auto 0' }}>
                         Everything you need to know about buying a car in Kenya with Mary Motors.
                     </p>
                 </div>
 
-                <div style={{ maxWidth: '760px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{
+                    maxWidth: '800px',
+                    margin: '0 auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    background: 'rgba(255, 255, 255, 0.7)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    padding: '40px',
+                    borderRadius: '24px',
+                    border: '1px solid rgba(0,0,0,0.05)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
+                }}>
                     {faqs.map((faq, i) => (
                         <div key={i} style={{
                             border: '1px solid var(--stroke)',

@@ -37,8 +37,11 @@ const cardVariants = {
 
 const WhyChooseUs = () => {
     return (
-        <section className="edge-section">
-            <div className="wrapper">
+        <section className="edge-section" style={{
+            background: `linear-gradient(rgba(248, 249, 250, 0.8), rgba(248, 249, 250, 0.88)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80') center/cover fixed`,
+            position: 'relative'
+        }}>
+            <div className="wrapper" style={{ position: 'relative', zIndex: 2 }}>
                 {/* HEADER */}
                 <div className="edge-header">
                     <div className="edge-header-left">
