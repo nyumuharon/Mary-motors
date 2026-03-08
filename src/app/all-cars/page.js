@@ -113,19 +113,18 @@ function AllCarsContent() {
                         <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', borderBottom: '2px solid var(--stroke)', paddingBottom: '10px' }}>Filter By</h3>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
-                            <h4 style={{ fontSize: '1rem', marginBottom: '10px', color: '#555' }}>Condition</h4>
-                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
-                                <input type="checkbox" checked={condition.all} onChange={() => handleConditionChange('all')} style={{ marginRight: '8px' }} /> All Vehicles
-                            </label>
-                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
-                                <input type="checkbox" checked={condition.new} onChange={() => handleConditionChange('new')} style={{ marginRight: '8px' }} /> New Cars
-                            </label>
-                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
-                                <input type="checkbox" checked={condition.used} onChange={() => handleConditionChange('used')} style={{ marginRight: '8px' }} /> Used Cars
-                            </label>
-                            <label style={{ display: 'block', marginBottom: '8px', cursor: 'pointer' }}>
-                                <input type="checkbox" checked={condition.preorder} onChange={() => handleConditionChange('preorder')} style={{ marginRight: '8px' }} /> Pre-Order
-                            </label>
+                            <h4 style={{ fontSize: '1rem', marginBottom: '15px', color: '#555', fontWeight: '600' }}>Condition</h4>
+                            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
+                                    <input type="checkbox" checked={condition.all} onChange={() => handleConditionChange('all')} style={{ marginRight: '6px' }} /> All
+                                </label>
+                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
+                                    <input type="checkbox" checked={condition.new} onChange={() => handleConditionChange('new')} style={{ marginRight: '6px' }} /> New
+                                </label>
+                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
+                                    <input type="checkbox" checked={condition.used} onChange={() => handleConditionChange('used')} style={{ marginRight: '6px' }} /> Used
+                                </label>
+                            </div>
                         </div>
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>

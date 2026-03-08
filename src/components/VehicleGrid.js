@@ -70,16 +70,15 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
                             </div>
                             <div className="car-footer">
                                 <div className="car-price"><span>KES </span>{v.price.replace('KES ', '')}</div>
-                                <div style={{ display: 'flex', gap: '8px' }}>
-                                    <Link href={`/vehicle/${v.id}`} className="btn-primary" style={{ flex: 1, padding: '8px', fontSize: '11px', textAlign: 'center' }}>VIEW DETAILS</Link>
+                                <div className="car-actions">
+                                    <Link href={`/vehicle/${v.id}`} className="btn-primary">VIEW DETAILS</Link>
                                     <a
                                         href={`https://wa.me/254742764263?text=${encodeURIComponent(`Hi Mary Motors, I'm interested in the ${v.make} ${v.name} priced at ${v.price}.`)}`}
-                                        className="btn-outline"
-                                        style={{ flex: 1, padding: '8px', fontSize: '11px', textAlign: 'center', borderColor: '#25D366', color: '#25D366' }}
+                                        className="btn-outline contact-btn"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        WHATSAPP
+                                        CONTACT
                                     </a>
                                 </div>
                             </div>
