@@ -2259,7 +2259,8 @@ a {
 /* ===== STUNNING CORE VALUES ===== */
 .stunning-values {
   padding: 120px 0;
-  background: var(--canvas);
+  background: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.95)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80') center/cover fixed;
+  position: relative;
 }
 
 .values-grid {
@@ -2270,12 +2271,14 @@ a {
 }
 
 .value-box {
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 50px 40px;
   border-radius: 24px;
   text-align: center;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid var(--stroke);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
