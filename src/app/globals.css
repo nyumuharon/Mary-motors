@@ -57,34 +57,34 @@ a {
   color: inherit;
 }
 
-/* ===== VARIABLES — DEEP OCEAN ===== */
+/* ===== VARIABLES — CARBON & CHROME ===== */
 :root {
   --red: #E8192C;
   /* Fallback for logo */
   --red-dark: #C01020;
   --red-light: rgba(232, 25, 44, 0.12);
-  --accent: #00B4D8;
-  /* Electric Teal */
+  --accent: #FF6B35;
+  /* Bright Orange */
 
-  --gold: #00B4D8;
-  /* Re-mapping to Teal for consistent price tags */
-  --gold-light: rgba(0, 180, 216, 0.15);
+  --gold: #FF6B35;
+  /* Re-mapping to Orange for consistent price tags */
+  --gold-light: rgba(255, 107, 53, 0.15);
 
-  --canvas: #0D1B2A;
-  /* Deep Navy background */
-  --canvas-alt: #1B263B;
-  /* Slightly lighter navy for section boundaries */
-  --surface: #102135;
-  /* Dark navy card surface */
-  --stroke: rgba(0, 180, 216, 0.2);
-  /* Subtle teal border on dark cards */
-  --primary-text: #E0E1DD;
-  /* Soft grey-white for readability */
-  --secondary-text: #778DA9;
-  /* Cool grey for body */
+  --canvas: #1C1E21;
+  /* Dark Charcoal background */
+  --canvas-alt: #232629;
+  /* Slightly lighter charcoal for section boundaries */
+  --surface: #2D3136;
+  /* Gunmetal card surface */
+  --stroke: rgba(255, 255, 255, 0.1);
+  /* Subtle light border on dark cards */
+  --primary-text: #F8F9FA;
+  /* Pure white for readability */
+  --secondary-text: #ADB5BD;
+  /* Cool grey chrome for body */
 
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 30px 60px -15px rgba(0, 180, 216, 0.2);
+  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 60px -15px rgba(255, 107, 53, 0.2);
   --radius: 12px;
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -164,9 +164,9 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.5);
-  background: #0096B4;
-  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+  background: #E85B2A;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover::before {
@@ -189,17 +189,17 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(13, 27, 42, 0.85);
+  background: rgba(28, 30, 33, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(10, 20, 32, 0.97);
-  box-shadow: 0 4px 30px rgba(0, 180, 216, 0.08);
-  border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+  background: rgba(22, 24, 26, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-inner {
@@ -1149,7 +1149,7 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(rgba(13, 27, 42, 0.85), rgba(10, 20, 32, 0.98)), url('/footer-bg.jpeg');
+  background: linear-gradient(rgba(28, 30, 33, 0.9), rgba(22, 24, 26, 0.98)), url('/footer-bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
