@@ -15,7 +15,7 @@ export default function AboutPage() {
     return (
         <>
             <div className="page-header"
-                style={{ background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=1600&q=80') center/cover", padding: '100px 0', textAlign: 'center', color: 'white' }}>
+                style={{ background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80') center/cover", padding: '100px 0', textAlign: 'center', color: 'white' }}>
                 <div className="container">
                     <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>About Us</h1>
                     <p style={{ fontSize: '1.1rem', color: '#eee' }}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             {/* CTA */}
             <section style={{ backgroundColor: '#111', color: 'white', padding: '80px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Ready to Drive Your Dream?</h2>
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#FFFFFF' }}>Ready to Drive Your Dream?</h2>
                     <p style={{ color: '#aaa', marginBottom: '30px', fontSize: '1.1rem' }}>Explore our vast inventory or contact our experts to help you find the perfect match.</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
                         <Link href="/all-cars" className="btn-primary">Browse Vehicles →</Link>

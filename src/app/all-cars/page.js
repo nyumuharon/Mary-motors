@@ -114,16 +114,28 @@ function AllCarsContent() {
 
                         <div className="filter-group" style={{ marginBottom: '25px' }}>
                             <h4 style={{ fontSize: '1rem', marginBottom: '15px', color: '#555', fontWeight: '600' }}>Condition</h4>
-                            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
-                                    <input type="checkbox" checked={condition.all} onChange={() => handleConditionChange('all')} style={{ marginRight: '6px' }} /> All
-                                </label>
-                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
-                                    <input type="checkbox" checked={condition.new} onChange={() => handleConditionChange('new')} style={{ marginRight: '6px' }} /> New
-                                </label>
-                                <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', fontSize: '13px' }}>
-                                    <input type="checkbox" checked={condition.used} onChange={() => handleConditionChange('used')} style={{ marginRight: '6px' }} /> Used
-                                </label>
+                            <div className="filter-pill-container">
+                                <div
+                                    className={`filter-pill ${condition.all ? 'active' : ''}`}
+                                    onClick={() => handleConditionChange('all')}
+                                >
+                                    <span className="filter-pill-dot"></span>
+                                    All
+                                </div>
+                                <div
+                                    className={`filter-pill ${condition.new ? 'active' : ''}`}
+                                    onClick={() => handleConditionChange('new')}
+                                >
+                                    <span className="filter-pill-dot"></span>
+                                    New
+                                </div>
+                                <div
+                                    className={`filter-pill ${condition.used ? 'active' : ''}`}
+                                    onClick={() => handleConditionChange('used')}
+                                >
+                                    <span className="filter-pill-dot"></span>
+                                    Used
+                                </div>
                             </div>
                         </div>
 
