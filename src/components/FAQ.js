@@ -49,7 +49,7 @@ const FAQ = () => {
     const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
     return (
-        <section style={{ padding: '80px 0', background: '#fff' }}>
+        <section style={{ padding: '80px 0', background: 'var(--canvas-alt)' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '48px' }}>
                     <p className="section-tag">FAQ</p>
@@ -74,7 +74,7 @@ const FAQ = () => {
                                 justifyContent: 'space-between',
                                 alignItems: 'center',
                                 padding: '18px 24px',
-                                background: openIndex === i ? 'var(--accent)' : '#fff',
+                                background: openIndex === i ? 'var(--accent)' : 'var(--surface)',
                                 color: openIndex === i ? '#fff' : 'var(--primary-text)',
                                 border: 'none',
                                 cursor: 'pointer',
@@ -97,7 +97,7 @@ const FAQ = () => {
                             {openIndex === i && (
                                 <div style={{
                                     padding: '16px 24px 20px',
-                                    background: '#fafafa',
+                                    background: 'transparent',
                                     borderTop: '1px solid var(--stroke)',
                                     color: 'var(--secondary-text)',
                                     lineHeight: '1.7',
