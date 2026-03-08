@@ -57,34 +57,34 @@ a {
   color: inherit;
 }
 
-/* ===== VARIABLES — CARBON & CHROME ===== */
+/* ===== VARIABLES — ROSE GOLD LUXE ===== */
 :root {
-  --red: #E8192C;
-  /* Fallback for logo */
-  --red-dark: #C01020;
-  --red-light: rgba(232, 25, 44, 0.12);
-  --accent: #FF6B35;
-  /* Bright Orange */
+  --red: #D4396B;
+  /* Deep Rose for logo/base */
+  --red-dark: #C22F5F;
+  --red-light: rgba(212, 57, 107, 0.12);
+  --accent: #D4396B;
+  /* Premium Deep Rose */
 
-  --gold: #FF6B35;
-  /* Re-mapping to Orange for consistent price tags */
-  --gold-light: rgba(255, 107, 53, 0.15);
+  --gold: #D4AF37;
+  /* Classic Showroom Gold for highlights */
+  --gold-light: rgba(212, 175, 55, 0.15);
 
-  --canvas: #1C1E21;
-  /* Dark Charcoal background */
-  --canvas-alt: #232629;
-  /* Slightly lighter charcoal for section boundaries */
-  --surface: #2D3136;
-  /* Gunmetal card surface */
-  --stroke: rgba(255, 255, 255, 0.1);
-  /* Subtle light border on dark cards */
-  --primary-text: #F8F9FA;
-  /* Pure white for readability */
-  --secondary-text: #ADB5BD;
-  /* Cool grey chrome for body */
+  --canvas: #FFF5F7;
+  /* Warm Blush Pink background */
+  --canvas-alt: #FFEBF0;
+  /* Deeper blush for section boundaries */
+  --surface: #FFFFFF;
+  /* Pure white card surface */
+  --stroke: rgba(212, 57, 107, 0.15);
+  /* Subtle rose border */
+  --primary-text: #2D1E24;
+  /* Deep rose-charcoal for readability */
+  --secondary-text: #8A6B76;
+  /* Muted rose-grey for body */
 
-  --shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 30px 60px -15px rgba(255, 107, 53, 0.2);
+  --shadow: 0 10px 40px -10px rgba(212, 57, 107, 0.08);
+  --shadow-lg: 0 30px 60px -15px rgba(212, 57, 107, 0.15);
   --radius: 12px;
   --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -164,9 +164,9 @@ a {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
-  background: #E85B2A;
-  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(212, 57, 107, 0.4);
+  background: #C22F5F;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary:hover::before {
@@ -189,17 +189,17 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(28, 30, 33, 0.85);
+  background: rgba(255, 245, 247, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(212, 57, 107, 0.08);
   transition: all var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(22, 24, 26, 0.98);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 30px rgba(212, 57, 107, 0.08);
+  border-bottom: 1px solid rgba(212, 57, 107, 0.15);
 }
 
 .nav-inner {
@@ -1149,7 +1149,7 @@ a {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(rgba(28, 30, 33, 0.9), rgba(22, 24, 26, 0.98)), url('/footer-bg.jpeg');
+  background: linear-gradient(rgba(45, 30, 36, 0.95), rgba(28, 18, 22, 0.98)), url('/footer-bg.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
