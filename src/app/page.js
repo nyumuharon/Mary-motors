@@ -97,67 +97,68 @@ export default function HomePage() {
                         <Link href="/all-cars" className="btn-outline">View All Vehicles</Link>
                     </div>
                 </div>
-                <section className="stunning-values">
-                    <div className="container">
-                        <div className="section-header">
-                            <p className="section-tag" style={{ color: 'var(--red)' }}>WHY CHOOSE US</p>
-                            <h2 className="section-title">Our Core Values</h2>
-                            <p className="section-sub">We are committed to excellence, transparency, and providing the best automotive experience in Kenya.</p>
-                        </div>
+            </section>
 
-                        <div className="values-grid">
-                            <div className="value-box">
-                                <div className="value-icon">🛡️</div>
-                                <h3>Quality Assurance</h3>
-                                <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                                <p>Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.</p>
-                            </div>
-                            <div className="value-box">
-                                <div className="value-icon">💎</div>
-                                <h3>Transparent Pricing</h3>
-                                <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                                <p>No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.</p>
-                            </div>
-                            <div className="value-box">
-                                <div className="value-icon">🤝</div>
-                                <h3>Customer First</h3>
-                                <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
-                                <p>Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.</p>
-                            </div>
+            <section className="stunning-values">
+                <div className="container">
+                    <div className="section-header">
+                        <p className="section-tag" style={{ color: 'var(--red)' }}>WHY CHOOSE US</p>
+                        <h2 className="section-title">Our Core Values</h2>
+                        <p className="section-sub">We are committed to excellence, transparency, and providing the best automotive experience in Kenya.</p>
+                    </div>
+
+                    <div className="values-grid">
+                        <div className="value-box">
+                            <div className="value-icon">🛡️</div>
+                            <h3>Quality Assurance</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>Every vehicle in our showroom undergoes a rigorous multi-point inspection to ensure absolute quality and safety.</p>
+                        </div>
+                        <div className="value-box">
+                            <div className="value-icon">💎</div>
+                            <h3>Transparent Pricing</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>No hidden fees. We offer competitive, transparent pricing and flexible financing options for every budget.</p>
+                        </div>
+                        <div className="value-box">
+                            <div className="value-icon">🤝</div>
+                            <h3>Customer First</h3>
+                            <div className="edge-div" style={{ margin: '0 auto 16px' }}></div>
+                            <p>Your satisfaction is our priority. We offer a no-pressure environment and dedicated support long after your purchase.</p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <WhyChooseUs />
+            <WhyChooseUs />
 
-
-                <section className="gallery" id="gallery">
-                    <div className="container">
-                        <div className="section-header">
-                            <p className="section-tag">GALLERY</p>
-                            <h2 className="section-title">See Our Showroom</h2>
-                        </div>
-                        <div className="gallery-grid">
-                            {[
-                                { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80', cls: 'g-large' },
-                                { src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80' },
-                                { src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80' },
-                                { src: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80' },
-                                { src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80' },
-                            ].map((img, i) => (
-                                <div key={i} className={`gallery-item ${img.cls || ''}`}>
-                                    <Image src={img.src} alt={`Showroom car ${i + 1}`} loading="lazy" width={600} height={400} />
-                                    <div className="gallery-overlay"><span>View</span></div>
-                                </div>
-                            ))}
-                        </div>
-                        <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                            <Link href="/gallery" className="btn-outline">View Full Gallery</Link>
-                        </div>
+            <section className="gallery" id="gallery">
+                <div className="container">
+                    <div className="section-header">
+                        <p className="section-tag">GALLERY</p>
+                        <h2 className="section-title">See Our Showroom</h2>
                     </div>
-                </section>
+                    <div className="gallery-grid">
+                        {[
+                            { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80', cls: 'g-large' },
+                            { src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80' },
+                            { src: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80' },
+                            { src: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80' },
+                            { src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80' },
+                        ].map((img, i) => (
+                            <div key={i} className={`gallery-item ${img.cls || ''}`}>
+                                <Image src={img.src} alt={`Showroom car ${i + 1}`} loading="lazy" width={600} height={400} />
+                                <div className="gallery-overlay"><span>View</span></div>
+                            </div>
+                        ))}
+                    </div>
+                    <div style={{ textAlign: 'center', marginTop: '40px' }}>
+                        <Link href="/gallery" className="btn-outline">View Full Gallery</Link>
+                    </div>
+                </div>
+            </section>
 
-                <FAQ />
-            </>
-            );
+            <FAQ />
+        </>
+    );
 }
