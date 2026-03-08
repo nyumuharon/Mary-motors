@@ -15,7 +15,7 @@ export default function AboutPage() {
     return (
         <>
             <div className="page-header"
-                style={{ background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80') center/cover", padding: '100px 0', textAlign: 'center', color: 'white' }}>
+                style={{ background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=1600&q=80') center/cover", padding: '100px 0', textAlign: 'center', color: 'white' }}>
                 <div className="container">
                     <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>About Us</h1>
                     <p style={{ fontSize: '1.1rem', color: '#eee' }}>
@@ -27,7 +27,7 @@ export default function AboutPage() {
 
             {/* Premium Story Section with Glassmorphism */}
             <section className="about-hero-bg">
-                <div className="container about-glass-content">
+                <div className="container about-glass-content" style={{ color: '#FFFFFF' }}>
                     <div className="about-grid" style={{ gridTemplateColumns: '1.2fr 0.8fr', alignItems: 'center' }}>
                         <div className="glass-card">
                             <p className="section-tag" style={{ color: 'var(--accent)' }}>OUR STORY</p>
