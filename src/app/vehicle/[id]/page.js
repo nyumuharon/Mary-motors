@@ -1,19 +1,13 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { vehicles } from '@/lib/vehicles';
 import {
     ChevronLeft,
-    Gauge,
-    Fuel,
     ShieldCheck,
-    Zap,
-    ArrowRight,
-    Settings,
-    Weight,
-    Palette
+    ArrowRight
 } from 'lucide-react';
 
 export default function VehicleDetailsPage() {
@@ -24,6 +18,15 @@ export default function VehicleDetailsPage() {
     const galleryItems = vehicle ? (vehicle.gallery || [vehicle.img]) : [];
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Auto-advance slideshow
+    useEffect(() => {
+        if (galleryItems.length <= 1) return;
+        const timer = setInterval(() => {
+            setCurrentIndex(prev => (prev === galleryItems.length - 1 ? 0 : prev + 1));
+        }, 3000); // Change slide every 3 seconds
+        return () => clearInterval(timer);
+    }, [galleryItems.length]);
+
     if (!vehicle) {
         return (
             <div className="container" style={{ padding: '200px 0', textAlign: 'center' }}>
@@ -32,6 +35,20 @@ export default function VehicleDetailsPage() {
             </div>
         );
     }
+
+    // CMS-friendly data mapping
+    const technicalSpecs = [
+        { label: 'Make', value: vehicle.make },
+        { label: 'Model', value: vehicle.name },
+        { label: 'Body Type', value: vehicle.id > 13 ? 'Motorcycle' : 'Sedan/SUV' },
+        { label: 'Engine', value: vehicle.engine || 'N/A' },
+        { label: 'Transmission', value: vehicle.transmission || 'Automatic' },
+        { label: 'Fuel Type', value: vehicle.fuel },
+        { label: 'Mileage', value: vehicle.mileage },
+        { label: 'Color', value: vehicle.color || 'Dynamic' },
+        { label: 'Seats', value: `${vehicle.seats} Seats` },
+        { label: 'Weight', value: vehicle.weight || 'N/A' }
+    ];
 
     return (
         <div className="vehicle-details-page" style={{ background: 'var(--canvas)', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
@@ -54,18 +71,18 @@ export default function VehicleDetailsPage() {
                                 alt={vehicle.name}
                                 fill
                                 priority
-                                style={{ objectFit: 'cover' }}
+                                style={{ objectFit: 'cover', transition: 'opacity 0.5s ease-in-out' }}
                             />
                             {galleryItems.length > 1 && (
                                 <>
                                     <button
                                         onClick={() => setCurrentIndex(prev => (prev === 0 ? galleryItems.length - 1 : prev - 1))}
-                                        style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+                                        style={{ position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)', zIndex: 10 }}>
                                         <ChevronLeft size={24} />
                                     </button>
                                     <button
                                         onClick={() => setCurrentIndex(prev => (prev === galleryItems.length - 1 ? 0 : prev + 1))}
-                                        style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+                                        style={{ position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '50px', height: '50px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)', zIndex: 10 }}>
                                         <ArrowRight size={24} />
                                     </button>
                                 </>
@@ -98,65 +115,53 @@ export default function VehicleDetailsPage() {
                     </div>
 
                     {/* Right: Info & Actions */}
-                    <div className="vehicle-info" style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
-                        <div style={{ marginBottom: '30px', flexShrink: 0 }}>
-                            <p style={{ color: 'var(--accent)', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', marginBottom: '8px' }}>
-                                {vehicle.badge || 'Available Now'}
-                            </p>
-                            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-text)', marginBottom: '10px' }}>
-                                {vehicle.make} {vehicle.name}
-                            </h1>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent)' }}>
+                    <div className="vehicle-info" style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'auto', paddingRight: '15px' }}>
+
+                        {/* Title & Price */}
+                        <div style={{ marginBottom: '20px', flexShrink: 0 }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                <div>
+                                    <p style={{ color: 'var(--accent)', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', marginBottom: '8px' }}>
+                                        {vehicle.badge || 'Available Now'}
+                                    </p>
+                                    <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-text)', marginBottom: '5px' }}>
+                                        {vehicle.make} {vehicle.name}
+                                    </h1>
+                                </div>
+                                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent)', textAlign: 'right' }}>
                                     {vehicle.price}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Enhanced Specs Grid */}
-                        <div className="specs-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '30px', flexShrink: 0 }}>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Gauge size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Odometer</span>
-                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.mileage}</strong>
-                                </div>
+                        {/* Specifications Table (CMS ready format) */}
+                        <div style={{ background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
+                            <div style={{ padding: '15px 20px', background: 'rgba(0,0,0,0.02)', borderBottom: '1px solid var(--stroke)', fontWeight: 700 }}>
+                                Technical Specifications
                             </div>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Fuel size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Fuel Type</span>
-                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.fuel}</strong>
-                                </div>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                                {technicalSpecs.map((spec, i) => (
+                                    <div key={i} style={{
+                                        padding: '12px 20px',
+                                        borderBottom: i < technicalSpecs.length - 2 ? '1px solid var(--stroke)' : 'none',
+                                        borderRight: i % 2 === 0 ? '1px solid var(--stroke)' : 'none',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center'
+                                    }}>
+                                        <span style={{ fontSize: '0.8rem', color: 'var(--secondary-text)', fontWeight: 600 }}>{spec.label}</span>
+                                        <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--primary-text)' }}>{spec.value}</span>
+                                    </div>
+                                ))}
                             </div>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Settings size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Engine</span>
-                                    <strong style={{ fontSize: '0.8rem' }}>{vehicle.engine || 'N/A'}</strong>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Zap size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Transmission</span>
-                                    <strong style={{ fontSize: '0.8rem' }}>{vehicle.transmission || 'Automatic'}</strong>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Palette size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Color</span>
-                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.color || 'Dynamic'}</strong>
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', padding: '12px', background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)' }}>
-                                <div style={{ color: 'var(--accent)' }}><Weight size={20} /></div>
-                                <div>
-                                    <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--secondary-text)', textTransform: 'uppercase' }}>Weight</span>
-                                    <strong style={{ fontSize: '0.9rem' }}>{vehicle.weight || 'N/A'}</strong>
-                                </div>
-                            </div>
+                        </div>
+
+                        {/* Description/Overview */}
+                        <div style={{ fontSize: '0.95rem', lineHeight: '1.6', color: 'var(--secondary-text)', marginBottom: '25px', flexShrink: 0 }}>
+                            <p>
+                                This stunning <strong>{vehicle.make} {vehicle.name}</strong> represents the pinnacle of automotive excellence.
+                                Meticulously maintained and finished in a breathtaking paint shade, this vehicle offers a perfect blend of performance, luxury, and technology.
+                            </p>
                         </div>
 
                         {/* Call to Actions */}
