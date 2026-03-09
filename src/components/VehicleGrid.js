@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getVehicles } from '@/sanity/client';
 
 const FILTERS = [
     { label: 'All', value: 'all' },
@@ -16,14 +17,12 @@ export default function VehicleGrid({ showFilterTabs = true, limit = null, custo
 
     useEffect(() => {
         if (!customVehicles) {
-            import('@/sanity/client').then(({ getVehicles }) => {
-                getVehicles().then(data => {
-                    setFetchedVehicles(data || []);
-                    setLoading(false);
-                }).catch(err => {
-                    console.error(err);
-                    setLoading(false);
-                });
+            getVehicles().then(data => {
+                setFetchedVehicles(data || []);
+                setLoading(false);
+            }).catch(err => {
+                console.error("Sanity fetch error:", err);
+                setLoading(false);
             });
         }
     }, [customVehicles]);
