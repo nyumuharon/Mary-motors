@@ -6,8 +6,8 @@ export default defineConfig({
     name: 'default',
     title: 'Mary Motors Administration',
 
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'khqg9ywx',
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
     basePath: '/studio',
 
