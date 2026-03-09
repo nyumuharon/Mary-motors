@@ -15,8 +15,8 @@ const faqs = [
         a: 'Yes. Many vehicles in Kenya are imported from Japan. The process involves purchasing the vehicle, shipping it to Kenya, paying import duty, and registering it locally.'
     },
     {
-        q: 'What is the best place to buy used cars in Nairobi?',
-        a: 'You can buy used cars from trusted car dealerships, online car marketplaces, and certified vehicle importers in Nairobi.'
+        q: 'What is the best place to buy used cars in Nakuru?',
+        a: 'You can buy used cars from trusted car dealerships, online car marketplaces, and certified vehicle importers in Nakuru.'
     },
     {
         q: 'Do you offer car financing in Kenya?',

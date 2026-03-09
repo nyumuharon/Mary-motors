@@ -66,14 +66,14 @@ export default function GalleryPage() {
 
             <section className="directions-map" style={{ background: '#000', padding: '0', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.27581179653!2d36.8172!3d-1.2863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d71a1c9ed7%3A0xc3f837e3d82a179e!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1709900000000!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?q=Nakuru,%20Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"
                     style={{ border: 0, display: 'block' }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Mary Motors Location"
+                    title="Mary Motors Location - Nakuru"
                 ></iframe>
             </section>
         </>
