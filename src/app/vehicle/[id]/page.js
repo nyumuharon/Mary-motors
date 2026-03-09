@@ -150,7 +150,7 @@ export default function VehicleDetailsPage() {
                         {/* Call to Actions */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                             <a
-                                href={`https://wa.me/254742764263?text=${encodeURIComponent(`Hi Mary Motors, I'm interested in the ${vehicle.make} ${vehicle.name} listing on your website.`)}`}
+                                href={`https://wa.me/254702864025?text=${encodeURIComponent(`Hi Mary Motors, I'm interested in the ${vehicle.make} ${vehicle.name} listing on your website.`)}`}
                                 className="btn-primary"
                                 style={{ textAlign: 'center', padding: '18px', fontSize: '1.1rem' }}
                                 target="_blank"
