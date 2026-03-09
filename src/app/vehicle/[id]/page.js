@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { vehicles } from '@/lib/vehicles';
+import { getVehicleById } from '@/sanity/client';
 import {
     ChevronLeft,
     ShieldCheck,
@@ -12,8 +12,20 @@ import {
 
 export default function VehicleDetailsPage() {
     const params = useParams();
-    const id = parseInt(params.id);
-    const vehicle = vehicles.find(v => v.id === id);
+    const id = params.id;
+
+    const [vehicle, setVehicle] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getVehicleById(id).then(data => {
+            setVehicle(data);
+            setLoading(false);
+        }).catch(err => {
+            console.error('Error fetching vehicle', err);
+            setLoading(false);
+        });
+    }, [id]);
 
     const galleryItems = vehicle ? (vehicle.gallery || [vehicle.img]) : [];
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,6 +38,16 @@ export default function VehicleDetailsPage() {
         }, 3000); // Change slide every 3 seconds
         return () => clearInterval(timer);
     }, [galleryItems.length]);
+
+    if (loading) {
+        return (
+            <div className="container" style={{ padding: '200px 0', textAlign: 'center' }}>
+                <h2 style={{ color: 'var(--primary-text)', marginBottom: '15px' }}>Loading Vehicle Details...</h2>
+                <div style={{ width: '40px', height: '40px', border: '4px solid var(--stroke)', borderTopColor: 'var(--accent)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto' }}></div>
+                <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+            </div>
+        );
+    }
 
     if (!vehicle) {
         return (

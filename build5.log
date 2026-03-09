@@ -1,0 +1,43 @@
+
+> mary-motors@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ⚠ Failed to download the stylesheet for https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap. Skipped optimizing this font.
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./src/app/layout.js
+78:9  Warning: Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    7.74 kB         149 kB
+├ ○ /_not-found                          876 B          88.8 kB
+├ ○ /about                               176 B          96.9 kB
+├ ○ /all-cars                            4.37 kB         144 kB
+├ ○ /contact-us                          2.67 kB        99.4 kB
+├ ○ /gallery                             1.36 kB         103 kB
+├ ƒ /studio/[[...index]]                 1.41 MB        1.56 MB
+└ ƒ /vehicle/[id]                        4.86 kB         144 kB
++ First Load JS shared by all            88 kB
+  ├ chunks/117-e28d8b5fe20df87e.js       31.9 kB
+  ├ chunks/fd9d1056-b36815ddd2f56915.js  53.6 kB
+  └ other shared chunks (total)          2.43 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

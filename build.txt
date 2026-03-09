@@ -1,0 +1,62 @@
+
+> mary-motors@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./node_modules/sanity/lib/_chunks-es/MenuGroup.js
+Module not found: Package path ./compiler-runtime is not exported from package C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react (see exports field in C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react\package.json)
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/sanity/lib/index.js
+./sanity.config.js
+./src/app/studio/[[...index]]/page.js
+
+./node_modules/sanity/lib/_chunks-es/StructureToolProvider.js
+Module not found: Package path ./compiler-runtime is not exported from package C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react (see exports field in C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react\package.json)
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/sanity/lib/structure.js
+./sanity.config.js
+./src/app/studio/[[...index]]/page.js
+
+./node_modules/sanity/lib/_chunks-es/TooltipDelayGroupProvider.js
+Module not found: Package path ./compiler-runtime is not exported from package C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react (see exports field in C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react\package.json)
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/sanity/lib/structure.js
+./sanity.config.js
+./src/app/studio/[[...index]]/page.js
+
+./node_modules/sanity/lib/_chunks-es/VideoPlayer.js
+Module not found: Package path ./compiler-runtime is not exported from package C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react (see exports field in C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react\package.json)
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/sanity/lib/index.js
+./sanity.config.js
+./src/app/studio/[[...index]]/page.js
+
+./node_modules/sanity/lib/_chunks-es/ViteDevServerStopped.js
+Module not found: Package path ./compiler-runtime is not exported from package C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react (see exports field in C:\Users\Administrator\Downloads\Mary-motors-main\Mary-motors-main\node_modules\react\package.json)
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/sanity/lib/index.js
+./sanity.config.js
+./src/app/studio/[[...index]]/page.js
+
+
+> Build failed because of webpack errors

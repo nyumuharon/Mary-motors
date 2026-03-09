@@ -1,8 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { vehicles } from '@/lib/vehicles';
 
 const FILTERS = [
     { label: 'All', value: 'all' },
@@ -12,9 +11,33 @@ const FILTERS = [
 
 export default function VehicleGrid({ showFilterTabs = true, limit = null, customVehicles = null }) {
     const [activeFilter, setActiveFilter] = useState('all');
+    const [fetchedVehicles, setFetchedVehicles] = useState([]);
+    const [loading, setLoading] = useState(!customVehicles);
 
-    // Use custom dataset if provided, else use all vehicles
-    const sourceVehicles = customVehicles || vehicles;
+    useEffect(() => {
+        if (!customVehicles) {
+            import('@/sanity/client').then(({ getVehicles }) => {
+                getVehicles().then(data => {
+                    setFetchedVehicles(data || []);
+                    setLoading(false);
+                }).catch(err => {
+                    console.error(err);
+                    setLoading(false);
+                });
+            });
+        }
+    }, [customVehicles]);
+
+    const sourceVehicles = customVehicles || fetchedVehicles;
+
+    if (loading) {
+        return (
+            <div style={{ padding: '50px 0', textAlign: 'center' }}>
+                <div style={{ width: '30px', height: '30px', border: '3px solid var(--stroke)', borderTopColor: 'var(--accent)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto' }}></div>
+                <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+            </div>
+        );
+    }
 
     const filtered = activeFilter === 'all'
         ? sourceVehicles

@@ -2,7 +2,7 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
-import { vehicles } from '@/lib/vehicles';
+import { getVehicles } from '@/sanity/client';
 import { useSearchParams } from 'next/navigation';
 
 function AllCarsContent() {
@@ -11,6 +11,19 @@ function AllCarsContent() {
     const makeParam = searchParams.get('make');
     const typeParam = searchParams.get('type');
     const priceParam = searchParams.get('price');
+
+    const [allVehicles, setAllVehicles] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getVehicles().then(data => {
+            setAllVehicles(data || []);
+            setLoading(false);
+        }).catch(err => {
+            console.error('Failed to fetch vehicles', err);
+            setLoading(false);
+        });
+    }, []);
 
     // Filter States
     const [condition, setCondition] = useState({
@@ -58,7 +71,7 @@ function AllCarsContent() {
 
     // Derived Data
     const filteredVehicles = useMemo(() => {
-        let result = vehicles;
+        let result = allVehicles;
 
         // Condition Filter
         if (!condition.all) {
@@ -87,10 +100,20 @@ function AllCarsContent() {
         }
 
         return result;
-    }, [condition, make, priceRange, sort]);
+    }, [condition, make, priceRange, sort, allVehicles]);
 
     // Derived unique makes for dropdown
-    const allMakes = ['All Makes', ...new Set(vehicles.map(v => v.make))];
+    const allMakes = ['All Makes', ...new Set(allVehicles.map(v => v.make))];
+
+    if (loading) {
+        return (
+            <div style={{ padding: '150px 0', textAlign: 'center', background: 'var(--canvas-alt)', minHeight: '80vh' }}>
+                <h2 style={{ color: 'var(--primary-text)', marginBottom: '15px' }}>Loading Vehicles...</h2>
+                <div style={{ width: '40px', height: '40px', border: '4px solid var(--stroke)', borderTopColor: 'var(--accent)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto' }}></div>
+                <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+            </div>
+        );
+    }
 
     return (
         <>

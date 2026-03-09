@@ -1,0 +1,49 @@
+
+> mary-motors@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./sanity.config.js
+Module not found: Can't resolve 'sanity'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/studio/[[...index]]/page.js
+
+./sanity.config.js
+Module not found: Can't resolve 'sanity/structure'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/studio/[[...index]]/page.js
+
+./src/app/studio/[[...index]]/page.js
+Module not found: Can't resolve 'next-sanity/studio'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/components/WhyChooseUs.js
+Module not found: Can't resolve 'framer-motion'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/page.js
+
+./src/sanity/client.js
+Module not found: Can't resolve '@sanity/client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/all-cars/page.js
+
+
+> Build failed because of webpack errors
