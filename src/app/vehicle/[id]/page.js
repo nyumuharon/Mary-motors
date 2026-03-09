@@ -119,16 +119,16 @@ export default function VehicleDetailsPage() {
 
                         {/* Title & Price */}
                         <div style={{ marginBottom: '20px', flexShrink: 0 }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                                <div>
-                                    <p style={{ color: 'var(--accent)', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', marginBottom: '8px' }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: '10px' }}>
+                                <div style={{ flex: '1 1 auto', minWidth: '0' }}>
+                                    <p style={{ color: 'var(--accent)', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.75rem', marginBottom: '6px' }}>
                                         {vehicle.badge || 'Available Now'}
                                     </p>
-                                    <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-text)', marginBottom: '5px' }}>
+                                    <h1 style={{ fontSize: '2.1rem', fontWeight: 800, color: 'var(--primary-text)', margin: 0, lineHeight: 1.1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                         {vehicle.make} {vehicle.name}
                                     </h1>
                                 </div>
-                                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent)', textAlign: 'right' }}>
+                                <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--red)', textAlign: 'right', whiteSpace: 'nowrap' }}>
                                     {vehicle.price}
                                 </div>
                             </div>
@@ -136,21 +136,22 @@ export default function VehicleDetailsPage() {
 
                         {/* Specifications Table (CMS ready format) */}
                         <div style={{ background: '#fff', borderRadius: '16px', border: '1px solid var(--stroke)', overflow: 'hidden', marginBottom: '25px', flexShrink: 0 }}>
-                            <div style={{ padding: '15px 20px', background: 'rgba(0,0,0,0.02)', borderBottom: '1px solid var(--stroke)', fontWeight: 700 }}>
+                            <div style={{ padding: '12px 20px', background: 'rgba(0,0,0,0.02)', borderBottom: '1px solid var(--stroke)', fontWeight: 700, fontSize: '0.9rem' }}>
                                 Technical Specifications
                             </div>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                                 {technicalSpecs.map((spec, i) => (
                                     <div key={i} style={{
-                                        padding: '12px 20px',
+                                        padding: '10px 20px',
                                         borderBottom: i < technicalSpecs.length - 2 ? '1px solid var(--stroke)' : 'none',
                                         borderRight: i % 2 === 0 ? '1px solid var(--stroke)' : 'none',
                                         display: 'flex',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center'
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        gap: '4px'
                                     }}>
-                                        <span style={{ fontSize: '0.8rem', color: 'var(--secondary-text)', fontWeight: 600 }}>{spec.label}</span>
-                                        <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--primary-text)' }}>{spec.value}</span>
+                                        <span style={{ fontSize: '0.7rem', color: 'var(--secondary-text)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{spec.label}</span>
+                                        <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--primary-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={spec.value}>{spec.value}</span>
                                     </div>
                                 ))}
                             </div>
