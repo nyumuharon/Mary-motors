@@ -82,6 +82,80 @@ export default defineConfig({
 
     studio: {
         components: {
+            layout: (props) => (
+                <>
+                    <style>{`
+                        /* EXTREME UI OVERRIDE - FORCE LARGE RED BUTTONS */
+                        
+                        :root { 
+                            font-size: 155% !important; 
+                        }
+
+                        /* 1. PUBLISH AND ACTION BUTTONS - BRUTAL FORCE */
+                        button[data-testid*="publish"],
+                        button[data-testid*="action"],
+                        [data-testid="pane-footer"] button {
+                            background-color: #ff4d4d !important;
+                            color: white !important;
+                            transform: scale(1.6) !important;
+                            padding: 15px 30px !important;
+                            font-weight: 900 !important;
+                            border-radius: 10px !important;
+                            box-shadow: 0 8px 25px rgba(255, 77, 77, 0.5) !important;
+                            margin: 20px !important;
+                            opacity: 1 !important; /* Force visibility even if disabled */
+                        }
+
+                        button[data-testid*="publish"] *, 
+                        [data-testid="pane-footer"] button * {
+                            color: white !important;
+                            stroke: white !important;
+                        }
+
+                        /* 2. PANE HEADER ICONS (Link, Close, Comment) - BRUTAL FORCE */
+                        [data-testid="pane-header"] button,
+                        [data-testid="pane-header"] [role="button"],
+                        [data-testid="default-pane-header"] button {
+                            background-color: #ff4d4d !important;
+                            color: white !important;
+                            transform: scale(1.8) !important;
+                            margin: 0 25px !important;
+                            border-radius: 8px !important;
+                            width: 45px !important;
+                            height: 45px !important;
+                            display: flex !important;
+                            align-items: center !important;
+                            justify-content: center !important;
+                            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4) !important;
+                        }
+
+                        [data-testid="pane-header"] button svg,
+                        [data-testid="default-pane-header"] button svg {
+                            transform: scale(1.4) !important;
+                            stroke: white !important;
+                            color: white !important;
+                        }
+
+                        /* 3. SIDEBAR AND GENERAL VISIBILITY */
+                        [data-testid="panes-column"] {
+                            min-width: 450px !important;
+                        }
+
+                        /* Enlarge all icons by default */
+                        svg {
+                            transform: scale(1.4) !important;
+                        }
+
+                        /* Form label visibility */
+                        label {
+                            font-size: 1.2rem !important;
+                            font-weight: 800 !important;
+                            color: #000 !important;
+                        }
+                    `}</style>
+                    {props.renderDefault(props)}
+                </>
+            ),
             logo: () => (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', paddingLeft: '5px' }}>
                     <div style={{ backgroundColor: '#ff4d4d', borderRadius: '50%', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 900, fontSize: '1.3rem' }}>M</div>
