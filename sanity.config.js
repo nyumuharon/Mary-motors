@@ -96,12 +96,16 @@ export default defineConfig({
                         button[data-testid="new-document-button"] {
                             background-color: #ff4d4d !important;
                             color: white !important;
-                            padding: 10px 24px !important;
-                            font-weight: 800 !important;
+                            padding: 12px 30px !important;
+                            font-weight: 900 !important;
+                            font-size: 1rem !important;
                             border-radius: 50px !important;
-                            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3) !important;
-                            border: none !important;
-                            min-height: 44px !important;
+                            box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4) !important;
+                            border: 2px solid #e03d0e !important;
+                            cursor: pointer !important;
+                            position: relative !important;
+                            z-index: 1000 !important;
+                            pointer-events: auto !important;
                         }
 
                         button[data-testid="publish-button"] *, 
@@ -111,40 +115,31 @@ export default defineConfig({
                         }
 
                         /* 2. PANE UTILITY ICONS (Link, Close, etc) */
-                        /* Target buttons that ONLY contain icons, avoiding text headers */
                         [data-testid="pane-header"] button:has(svg):not(:has(span)),
                         button[data-testid="search-button"] {
                             background-color: #ff4d4d !important;
                             color: white !important;
                             border-radius: 50% !important;
-                            width: 40px !important;
-                            height: 40px !important;
-                            min-width: 40px !important;
+                            width: 44px !important;
+                            height: 44px !important;
                             display: inline-flex !important;
                             align-items: center !important;
                             justify-content: center !important;
-                            border: none !important;
-                            box-shadow: 0 2px 8px rgba(255, 77, 77, 0.2) !important;
+                            border: 2px solid #e03d0e !important;
+                            box-shadow: 0 3px 10px rgba(255, 77, 77, 0.3) !important;
+                            cursor: pointer !important;
+                            pointer-events: auto !important;
                         }
 
-                        /* 3. RESTORE HEADERS (Fix the red ovals) */
+                        /* 3. RESTORE HEADERS & LAYOUT FIXES */
                         [data-testid="pane-header"] {
                             background-color: #fff !important;
                             border-bottom: 1px solid #eee !important;
                         }
 
-                        /* Ensure titles are just bold text, not red shapes */
-                        [data-testid="pane-header"] h2,
-                        [data-testid="default-pane-header"] h2 {
-                            background: none !important;
-                            color: #000 !important;
-                            font-weight: 800 !important;
-                            font-size: 1.2rem !important;
-                        }
-
-                        /* 4. SIDEBAR & FORM LABELS */
                         [data-testid="panes-column"] {
                             min-width: 350px !important;
+                            z-index: 1 !important; /* Lowered to prevent header overlap */
                         }
 
                         label {
