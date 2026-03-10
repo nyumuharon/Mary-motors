@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getVehicleById } from '@/sanity/client';
 import {
     ChevronLeft,
     ShieldCheck,
@@ -18,13 +17,15 @@ export default function VehicleDetailsPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getVehicleById(id).then(data => {
-            setVehicle(data);
-            setLoading(false);
-        }).catch(err => {
-            console.error('Error fetching vehicle', err);
-            setLoading(false);
-        });
+        fetch(`/api/vehicle/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setVehicle(data);
+                setLoading(false);
+            }).catch(err => {
+                console.error('Error fetching vehicle', err);
+                setLoading(false);
+            });
     }, [id]);
 
     const galleryItems = vehicle ? (vehicle.gallery || [vehicle.img]) : [];

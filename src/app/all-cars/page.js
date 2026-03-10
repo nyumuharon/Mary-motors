@@ -2,7 +2,6 @@
 import { useState, useMemo, useEffect, Suspense } from 'react';
 import VehicleGrid from '@/components/VehicleGrid';
 import Link from 'next/link';
-import { getVehicles } from '@/sanity/client';
 import { useSearchParams } from 'next/navigation';
 
 function AllCarsContent() {
@@ -16,13 +15,15 @@ function AllCarsContent() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getVehicles().then(data => {
-            setAllVehicles(data || []);
-            setLoading(false);
-        }).catch(err => {
-            console.error('Failed to fetch vehicles', err);
-            setLoading(false);
-        });
+        fetch('/api/vehicles')
+            .then(res => res.json())
+            .then(data => {
+                setAllVehicles(data || []);
+                setLoading(false);
+            }).catch(err => {
+                console.error('Failed to fetch vehicles', err);
+                setLoading(false);
+            });
     }, []);
 
     // Filter States
