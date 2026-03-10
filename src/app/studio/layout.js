@@ -65,6 +65,45 @@ export default function StudioLayout({ children }) {
                     min-width: 380px !important;
                 }
 
+                /* ENLARGE AND RED STYLE FOR ACTION BUTTONS (Publish, etc) */
+                [data-testid="pane-footer"] button,
+                button[data-testid="publish-button"],
+                button[data-testid^="action-"] {
+                    background-color: #ff4d4d !important;
+                    color: white !important;
+                    transform: scale(1.4) !important;
+                    padding: 12px 24px !important;
+                    font-weight: 800 !important;
+                    border-radius: 8px !important;
+                    margin: 15px !important;
+                    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3) !important;
+                }
+
+                [data-testid="pane-footer"] button svg,
+                button[data-testid="publish-button"] svg {
+                    stroke: white !important;
+                }
+
+                /* ENLARGE AND RED STYLE FOR PANE HEADER ICONS (Link, Close, etc) */
+                [data-testid="pane-header"] button {
+                    background-color: #ff4d4d !important;
+                    color: white !important;
+                    transform: scale(1.5) !important;
+                    margin: 0 15px !important;
+                    border-radius: 6px !important;
+                    width: 40px !important;
+                    height: 40px !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                }
+
+                [data-testid="pane-header"] button svg {
+                    transform: scale(1.2) !important;
+                    stroke: white !important;
+                    color: white !important;
+                }
+
                 /* Ensure the logo area doesn't push out other elements */
                 [data-testid="studio-logo"] {
                     min-width: auto !important;
