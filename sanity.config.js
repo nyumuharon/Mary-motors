@@ -85,24 +85,30 @@ export default defineConfig({
             layout: (props) => (
                 <>
                     <style>{`
-                        /* SURGICAL UI OVERRIDE */
+                        /* PRO RED UI OVERRIDE */
                         
                         :root { 
-                            font-size: 130% !important; 
+                            font-size: 135% !important; 
                         }
 
-                        /* 1. THE PUBLISH BUTTON - SPECIFIC AND CLEAN */
+                        /* 1. THE PUBLISH BUTTON - PRO PILL STYLE */
                         button[data-testid="publish-button"],
                         [data-testid="pane-footer"] button {
                             background-color: #ff4d4d !important;
                             color: white !important;
-                            transform: scale(1.3) !important;
-                            padding: 10px 25px !important;
-                            font-weight: 800 !important;
-                            border-radius: 8px !important;
-                            box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4) !important;
-                            margin: 15px !important;
-                            border: none !important;
+                            transform: scale(1.2) !important;
+                            padding: 12px 28px !important;
+                            font-weight: 900 !important;
+                            border-radius: 50px !important;
+                            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4) !important;
+                            margin: 10px !important;
+                            border: 2px solid #e03d0e !important;
+                            transition: all 0.2s ease !important;
+                        }
+
+                        button[data-testid="publish-button"]:hover {
+                            background-color: #e03d0e !important;
+                            transform: scale(1.25) !important;
                         }
 
                         button[data-testid="publish-button"] *, 
@@ -111,45 +117,36 @@ export default defineConfig({
                             stroke: white !important;
                         }
 
-                        /* 2. PANE HEADER UTILITY ICONS (Link, Close, etc) - SURGICAL */
+                        /* 2. PANE HEADER ICONS - CLEAN CIRCULAR BUTTONS */
                         [data-testid="pane-header"] button,
                         [data-testid="default-pane-header"] button {
                             background-color: #ff4d4d !important;
                             color: white !important;
-                            border-radius: 6px !important;
-                            width: 36px !important;
-                            height: 36px !important;
+                            border-radius: 50% !important;
+                            width: 42px !important;
+                            height: 42px !important;
                             display: inline-flex !important;
                             align-items: center !important;
                             justify-content: center !important;
-                            margin: 0 8px !important;
-                            box-shadow: 0 2px 8px rgba(255, 77, 77, 0.3) !important;
-                            border: none !important;
+                            margin: 0 10px !important;
+                            box-shadow: 0 3px 10px rgba(255, 77, 77, 0.3) !important;
+                            border: 2px solid #e03d0e !important;
                         }
 
-                        [data-testid="pane-header"] button svg,
-                        [data-testid="default-pane-header"] button svg {
-                            transform: scale(1.1) !important;
+                        [data-testid="pane-header"] button svg {
+                            transform: scale(1.2) !important;
                             stroke: white !important;
-                            color: white !important;
                         }
 
-                        /* 3. FIX OVERLAP AND SIDEBAR */
+                        /* 3. SIDEBAR NAVIGATION - ENLARGE ICONS */
                         [data-testid="panes-column"] {
-                            min-width: 350px !important;
-                            z-index: 100 !important;
-                        }
-
-                        /* Ensure the main form area doesn't have a red background */
-                        [data-testid="pane-header"] {
-                            background-color: #fff !important;
-                            border-bottom: 1px solid #eee !important;
+                            min-width: 380px !important;
                         }
 
                         /* Form label visibility */
                         label {
-                            font-size: 1.1rem !important;
-                            font-weight: 700 !important;
+                            font-size: 1.15rem !important;
+                            font-weight: 800 !important;
                             color: #000 !important;
                         }
                     `}</style>
