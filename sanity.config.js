@@ -91,8 +91,9 @@ export default defineConfig({
                             font-size: 135% !important; 
                         }
 
-                        /* 1. THE PUBLISH BUTTON - PRO PILL STYLE */
+                        /* 1. THE ACTION BUTTONS (Publish, Create, etc) */
                         button[data-testid="publish-button"],
+                        button[data-testid="new-document-button"],
                         [data-testid="pane-footer"] button {
                             background-color: #ff4d4d !important;
                             color: white !important;
@@ -106,20 +107,23 @@ export default defineConfig({
                             transition: all 0.2s ease !important;
                         }
 
-                        button[data-testid="publish-button"]:hover {
+                        button[data-testid="publish-button"]:hover,
+                        button[data-testid="new-document-button"]:hover {
                             background-color: #e03d0e !important;
                             transform: scale(1.25) !important;
                         }
 
                         button[data-testid="publish-button"] *, 
+                        button[data-testid="new-document-button"] *,
                         [data-testid="pane-footer"] button * {
                             color: white !important;
                             stroke: white !important;
                         }
 
-                        /* 2. PANE HEADER ICONS - CLEAN CIRCULAR BUTTONS */
+                        /* 2. HEADER & PANE UTILITY ICONS - CLEAN RED BUTTONS */
                         [data-testid="pane-header"] button,
-                        [data-testid="default-pane-header"] button {
+                        [data-testid="default-pane-header"] button,
+                        button[data-testid="search-button"] {
                             background-color: #ff4d4d !important;
                             color: white !important;
                             border-radius: 50% !important;
@@ -133,9 +137,22 @@ export default defineConfig({
                             border: 2px solid #e03d0e !important;
                         }
 
-                        [data-testid="pane-header"] button svg {
+                        [data-testid="pane-header"] button svg,
+                        button[data-testid="search-button"] svg {
                             transform: scale(1.2) !important;
                             stroke: white !important;
+                        }
+
+                        /* 3. PANE HEADERS (e.g., STOCK LIST) - TEXT COLOR FIX */
+                        [data-testid="pane-header"] h2,
+                        [data-testid="pane-header"] div {
+                            color: inherit;
+                        }
+
+                        /* Target the red pane header specifically to ensure white text */
+                        [data-testid="pane-header"][style*="background-color: rgb(255, 77, 77)"] h2,
+                        [data-testid="pane-header"][style*="background-color: #ff4d4d"] h2 {
+                            color: white !important;
                         }
 
                         /* 3. SIDEBAR NAVIGATION - ENLARGE ICONS */
