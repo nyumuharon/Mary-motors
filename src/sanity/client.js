@@ -42,7 +42,8 @@ export function mapSanityVehicle(doc) {
 // Queries
 export async function getVehicles() {
     // Fetch all vehicles properly sorted
-    const docs = await client.fetch(`*[_type == "vehicle"] | order(_createdAt desc)`);
+    // Setting useCdn: false here ensures you see new cars immediately after publishing
+    const docs = await client.fetch(`*[_type == "vehicle"] | order(_createdAt desc)`, {}, { useCdn: false });
     return docs.map(mapSanityVehicle);
 }
 

@@ -15,7 +15,7 @@ function AllCarsContent() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/vehicles')
+        fetch('/api/vehicles', { cache: 'no-store' })
             .then(res => res.json())
             .then(data => {
                 setAllVehicles(data || []);

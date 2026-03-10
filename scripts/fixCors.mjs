@@ -1,4 +1,4 @@
-const token = 'skQOJOLCdLvNipOmBf0OiyUOkmQmeZRUwx11wDkvsJVInWjU4E3VYJz6Gk1B39MkQ7bK1kN1TlAIefNKybw7elogQMQeua5WaDNkvGu32qGOOihaT4N5zxtzOm83BLY5G2bryaxH1xbsXUgdk2QjsexqVfHf8HfQyW2BozhC4X57Gdmu1beH';
+const token = 'skuAJgBrSX83lUeZjlMDAcGNomLHJjF2daLVcq9tXp4cbbI6qbrNMrFUNQFgXF5g1vDKowLAyop8tkXBrU53NOtwJZ5mR2B9gCcvfPN7gMBJPnC5QgtzQnILegIenfrBwd2pccx7CpqF0zfyWYaaw0AA4l25NSdlzkOXtIFMpyEyAKg6OuIE';
 const projectId = 'khqg9ywx';
 
 async function addCors() {
