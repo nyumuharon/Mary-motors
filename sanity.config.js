@@ -16,6 +16,20 @@ export default defineConfig({
     schema: {
         types: [vehicleSchema],
     },
+    studio: {
+        components: {
+            logo: () => (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <img
+                        src="/logo.png"
+                        alt="Mary Motors"
+                        style={{ height: '24px', width: 'auto', borderRadius: '4px' }}
+                    />
+                    <span style={{ fontWeight: 800, letterSpacing: '-0.02em' }}>MARY MOTORS</span>
+                </div>
+            )
+        }
+    },
     document: {
         // This ensures the custom icons and titles appear everywhere
         productionViews: (prev, { schemaType }) => prev,
