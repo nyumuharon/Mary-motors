@@ -23,27 +23,47 @@ export default function StudioLayout({ children }) {
                     background: #ffffff;
                 }
                 
-                /* High-visibility scaling */
+                /* Max visibility scaling */
                 :root { 
-                    font-size: 145% !important; 
+                    font-size: 155% !important; 
                 }
 
                 @media (max-width: 768px) {
                     :root { 
-                        font-size: 120% !important; 
+                        font-size: 130% !important; 
                     }
                 }
 
-                /* Target icons and utility buttons in the top right to make them specifically larger */
-                [data-testid="studio-header"] button,
-                [data-testid="studio-header"] [role="button"] {
-                    transform: scale(1.25);
-                    margin: 0 5px;
+                /* Enlarge all icons across the studio */
+                svg {
+                    transform: scale(1.35);
                 }
 
-                /* Ensure the user profile and tasks text are visible */
-                [data-testid="studio-header"] span {
-                    font-weight: 600 !important;
+                /* Header specific overrides */
+                [data-testid="studio-header"] {
+                    height: 80px !important;
+                }
+
+                [data-testid="studio-header"] button,
+                [data-testid="studio-header"] [role="button"] {
+                    transform: scale(1.4) !important;
+                    margin: 0 12px !important;
+                }
+
+                /* Increase sidebar width to prevent "ADD NEW VEHICL..." truncation */
+                [data-testid="panes-column"] {
+                    min-width: 400px !important;
+                }
+
+                /* Make sidebar items larger and more clickable */
+                [data-testid="sidebar-item"] {
+                    padding: 18px 12px !important;
+                }
+
+                /* Ensure form labels and text are bold and clear */
+                label {
+                    font-weight: 700 !important;
+                    font-size: 1.1rem !important;
                 }
 
                 /* Ensure the logo area doesn't push out other elements */

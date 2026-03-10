@@ -53,21 +53,21 @@ export default defineConfig({
                     .title('MANAGEMENT CONSOLE')
                     .items([
                         S.listItem()
-                            .title('ADD NEW VEHICLE (+)')
+                            .title('ADD VEHICLE')
                             .icon(() => '🚗')
                             .child(
                                 S.document()
                                     .schemaType('vehicle')
                                     .documentId('new-vehicle')
-                                    .title('Create Vehicle Form')
+                                    .title('Vehicle Form')
                             ),
                         S.divider(),
                         S.listItem()
-                            .title('VIEW ALL VEHICLES')
+                            .title('ALL VEHICLES')
                             .icon(vehicleSchema.icon)
                             .child(
                                 S.documentTypeList('vehicle')
-                                    .title('LIVE STOCK LIST')
+                                    .title('STOCK LIST')
                                     .initialValueTemplates([
                                         S.initialValueTemplateItem('vehicle')
                                     ])
