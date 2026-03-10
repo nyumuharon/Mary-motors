@@ -16,4 +16,8 @@ export default defineConfig({
     schema: {
         types: [vehicleSchema],
     },
+    document: {
+        // This ensures the custom icons and titles appear everywhere
+        productionViews: (prev, { schemaType }) => prev,
+    }
 })

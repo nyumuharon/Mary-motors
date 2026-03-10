@@ -1,7 +1,10 @@
+import { TagIcon } from '@sanity/icons'
+
 export const vehicleSchema = {
     name: 'vehicle',
     title: 'Vehicle Inventory',
     type: 'document',
+    icon: TagIcon,
     groups: [
         { name: 'basic', title: 'Basic Info', default: true },
         { name: 'pricing', title: 'Pricing & Status' },
@@ -146,14 +149,17 @@ export const vehicleSchema = {
     ],
     preview: {
         select: {
-            title: 'name',
-            subtitle: 'make',
+            name: 'name',
+            make: 'make',
+            price: 'price',
+            badge: 'badge',
             media: 'mainImage',
         },
         prepare(selection) {
-            const { title, subtitle, media } = selection
+            const { name, make, price, badge, media } = selection
             return {
-                title: `${subtitle} ${title}`,
+                title: `${make} ${name}`,
+                subtitle: `${price} | ${badge || 'No Status'}`,
                 media: media
             }
         }
