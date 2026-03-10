@@ -85,67 +85,79 @@ export default defineConfig({
             layout: (props) => (
                 <>
                     <style>{`
-                        /* REFINED PRO UI OVERRIDE */
-
+                        /* ULTRA-VISIBLE RED UI OVERRIDE */
+                        
                         :root { 
-                            font-size: 120% !important; 
+                            font-size: 140% !important; 
                         }
 
-                        /* 1. PRIMARY ACTION BUTTONS (Publish, Create) */
-                        button[data-testid="publish-button"],
-                        button[data-testid="new-document-button"] {
+                        /* 1. FORCE ALL ACTION & UTILITY BUTTONS TO BE RED & LARGE */
+                        /* Targets Publish, Create, Search, Link, Close, Comment, and Menu buttons */
+                        button[data-testid*="button"],
+                        button[data-testid*="action"],
+                        [role="button"]:has(svg) {
                             background-color: #ff4d4d !important;
                             color: white !important;
-                            padding: 12px 30px !important;
+                            padding: 10px 20px !important;
                             font-weight: 900 !important;
-                            font-size: 1rem !important;
-                            border-radius: 50px !important;
-                            box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4) !important;
+                            border-radius: 8px !important;
+                            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.4) !important;
                             border: 2px solid #e03d0e !important;
                             cursor: pointer !important;
-                            position: relative !important;
-                            z-index: 1000 !important;
-                            pointer-events: auto !important;
-                        }
-
-                        button[data-testid="publish-button"] *, 
-                        button[data-testid="new-document-button"] * {
-                            color: white !important;
-                            stroke: white !important;
-                        }
-
-                        /* 2. PANE UTILITY ICONS (Link, Close, etc) */
-                        [data-testid="pane-header"] button:has(svg):not(:has(span)),
-                        button[data-testid="search-button"] {
-                            background-color: #ff4d4d !important;
-                            color: white !important;
-                            border-radius: 50% !important;
-                            width: 44px !important;
-                            height: 44px !important;
                             display: inline-flex !important;
                             align-items: center !important;
                             justify-content: center !important;
-                            border: 2px solid #e03d0e !important;
-                            box-shadow: 0 3px 10px rgba(255, 77, 77, 0.3) !important;
-                            cursor: pointer !important;
-                            pointer-events: auto !important;
+                            margin: 5px !important;
+                            min-width: 44px !important;
+                            min-height: 44px !important;
                         }
 
-                        /* 3. RESTORE HEADERS & LAYOUT FIXES */
-                        [data-testid="pane-header"] {
+                        /* Ensure icons inside these buttons are large and white */
+                        button[data-testid*="button"] svg,
+                        [role="button"] svg {
+                            transform: scale(1.3) !important;
+                            stroke: white !important;
+                            color: white !important;
+                        }
+
+                        /* Special handling for the main 'Create' and 'Publish' to be even bigger */
+                        button[data-testid="new-document-button"],
+                        button[data-testid="publish-button"] {
+                            padding: 12px 35px !important;
+                            border-radius: 50px !important;
+                        }
+
+                        /* 2. RESTORE HEADER TEXT (Prevent red ovals) */
+                        [data-testid="pane-header"], 
+                        [data-testid="default-pane-header"] {
                             background-color: #fff !important;
                             border-bottom: 1px solid #eee !important;
                         }
 
-                        [data-testid="panes-column"] {
-                            min-width: 350px !important;
-                            z-index: 1 !important; /* Lowered to prevent header overlap */
+                        /* Ensure title text doesn't inherit the button style */
+                        [data-testid="pane-header"] h2,
+                        [data-testid="default-pane-header"] h2 {
+                            background: none !important;
+                            border: none !important;
+                            box-shadow: none !important;
+                            color: #000 !important;
+                            font-weight: 800 !important;
+                            font-size: 1.3rem !important;
+                            padding: 0 !important;
+                            margin: 0 15px !important;
                         }
 
+                        /* 3. SIDEBAR WIDTH */
+                        [data-testid="panes-column"] {
+                            min-width: 400px !important;
+                            z-index: 1 !important;
+                        }
+
+                        /* Form label clarity */
                         label {
-                            font-size: 1.1rem !important;
-                            font-weight: 700 !important;
-                            color: #333 !important;
+                            font-size: 1.2rem !important;
+                            font-weight: 800 !important;
+                            color: #000 !important;
                         }
                     `}</style>
 
