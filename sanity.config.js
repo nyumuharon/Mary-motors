@@ -85,88 +85,75 @@ export default defineConfig({
             layout: (props) => (
                 <>
                     <style>{`
-                        /* PRO RED UI OVERRIDE */
-                        
+                        /* REFINED PRO UI OVERRIDE */
+
                         :root { 
-                            font-size: 135% !important; 
+                            font-size: 120% !important; 
                         }
 
-                        /* 1. THE ACTION BUTTONS (Publish, Create, etc) */
+                        /* 1. PRIMARY ACTION BUTTONS (Publish, Create) */
                         button[data-testid="publish-button"],
-                        button[data-testid="new-document-button"],
-                        [data-testid="pane-footer"] button {
+                        button[data-testid="new-document-button"] {
                             background-color: #ff4d4d !important;
                             color: white !important;
-                            transform: scale(1.2) !important;
-                            padding: 12px 28px !important;
-                            font-weight: 900 !important;
+                            padding: 10px 24px !important;
+                            font-weight: 800 !important;
                             border-radius: 50px !important;
-                            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4) !important;
-                            margin: 10px !important;
-                            border: 2px solid #e03d0e !important;
-                            transition: all 0.2s ease !important;
-                        }
-
-                        button[data-testid="publish-button"]:hover,
-                        button[data-testid="new-document-button"]:hover {
-                            background-color: #e03d0e !important;
-                            transform: scale(1.25) !important;
+                            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3) !important;
+                            border: none !important;
+                            min-height: 44px !important;
                         }
 
                         button[data-testid="publish-button"] *, 
-                        button[data-testid="new-document-button"] *,
-                        [data-testid="pane-footer"] button * {
+                        button[data-testid="new-document-button"] * {
                             color: white !important;
                             stroke: white !important;
                         }
 
-                        /* 2. HEADER & PANE UTILITY ICONS - CLEAN RED BUTTONS */
-                        [data-testid="pane-header"] button,
-                        [data-testid="default-pane-header"] button,
+                        /* 2. PANE UTILITY ICONS (Link, Close, etc) */
+                        /* Target buttons that ONLY contain icons, avoiding text headers */
+                        [data-testid="pane-header"] button:has(svg):not(:has(span)),
                         button[data-testid="search-button"] {
                             background-color: #ff4d4d !important;
                             color: white !important;
                             border-radius: 50% !important;
-                            width: 42px !important;
-                            height: 42px !important;
+                            width: 40px !important;
+                            height: 40px !important;
+                            min-width: 40px !important;
                             display: inline-flex !important;
                             align-items: center !important;
                             justify-content: center !important;
-                            margin: 0 10px !important;
-                            box-shadow: 0 3px 10px rgba(255, 77, 77, 0.3) !important;
-                            border: 2px solid #e03d0e !important;
+                            border: none !important;
+                            box-shadow: 0 2px 8px rgba(255, 77, 77, 0.2) !important;
                         }
 
-                        [data-testid="pane-header"] button svg,
-                        button[data-testid="search-button"] svg {
-                            transform: scale(1.2) !important;
-                            stroke: white !important;
+                        /* 3. RESTORE HEADERS (Fix the red ovals) */
+                        [data-testid="pane-header"] {
+                            background-color: #fff !important;
+                            border-bottom: 1px solid #eee !important;
                         }
 
-                        /* 3. PANE HEADERS (e.g., STOCK LIST) - TEXT COLOR FIX */
+                        /* Ensure titles are just bold text, not red shapes */
                         [data-testid="pane-header"] h2,
-                        [data-testid="pane-header"] div {
-                            color: inherit;
-                        }
-
-                        /* Target the red pane header specifically to ensure white text */
-                        [data-testid="pane-header"][style*="background-color: rgb(255, 77, 77)"] h2,
-                        [data-testid="pane-header"][style*="background-color: #ff4d4d"] h2 {
-                            color: white !important;
-                        }
-
-                        /* 3. SIDEBAR NAVIGATION - ENLARGE ICONS */
-                        [data-testid="panes-column"] {
-                            min-width: 380px !important;
-                        }
-
-                        /* Form label visibility */
-                        label {
-                            font-size: 1.15rem !important;
-                            font-weight: 800 !important;
+                        [data-testid="default-pane-header"] h2 {
+                            background: none !important;
                             color: #000 !important;
+                            font-weight: 800 !important;
+                            font-size: 1.2rem !important;
+                        }
+
+                        /* 4. SIDEBAR & FORM LABELS */
+                        [data-testid="panes-column"] {
+                            min-width: 350px !important;
+                        }
+
+                        label {
+                            font-size: 1.1rem !important;
+                            font-weight: 700 !important;
+                            color: #333 !important;
                         }
                     `}</style>
+
                     {props.renderDefault(props)}
                 </>
             ),
