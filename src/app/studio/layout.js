@@ -23,9 +23,15 @@ export default function StudioLayout({ children }) {
                     background: #ffffff;
                 }
                 
-                /* Reset scaling to standard values to prevent header overcrowding */
+                /* Balanced scaling for better visibility without overcrowding */
                 :root { 
-                    font-size: 100%; 
+                    font-size: 120% !important; 
+                }
+
+                @media (max-width: 768px) {
+                    :root { 
+                        font-size: 110% !important; 
+                    }
                 }
 
                 /* Ensure the logo area doesn't push out other elements */
