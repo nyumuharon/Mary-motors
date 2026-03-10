@@ -23,47 +23,46 @@ export default function StudioLayout({ children }) {
                     background: #ffffff;
                 }
                 
-                /* Max visibility scaling */
+                /* High visibility scaling */
                 :root { 
-                    font-size: 155% !important; 
+                    font-size: 145% !important; 
                 }
 
                 @media (max-width: 768px) {
                     :root { 
-                        font-size: 130% !important; 
+                        font-size: 120% !important; 
                     }
                 }
 
-                /* Enlarge all icons across the studio */
+                /* Enlarge icons but keep layout stable */
                 svg {
-                    transform: scale(1.35);
+                    transform: scale(1.2);
                 }
 
-                /* Header specific overrides */
+                /* Header layout stability */
                 [data-testid="studio-header"] {
-                    height: 80px !important;
+                    height: 70px !important;
                 }
 
-                [data-testid="studio-header"] button,
-                [data-testid="studio-header"] [role="button"] {
-                    transform: scale(1.4) !important;
-                    margin: 0 12px !important;
+                /* Give buttons enough breathing room without breaking hitboxes */
+                [data-testid="studio-header"] button {
+                    margin: 0 10px !important;
                 }
 
-                /* Increase sidebar width to prevent "ADD NEW VEHICL..." truncation */
+                /* Fix for the Create button overlap */
+                [data-testid="studio-logo"] {
+                    margin-right: 30px !important;
+                    z-index: 1;
+                }
+                
+                button[data-testid="new-document-button"] {
+                    z-index: 10 !important;
+                    position: relative;
+                }
+
+                /* Sidebar width for large scale */
                 [data-testid="panes-column"] {
-                    min-width: 400px !important;
-                }
-
-                /* Make sidebar items larger and more clickable */
-                [data-testid="sidebar-item"] {
-                    padding: 18px 12px !important;
-                }
-
-                /* Ensure form labels and text are bold and clear */
-                label {
-                    font-weight: 700 !important;
-                    font-size: 1.1rem !important;
+                    min-width: 380px !important;
                 }
 
                 /* Ensure the logo area doesn't push out other elements */

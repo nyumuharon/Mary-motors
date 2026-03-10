@@ -36,7 +36,7 @@ const chunkyTheme = buildLegacyTheme({
 
 export default defineConfig({
     name: 'default',
-    title: 'Mary Motors Admin',
+    title: 'Mary Motors',
     theme: chunkyTheme,
 
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'khqg9ywx',
