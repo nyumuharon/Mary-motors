@@ -12,16 +12,37 @@ export default function StudioLayout({ children }) {
             width: '100%',
             height: '100dvh',
             zIndex: 999999,
-            backgroundColor: '#fff',
+            backgroundColor: '#ffffff',
             overflow: 'hidden',
-            fontSize: '18px' // Global scale up for all REM units
         }}>
             <style suppressHydrationWarning>{`
-                body { margin: 0; padding: 0; overflow: hidden; background: #fff; }
-                /* Force Sanity Studio UI elements to scale up */
-                :root { font-size: 110% !important; }
+                body { 
+                    margin: 0; 
+                    padding: 0; 
+                    overflow: hidden; 
+                    background: #ffffff;
+                }
+                
+                /* GLOBAL SCALE OVERRIDE */
+                /* This forces Sanity's REM-based UI to enlarge by 25% */
+                :root { 
+                    font-size: 130% !important; 
+                }
+
                 @media (max-width: 768px) {
-                    :root { font-size: 115% !important; }
+                    :root { 
+                        font-size: 140% !important; 
+                    }
+                }
+
+                /* Fix for button truncation */
+                [data-testid="studio-logo"] {
+                    min-width: 250px !important;
+                }
+                
+                button[data-testid="new-document-button"] {
+                    transform: scale(1.2);
+                    margin-left: 20px;
                 }
             `}</style>
             {children}

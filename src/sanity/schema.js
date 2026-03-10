@@ -11,12 +11,6 @@ export const vehicleSchema = {
         { name: 'specs', title: 'Specifications' },
         { name: 'media', title: 'Media & Details' }
     ],
-    fieldsets: [
-        { name: 'basic', title: 'Basic Information', options: { collapsible: true, collapsed: false } },
-        { name: 'pricing', title: 'Pricing & Classification', options: { collapsible: true, collapsed: false } },
-        { name: 'specs', title: 'Technical Specifications', options: { collapsible: true, collapsed: true } },
-        { name: 'media', title: 'Media & Description', options: { collapsible: true, collapsed: false } }
-    ],
     fields: [
         {
             name: 'make',
@@ -144,7 +138,7 @@ export const vehicleSchema = {
             title: 'Vehicle Weight',
             type: 'string',
             description: 'e.g., 2,560 kg',
-            fieldset: 'specs'
+            group: 'specs'
         }
     ],
     preview: {

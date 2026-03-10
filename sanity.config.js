@@ -3,23 +3,21 @@ import { structureTool } from 'sanity/structure'
 import { vehicleSchema } from './src/sanity/schema'
 import { buildLegacyTheme } from 'sanity'
 
-// Define a premium, high-accessibility "Chunky" theme
+// DEFINE A RADIANT, BOLD, ACCESSIBLE THEME
 const props = {
-    '--black': '#000',
-    '--white': '#fff',
-    '--brand-primary': '#e74c3c', // Mary Motors Red
-    '--brand-secondary': '#1a1a1a',
-    '--gray': '#f4f4f4',
-    '--focus-color': '#e74c3c',
+    '--black': '#000000',
+    '--white': '#ffffff',
+    '--brand-primary': '#ff4d4d', // Bold Accent Red
+    '--brand-secondary': '#111111',
 }
 
-const customTheme = buildLegacyTheme({
+const chunkyTheme = buildLegacyTheme({
     /* Base theme colors */
     '--black': props['--black'],
     '--white': props['--white'],
 
-    '--gray': '#666',
-    '--gray-base': '#666',
+    '--gray': '#8a8a8a',
+    '--gray-base': '#8a8a8a',
 
     '--component-bg': props['--white'],
     '--component-text-color': props['--black'],
@@ -28,29 +26,18 @@ const customTheme = buildLegacyTheme({
     '--brand-primary': props['--brand-primary'],
 
     // Default button
-    '--default-button-color': '#666',
     '--default-button-primary-color': props['--brand-primary'],
-    '--default-button-success-color': '#2ecc71',
-    '--default-button-warning-color': '#f1c40f',
-    '--default-button-danger-color': '#e74c3c',
-
-    /* State */
-    '--state-info-color': props['--brand-primary'],
-    '--state-success-color': '#2ecc71',
-    '--state-warning-color': '#f1c40f',
-    '--state-danger-color': '#e74c3c',
+    '--default-button-danger-color': '#ff4d4d',
 
     /* Navbar */
     '--main-navigation-color': props['--black'],
     '--main-navigation-color--inverted': props['--white'],
-
-    '--focus-color': props['--focus-color'],
 })
 
 export default defineConfig({
     name: 'default',
-    title: 'Mary Motors Administration',
-    theme: customTheme,
+    title: 'Mary Motors Administration Dashboard',
+    theme: chunkyTheme,
 
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'khqg9ywx',
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
@@ -59,17 +46,28 @@ export default defineConfig({
 
     plugins: [
         structureTool({
+            name: 'inventory',
+            title: 'Inventory Management',
             structure: (S) =>
                 S.list()
-                    .title('Management Console')
+                    .title('MANAGEMENT CONSOLE')
                     .items([
                         S.listItem()
-                            .title('Vehicle Inventory')
+                            .title('ADD NEW VEHICLE (+)')
+                            .icon(() => '🚗')
+                            .child(
+                                S.document()
+                                    .schemaType('vehicle')
+                                    .documentId('new-vehicle')
+                                    .title('Create Vehicle Form')
+                            ),
+                        S.divider(),
+                        S.listItem()
+                            .title('VIEW ALL VEHICLES')
                             .icon(vehicleSchema.icon)
                             .child(
                                 S.documentTypeList('vehicle')
-                                    .title('All Vehicles')
-                                    // Make "Create" obvious in the list header
+                                    .title('LIVE STOCK LIST')
                                     .initialValueTemplates([
                                         S.initialValueTemplateItem('vehicle')
                                     ])
@@ -81,20 +79,18 @@ export default defineConfig({
     schema: {
         types: [vehicleSchema],
     },
+
     studio: {
         components: {
             logo: () => (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '0 10px' }}>
-                    <img
-                        src="/logo.png"
-                        alt="Mary Motors"
-                        style={{ height: '32px', width: 'auto', borderRadius: '4px' }}
-                    />
-                    <span style={{ fontWeight: 900, fontSize: '1.2rem', letterSpacing: '-0.03em', color: '#e74c3c' }}>MARY MOTORS</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', paddingLeft: '10px', minWidth: '350px' }}>
+                    <div style={{ backgroundColor: '#ff4d4d', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 900, fontSize: '1.4rem' }}>M</div>
+                    <span style={{ fontWeight: 900, fontSize: '1.4rem', letterSpacing: '-0.02em', color: '#000' }}>MARY MOTORS ADMIN</span>
                 </div>
             )
         }
     },
+
     document: {
         productionViews: (prev, { schemaType }) => prev,
     }
