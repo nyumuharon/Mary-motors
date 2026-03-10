@@ -23,26 +23,20 @@ export default function StudioLayout({ children }) {
                     background: #ffffff;
                 }
                 
-                /* GLOBAL SCALE OVERRIDE */
-                /* This forces Sanity's REM-based UI to enlarge by 25% */
+                /* Reset scaling to standard values to prevent header overcrowding */
                 :root { 
-                    font-size: 130% !important; 
+                    font-size: 100%; 
                 }
 
-                @media (max-width: 768px) {
-                    :root { 
-                        font-size: 140% !important; 
-                    }
-                }
-
-                /* Fix for button truncation */
+                /* Ensure the logo area doesn't push out other elements */
                 [data-testid="studio-logo"] {
-                    min-width: 250px !important;
+                    min-width: auto !important;
                 }
                 
+                /* Ensure buttons have enough space and are not artificially enlarged */
                 button[data-testid="new-document-button"] {
-                    transform: scale(1.2);
-                    margin-left: 20px;
+                    transform: none;
+                    margin-left: 0;
                 }
             `}</style>
             {children}

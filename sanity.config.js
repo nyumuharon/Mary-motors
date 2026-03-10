@@ -36,7 +36,7 @@ const chunkyTheme = buildLegacyTheme({
 
 export default defineConfig({
     name: 'default',
-    title: 'Mary Motors Administration Dashboard',
+    title: 'Mary Motors Admin',
     theme: chunkyTheme,
 
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'khqg9ywx',
@@ -83,9 +83,9 @@ export default defineConfig({
     studio: {
         components: {
             logo: () => (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', paddingLeft: '10px', minWidth: '350px' }}>
-                    <div style={{ backgroundColor: '#ff4d4d', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 900, fontSize: '1.4rem' }}>M</div>
-                    <span style={{ fontWeight: 900, fontSize: '1.4rem', letterSpacing: '-0.02em', color: '#000' }}>MARY MOTORS ADMIN</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingLeft: '5px' }}>
+                    <div style={{ backgroundColor: '#ff4d4d', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 900, fontSize: '1.1rem' }}>M</div>
+                    <span style={{ fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#000', whiteSpace: 'nowrap' }}>MARY MOTORS</span>
                 </div>
             )
         }
