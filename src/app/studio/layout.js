@@ -23,15 +23,27 @@ export default function StudioLayout({ children }) {
                     background: #ffffff;
                 }
                 
-                /* Balanced scaling for better visibility without overcrowding */
+                /* High-visibility scaling */
                 :root { 
-                    font-size: 120% !important; 
+                    font-size: 145% !important; 
                 }
 
                 @media (max-width: 768px) {
                     :root { 
-                        font-size: 110% !important; 
+                        font-size: 120% !important; 
                     }
+                }
+
+                /* Target icons and utility buttons in the top right to make them specifically larger */
+                [data-testid="studio-header"] button,
+                [data-testid="studio-header"] [role="button"] {
+                    transform: scale(1.25);
+                    margin: 0 5px;
+                }
+
+                /* Ensure the user profile and tasks text are visible */
+                [data-testid="studio-header"] span {
+                    font-weight: 600 !important;
                 }
 
                 /* Ensure the logo area doesn't push out other elements */

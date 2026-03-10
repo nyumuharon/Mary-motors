@@ -47,7 +47,7 @@ export default defineConfig({
     plugins: [
         structureTool({
             name: 'inventory',
-            title: 'Inventory Management',
+            title: 'Inventory',
             structure: (S) =>
                 S.list()
                     .title('MANAGEMENT CONSOLE')
