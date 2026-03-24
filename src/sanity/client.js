@@ -67,8 +67,8 @@ export async function getVehicles() {
 }
 
 export async function getVehicleById(id) {
-    // Fetch a single vehicle by its Sanity ID with a full projection
-    const query = `*[_type == "vehicle" && _id == $id][0] {
+    // Fetch a single vehicle by its Sanity _id OR a custom ID field if used
+    const query = `*[_type == "vehicle" && (_id == $id || id == $id)][0] {
         _id,
         make,
         name,
