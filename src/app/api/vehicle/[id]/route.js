@@ -6,7 +6,8 @@ export const revalidate = 0;
 
 export async function GET(request, { params }) {
     try {
-        const data = await getVehicleById(params.id);
+        const { id } = await params;
+        const data = await getVehicleById(id);
         return NextResponse.json(data, {
             headers: {
                 'Cache-Control': 'no-store, max-age=0',

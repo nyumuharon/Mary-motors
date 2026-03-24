@@ -1,6 +1,4 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -9,9 +7,8 @@ import {
     ArrowRight
 } from 'lucide-react';
 
-export default function VehicleDetailsPage() {
-    const params = useParams();
-    const id = params.id;
+export default function VehicleDetailsPage({ params }) {
+    const { id } = React.use(params);
 
     const [vehicle, setVehicle] = useState(null);
     const [loading, setLoading] = useState(true);
