@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const slides = [
     {
@@ -34,32 +35,12 @@ export default function HeroSlider() {
 
     const goTo = useCallback((idx) => {
         setCurrent((idx + slides.length) % slides.length);
-    }, []);
+    }, [slides.length]);
 
     // Auto-advance every 10 seconds
     useEffect(() => {
         const timer = setInterval(() => goTo(current + 1), 10000);
         return () => clearInterval(timer);
-    }, [current, goTo]);
-
-    // Touch/swipe support
-    useEffect(() => {
-        let touchStartX = 0;
-        const hero = document.querySelector('.hero');
-        if (!hero) return;
-
-        const onTouchStart = (e) => { touchStartX = e.touches[0].clientX; };
-        const onTouchEnd = (e) => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
-        };
-
-        hero.addEventListener('touchstart', onTouchStart, { passive: true });
-        hero.addEventListener('touchend', onTouchEnd);
-        return () => {
-            hero.removeEventListener('touchstart', onTouchStart);
-            hero.removeEventListener('touchend', onTouchEnd);
-        };
     }, [current, goTo]);
 
     return (
@@ -70,9 +51,13 @@ export default function HeroSlider() {
                         key={i}
                         className={`slide ${i === current ? 'active' : ''}`}
                     >
-                        <div
+                        <Image
+                            src={slide.bg}
+                            alt={slide.tag}
+                            fill
+                            priority={i === 0}
                             className="slide-bg"
-                            style={{ backgroundImage: `url('${slide.bg}')` }}
+                            style={{ objectFit: 'cover' }}
                         />
                         <div className="container slide-content">
                             <p className="slide-tag">{slide.tag}</p>
