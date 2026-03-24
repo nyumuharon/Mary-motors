@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+import { useState, useEffect, use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -8,7 +9,7 @@ import {
 } from 'lucide-react';
 
 export default function VehicleDetailsPage({ params }) {
-    const { id } = React.use(params);
+    const { id } = use(params);
 
     const [vehicle, setVehicle] = useState(null);
     const [loading, setLoading] = useState(true);
