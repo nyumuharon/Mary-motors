@@ -17,7 +17,7 @@ export default function VehicleDetailsPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`/api/vehicles/${id}`, { cache: 'no-store' })
+        fetch(`/api/vehicle/${id}`, { cache: 'no-store' })
             .then(res => res.json())
             .then(data => {
                 setVehicle(data);
