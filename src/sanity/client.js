@@ -67,7 +67,27 @@ export async function getVehicles() {
 }
 
 export async function getVehicleById(id) {
-    // Fetch a single vehicle by its Sanity ID
-    const doc = await client.fetch(`*[_type == "vehicle" && _id == $id][0]`, { id });
+    // Fetch a single vehicle by its Sanity ID with a full projection
+    const query = `*[_type == "vehicle" && _id == $id][0] {
+        _id,
+        make,
+        name,
+        badge,
+        price,
+        mainImage,
+        gallery,
+        vehicleType,
+        bodyType,
+        fuel,
+        mileage,
+        seats,
+        engine,
+        transmission,
+        color,
+        weight,
+        description,
+        _createdAt
+    }`;
+    const doc = await client.fetch(query, { id });
     return mapSanityVehicle(doc);
 }

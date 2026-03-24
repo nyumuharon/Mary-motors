@@ -61,16 +61,16 @@ export default function VehicleDetailsPage() {
 
     // CMS-friendly data mapping
     const technicalSpecs = [
-        { label: 'Make', value: vehicle.make },
-        { label: 'Model', value: vehicle.name },
-        { label: 'Body Type', value: vehicle.id > 13 ? 'Motorcycle' : 'Sedan/SUV' },
-        { label: 'Engine', value: vehicle.engine || 'N/A' },
-        { label: 'Transmission', value: vehicle.transmission || 'Automatic' },
-        { label: 'Fuel Type', value: vehicle.fuel },
-        { label: 'Mileage', value: vehicle.mileage },
-        { label: 'Color', value: vehicle.color || 'Dynamic' },
-        { label: 'Seats', value: `${vehicle.seats} Seats` },
-        { label: 'Weight', value: vehicle.weight || 'N/A' }
+        { label: 'Make', value: vehicle?.make || 'N/A' },
+        { label: 'Model', value: vehicle?.name || 'N/A' },
+        { label: 'Body Type', value: vehicle?.bodyType || 'Sedan/SUV' },
+        { label: 'Engine', value: vehicle?.engine || 'N/A' },
+        { label: 'Transmission', value: vehicle?.transmission || 'Automatic' },
+        { label: 'Fuel Type', value: vehicle?.fuel || 'Petrol' },
+        { label: 'Mileage', value: vehicle?.mileage || '0 km' },
+        { label: 'Color', value: vehicle?.color || 'Dynamic' },
+        { label: 'Seats', value: vehicle?.seats ? `${vehicle.seats} Seats` : 'N/A' },
+        { label: 'Weight', value: vehicle?.weight || 'N/A' }
     ];
 
     return (
@@ -89,13 +89,17 @@ export default function VehicleDetailsPage() {
                     {/* Left: Images Showcase (Slideshow) */}
                     <div className="vehicle-gallery" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                         <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', background: '#fff', position: 'relative', flex: 1, width: '100%' }}>
-                            <Image
-                                src={galleryItems[currentIndex]}
-                                alt={vehicle.name}
-                                fill
-                                priority
-                                style={{ objectFit: 'cover', transition: 'opacity 0.5s ease-in-out' }}
-                            />
+                            {galleryItems.length > 0 ? (
+                                <Image
+                                    src={galleryItems[currentIndex]}
+                                    alt={vehicle?.name || 'Vehicle'}
+                                    fill
+                                    priority
+                                    style={{ objectFit: 'cover', transition: 'opacity 0.5s ease-in-out' }}
+                                />
+                            ) : (
+                                <div style={{ width: '100%', height: '100%', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>No Image Available</div>
+                            )}
                             {galleryItems.length > 1 && (
                                 <>
                                     <button
