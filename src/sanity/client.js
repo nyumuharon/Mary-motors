@@ -41,9 +41,28 @@ export function mapSanityVehicle(doc) {
 
 // Queries
 export async function getVehicles() {
-    // Fetch all vehicles properly sorted
-    // Setting useCdn: false here ensures you see new cars immediately after publishing
-    const docs = await client.fetch(`*[_type == "vehicle"] | order(_createdAt desc)`, {}, { useCdn: false });
+    // Fetch all vehicles properly sorted with a lean projection for performance
+    const query = `*[_type == "vehicle"] | order(_createdAt desc) {
+        _id,
+        make,
+        name,
+        badge,
+        price,
+        mainImage,
+        gallery,
+        vehicleType,
+        bodyType,
+        fuel,
+        mileage,
+        seats,
+        engine,
+        transmission,
+        color,
+        weight,
+        description,
+        _createdAt
+    }`;
+    const docs = await client.fetch(query, {}, { useCdn: true }); // Enable CDN for faster repeat fetches
     return docs.map(mapSanityVehicle);
 }
 
